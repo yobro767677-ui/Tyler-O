@@ -426,17 +426,6 @@ export class SessionManager {
           </div>
         </div>
 
-        <div class="session-electron-banner" id="session-electron-banner">
-          <button class="session-electron-banner__close" id="electron-banner-close" aria-label="Dismiss" title="Dismiss">
-            <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/window-close.svg" class="papirus-icon papirus-icon--22" alt="" />
-          </button>
-          <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/edit-download.svg" class="papirus-icon papirus-icon--22" alt="" />
-          <span><strong>Tyler OS desktop app</strong> Persistent storage, system tray, remote desktop, and faster performance.</span>
-          <div class="electron-banner-actions">
-            <span class="electron-download-link" id="electron-download-btn"><img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/edit-download.svg" class="papirus-icon papirus-icon--22" alt="" /> Download</span>
-            <a href="https://github.com/reeyuki/yukios/releases" target="_blank" class="electron-releases-link">View all releases</a>
-          </div>
-        </div>
         <a href="features.html" class="session-features-link">Explore Features</a>
         </div>
         <button class="session-settings-btn" id="session-settings-btn" title="Login settings" type="button">

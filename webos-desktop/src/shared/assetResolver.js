@@ -243,7 +243,7 @@ function isLocalDevHost() {
 }
 
 function isTylerosRepo(repo) {
-  return typeof repo === "string" && repo.toLowerCase() === "tyleros";
+  return typeof repo === "string" && repo.toLowerCase() === "yukios";
 }
 
 export function getCdnMirror() {
@@ -459,7 +459,7 @@ export function resolveTylerAsset(path) {
     CDN_MIRRORS.find((m) => m.id === getCdnMirror()) || CDN_MIRRORS[0];
 
   const user = "Reeyuki";
-  const repo = "tyleros";
+  const repo = "yukios";
   const branch = "main";
 
   return mirror.ghTemplate
