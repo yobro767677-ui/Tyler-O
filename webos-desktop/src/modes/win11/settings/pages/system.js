@@ -14,7 +14,7 @@ import {
 } from "../win11Controls.js";
 import { registerWin11Binding } from "../win11SettingsBindings.js";
 import { win11Icon, win11Description } from "../win11SettingsIcons.js";
-import { YUKIOS_VERSION } from "../../../../apps/about.js";
+import { TYLEROS_VERSION } from "../../../../apps/about.js";
 import "../panels/aboutPanel.js";
 import "../panels/quickLinks.js";
 import "../panels/tilingPanel.js";
@@ -32,7 +32,7 @@ function renderSystemHero() {
       <div class="left">
         <div class="column_device">
           <p class="device_name">Tyler OS</p>
-          <p class="device_model">${YUKIOS_VERSION}</p>
+          <p class="device_model">${TYLEROS_VERSION}</p>
           <p class="device_rename">Windows 11 mode</p>
         </div>
       </div>

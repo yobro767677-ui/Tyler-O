@@ -1,5 +1,5 @@
 import { StorageKeys, os } from "../framework.js";
-import { resolveIconUrl, resolveYukiAsset } from "../shared/assetResolver.js";
+import { resolveIconUrl, resolveTylerAsset } from "../shared/assetResolver.js";
 import { createElement, $ } from "../shared/domUtils.js";
 import { showDynamicContextMenu } from "../shared/contextMenu.js";
 import { showIconPicker } from "../shared/iconPicker.js";
@@ -7,7 +7,7 @@ import logoFallback from "../assets/logo.png";
 
 function getFallbackUrl() {
   if (logoFallback) return logoFallback;
-  return resolveYukiAsset("static/icons/logo.png");
+  return resolveTylerAsset("static/icons/logo.png");
 }
 
 export function getStoredStartIcon() {

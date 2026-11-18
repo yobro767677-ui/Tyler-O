@@ -930,7 +930,7 @@
 .browser-native-root .main-menu-wrapper .browser-dropdown.open {
   display: block;
 }
-.browser-native-root .yuki-page-container {
+.browser-native-root .tyler-page-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -940,22 +940,22 @@
   overflow-y: auto;
   z-index: 10;
 }
-.browser-native-root .yuki-page-container.settings-zoom {
+.browser-native-root .tyler-page-container.settings-zoom {
   zoom: 1.25;
 }
-.browser-native-root .yuki-page-container .dino-page {
+.browser-native-root .tyler-page-container .dino-page {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.browser-native-root .yuki-page-container .dino-srcdoc {
+.browser-native-root .tyler-page-container .dino-srcdoc {
   width: 100%;
   height: 100%;
   border: 0;
 }
-.browser-native-root .yuki-page-container .yuki-page-header {
+.browser-native-root .tyler-page-container .tyler-page-header {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -963,7 +963,7 @@
   border-bottom: 1px solid var(--border);
   background: var(--surface);
 }
-.browser-native-root .yuki-page-container .yuki-back-btn {
+.browser-native-root .tyler-page-container .tyler-back-btn {
   background: none;
   border: none;
   color: var(--text-dim);
@@ -975,29 +975,29 @@
   transition: all 0.15s;
   margin-right: 4px;
 }
-.browser-native-root .yuki-page-container .yuki-back-btn:hover {
+.browser-native-root .tyler-page-container .tyler-back-btn:hover {
   background: var(--surface-hover);
   color: var(--text);
 }
-.browser-native-root .yuki-page-container .yuki-page-header i {
+.browser-native-root .tyler-page-container .tyler-page-header i {
   font-size: 18px;
   color: var(--text-muted);
   width: 24px;
   text-align: center;
 }
-.browser-native-root .yuki-page-container .yuki-page-header h1 {
+.browser-native-root .tyler-page-container .tyler-page-header h1 {
   font-size: 16px;
   font-weight: 600;
   color: var(--text);
   flex: 1;
 }
-.browser-native-root .yuki-page-container .yuki-page-empty {
+.browser-native-root .tyler-page-container .tyler-page-empty {
   text-align: center;
   padding: 40px 20px;
   color: var(--text-dim);
   font-size: 14px;
 }
-.browser-native-root .yuki-page-container .history-date {
+.browser-native-root .tyler-page-container .history-date {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-muted);
@@ -1183,8 +1183,8 @@
   color: var(--brand);
   border-color: var(--brand);
 }
-.browser-native-root .yuki-page-container .panel-item,
-.browser-native-root .yuki-page-container .history-entry {
+.browser-native-root .tyler-page-container .panel-item,
+.browser-native-root .tyler-page-container .history-entry {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1193,35 +1193,35 @@
   cursor: pointer;
   transition: background 0.1s;
 }
-.browser-native-root .yuki-page-container .panel-item:hover,
-.browser-native-root .yuki-page-container .history-entry:hover {
+.browser-native-root .tyler-page-container .panel-item:hover,
+.browser-native-root .tyler-page-container .history-entry:hover {
   background: var(--surface-hover);
 }
-.browser-native-root .yuki-page-container .panel-item-icon {
+.browser-native-root .tyler-page-container .panel-item-icon {
   font-size: 16px;
   width: 24px;
   text-align: center;
   flex-shrink: 0;
 }
-.browser-native-root .yuki-page-container .panel-item-content {
+.browser-native-root .tyler-page-container .panel-item-content {
   flex: 1;
   min-width: 0;
 }
-.browser-native-root .yuki-page-container .panel-item-title {
+.browser-native-root .tyler-page-container .panel-item-title {
   font-size: 13px;
   color: var(--text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.browser-native-root .yuki-page-container .panel-item-sub {
+.browser-native-root .tyler-page-container .panel-item-sub {
   font-size: 11px;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.browser-native-root .yuki-page-container .panel-item-action {
+.browser-native-root .tyler-page-container .panel-item-action {
   background: none;
   border: none;
   color: var(--text-dim);
@@ -1230,40 +1230,40 @@
   padding: 4px 6px;
   border-radius: 4px;
 }
-.browser-native-root .yuki-page-container .panel-item-action:hover {
+.browser-native-root .tyler-page-container .panel-item-action:hover {
   background: var(--surface-active);
   color: var(--error);
 }
-.browser-native-root .yuki-page-container .he-favicon {
+.browser-native-root .tyler-page-container .he-favicon {
   width: 18px;
   height: 18px;
   border-radius: 3px;
   flex-shrink: 0;
 }
-.browser-native-root .yuki-page-container .he-.browser-native-root {
+.browser-native-root .tyler-page-container .he-.browser-native-root {
   flex: 1;
   min-width: 0;
 }
-.browser-native-root .yuki-page-container .he-title {
+.browser-native-root .tyler-page-container .he-title {
   font-size: 13px;
   color: var(--text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.browser-native-root .yuki-page-container .he-meta {
+.browser-native-root .tyler-page-container .he-meta {
   font-size: 11px;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.browser-native-root .yuki-page-container .he-time {
+.browser-native-root .tyler-page-container .he-time {
   font-size: 11px;
   color: var(--text-dim);
   flex-shrink: 0;
 }
-.browser-native-root .yuki-page-container .yuki-search-bar {
+.browser-native-root .tyler-page-container .tyler-search-bar {
   width: 100%;
   padding: 8px 12px;
   background: var(--surface);
@@ -1274,10 +1274,10 @@
   margin-bottom: 8px;
   outline: none;
 }
-.browser-native-root .yuki-page-container .yuki-search-bar:focus {
+.browser-native-root .tyler-page-container .tyler-search-bar:focus {
   border-color: var(--border-light);
 }
-.browser-native-root .yuki-dialog-overlay {
+.browser-native-root .tyler-dialog-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -1289,7 +1289,7 @@
   align-items: center;
   justify-content: center;
 }
-.browser-native-root .yuki-dialog-box {
+.browser-native-root .tyler-dialog-box {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -1298,19 +1298,19 @@
   max-width: 440px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65);
 }
-.browser-native-root .yuki-dialog-title {
+.browser-native-root .tyler-dialog-title {
   font-size: 15px;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 10px;
 }
-.browser-native-root .yuki-dialog-message {
+.browser-native-root .tyler-dialog-message {
   font-size: 13px;
   color: var(--text-dim);
   margin-bottom: 18px;
   line-height: 1.4;
 }
-.browser-native-root .yuki-dialog-input {
+.browser-native-root .tyler-dialog-input {
   width: 100%;
   padding: 8px 10px;
   border: 1px solid var(--border);
@@ -1322,15 +1322,15 @@
   margin-bottom: 16px;
   box-sizing: border-box;
 }
-.browser-native-root .yuki-dialog-input:focus {
+.browser-native-root .tyler-dialog-input:focus {
   border-color: var(--accent);
 }
-.browser-native-root .yuki-dialog-actions {
+.browser-native-root .tyler-dialog-actions {
   display: flex;
   gap: 8px;
   justify-content: flex-end;
 }
-.browser-native-root .yuki-dialog-btn {
+.browser-native-root .tyler-dialog-btn {
   padding: 7px 18px;
   border: none;
   border-radius: 6px;
@@ -1339,28 +1339,28 @@
   font-weight: 500;
   transition: all 0.15s;
 }
-.browser-native-root .yuki-dialog-btn-primary {
+.browser-native-root .tyler-dialog-btn-primary {
   background: var(--brand);
   color: var(--text-on-brand, #fff);
 }
-.browser-native-root .yuki-dialog-btn-primary:hover {
+.browser-native-root .tyler-dialog-btn-primary:hover {
   filter: brightness(1.15);
 }
-.browser-native-root .yuki-dialog-btn-cancel {
+.browser-native-root .tyler-dialog-btn-cancel {
   background: var(--surface-hover);
   color: var(--text-dim);
 }
-.browser-native-root .yuki-dialog-btn-cancel:hover {
+.browser-native-root .tyler-dialog-btn-cancel:hover {
   background: var(--surface-active);
   color: var(--text);
 }
-.browser-native-root .yuki-select {
+.browser-native-root .tyler-select {
   position: relative;
   cursor: pointer;
   user-select: none;
   min-width: 140px;
 }
-.browser-native-root .yuki-select-trigger {
+.browser-native-root .tyler-select-trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1372,18 +1372,18 @@
   color: var(--text);
   font-size: 12px;
 }
-.browser-native-root .yuki-select-trigger:hover {
+.browser-native-root .tyler-select-trigger:hover {
   background: var(--surface-active);
 }
-.browser-native-root .yuki-select-arrow {
+.browser-native-root .tyler-select-arrow {
   font-size: 10px;
   color: var(--text-muted);
   transition: transform 0.15s;
 }
-.browser-native-root .yuki-select.open .yuki-select-arrow {
+.browser-native-root .tyler-select.open .tyler-select-arrow {
   transform: rotate(180deg);
 }
-.browser-native-root .yuki-select-dropdown {
+.browser-native-root .tyler-select-dropdown {
   display: none;
   position: absolute;
   top: 100%;
@@ -1398,28 +1398,28 @@
   overflow-y: auto;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 }
-.browser-native-root .yuki-select.open .yuki-select-dropdown {
+.browser-native-root .tyler-select.open .tyler-select-dropdown {
   display: block;
 }
-.browser-native-root .yuki-select-option {
+.browser-native-root .tyler-select-option {
   padding: 6px 10px;
   font-size: 12px;
   color: var(--text);
   transition: background 0.1s;
 }
-.browser-native-root .yuki-select-option:hover {
+.browser-native-root .tyler-select-option:hover {
   background: var(--surface-hover);
 }
-.browser-native-root .yuki-select-option.selected {
+.browser-native-root .tyler-select-option.selected {
   background: var(--brand-dim);
   color: var(--brand);
 }
-.browser-native-root .yuki-range {
+.browser-native-root .tyler-range {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.browser-native-root .yuki-range-track {
+.browser-native-root .tyler-range-track {
   position: relative;
   flex: 1;
   min-width: 140px;
@@ -1428,13 +1428,13 @@
   border-radius: 2px;
   cursor: pointer;
 }
-.browser-native-root .yuki-range-fill {
+.browser-native-root .tyler-range-fill {
   height: 100%;
   background: var(--brand);
   border-radius: 2px;
   pointer-events: none;
 }
-.browser-native-root .yuki-range-thumb {
+.browser-native-root .tyler-range-thumb {
   position: absolute;
   top: 50%;
   width: 14px;
@@ -1447,15 +1447,15 @@
   cursor: grab;
   transition: box-shadow 0.15s;
 }
-.browser-native-root .yuki-range-thumb:active {
+.browser-native-root .tyler-range-thumb:active {
   cursor: grabbing;
   box-shadow: 0 0 0 4px var(--brand-dim);
 }
-.browser-native-root .yuki-settings-layout {
+.browser-native-root .tyler-settings-layout {
   display: flex;
   height: 100%;
 }
-.browser-native-root .yuki-settings-nav {
+.browser-native-root .tyler-settings-nav {
   width: 210px;
   flex: 0 0 auto;
   flex-shrink: 0;
@@ -1468,7 +1468,7 @@
   gap: 2px;
   height: 100%;
 }
-.browser-native-root .yuki-settings-nav-item {
+.browser-native-root .tyler-settings-nav-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1482,36 +1482,36 @@
   transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
-.browser-native-root .yuki-settings-nav-item:hover {
+.browser-native-root .tyler-settings-nav-item:hover {
   background: var(--surface-hover);
   color: var(--text);
 }
-.browser-native-root .yuki-settings-nav-item.selected {
+.browser-native-root .tyler-settings-nav-item.selected {
   background: var(--brand-dim);
   border: 1px solid var(--border-light);
   color: var(--text);
   font-weight: 600;
 }
-.browser-native-root .yuki-settings-nav-item i {
+.browser-native-root .tyler-settings-nav-item i {
   width: 18px;
   text-align: center;
   font-size: 14px;
   opacity: 0.75;
 }
-.browser-native-root .yuki-settings-content {
+.browser-native-root .tyler-settings-content {
   flex: 1;
   overflow-y: auto;
   padding: 24px 28px 40px;
   max-width: 800px;
 }
-.browser-native-root .yuki-settings-section {
+.browser-native-root .tyler-settings-section {
   display: none;
   margin-bottom: 32px;
 }
-.browser-native-root .yuki-settings-section:last-child {
+.browser-native-root .tyler-settings-section:last-child {
   margin-bottom: 0;
 }
-.browser-native-root .yuki-settings-section.active {
+.browser-native-root .tyler-settings-section.active {
   display: block;
   animation: fadeSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -2237,7 +2237,7 @@
 .browser-native-root .delete-wisp-btn:hover {
   color: var(--error);
 }
-.browser-native-root .yuki-settings-nav-item:focus-visible,
+.browser-native-root .tyler-settings-nav-item:focus-visible,
 .browser-native-root .settings-option-pill:focus-visible,
 .browser-native-root .settings-action-btn:focus-visible,
 .browser-native-root .settings-icon-btn:focus-visible,

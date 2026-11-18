@@ -4,7 +4,7 @@ import { BaseApp, os, StorageKeys } from "../framework.js";
 import { bindEvent, $ } from "../shared/domUtils.js";
 import { renderCreditsSettings } from "../settings/settingRenderer.js";
 import versionTxt from "../../version.txt?raw";
-export const YUKIOS_VERSION = versionTxt.trim();
+export const TYLEROS_VERSION = versionTxt.trim();
 
 const capabilities = [
   {
@@ -70,7 +70,7 @@ const copyrightText = `
 
   If you believe something here violates your rights, contact us at:
 
-  <a href="mailto:yukios-os@proton.me">yukios-os@proton.me</a>
+  <a href="mailto:tyleros-os@proton.me">tyleros-os@proton.me</a>
 
   Include enough information to identify the content and your connection to it. Requests will be reviewed and processed.
 `;
@@ -81,7 +81,7 @@ export class AboutApp extends BaseApp {
 
   open(opts = {}) {
     const win = os.window.create(
-      "about-yukios",
+      "about-tyleros",
       "About Tyler OS",
       "720px",
       "85vh",
@@ -104,7 +104,7 @@ export class AboutApp extends BaseApp {
             </div>
 
             <div class="abx-meta">
-              <div class="abx-pill">Version ${YUKIOS_VERSION}</div>
+              <div class="abx-pill">Version ${TYLEROS_VERSION}</div>
               <div class="abx-pill">
                 50k+ Total Users
               </div>

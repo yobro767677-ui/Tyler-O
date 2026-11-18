@@ -249,7 +249,7 @@ export async function syncSystemOverrideAfterWrite(fsFacade, fullPath) {
   os.storage.set(StorageKeys.systemOverridesIndex, index);
   if (import.meta.env.DEV) {
     try {
-      const response = await fetch("/__yukios-overrides", {
+      const response = await fetch("/__tyleros-overrides", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ path: "src/" + relPath, content }),
@@ -291,7 +291,7 @@ export async function removeSystemOverride(fsFacade, fullPath) {
     os.storage.set(StorageKeys.systemOverridesIndex, null);
   }
   const devClearedRequest = import.meta.env.DEV
-    ? fetch("/__yukios-overrides", {
+    ? fetch("/__tyleros-overrides", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ path: "src/" + relPath }),

@@ -1,7 +1,7 @@
 import { os, StorageKeys, BusEvents, $, createElement } from "../framework.js";
 import { sanitizeBackground, THEME_EFFECT_OPTIONS } from "./themeContract.js";
 
-const EFFECTS_STYLE_ID = "yukios-theme-effects";
+const EFFECTS_STYLE_ID = "tyleros-theme-effects";
 
 function applyEffectsStyle(effects) {
   const hasBg =

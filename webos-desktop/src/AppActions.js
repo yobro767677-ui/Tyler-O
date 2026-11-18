@@ -5,7 +5,7 @@ export function createAppActions(appLauncher) {
   const actions = {};
 
   const LAUNCH_METHOD_DISPATCH = {
-    openYukiDevToolsApp: (extra) => appLauncher.openYukiDevToolsApp(extra),
+    openTylerDevToolsApp: (extra) => appLauncher.openTylerDevToolsApp(extra),
   };
 
   for (const [appId, metadata] of Object.entries(SYSTEM_APPS)) {

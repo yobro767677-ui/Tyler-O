@@ -305,7 +305,7 @@ export function downloadBlob(blob, filename) {
 
 export async function downloadPage(showStatus) {
   const u = "Reeyuki";
-  const r = "YukiOsSingleHtml";
+  const r = "TylerOsSingleHtml";
   const b = "main";
   const p = "index.html";
   const f = "";
@@ -346,7 +346,7 @@ export async function downloadPage(showStatus) {
     const link = createElement("a", {
       attributes: {
         href: downloadUrl,
-        download: "yukios.html",
+        download: "tyleros.html",
       },
     });
 

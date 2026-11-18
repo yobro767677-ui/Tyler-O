@@ -42,7 +42,7 @@ export class WeatherWidget extends WidgetBase {
   async fetchWeather() {
     try {
       const loc = await detectUserLocation();
-      const cacheKey = `yukiOS_weather_widget_${loc.latitude.toFixed(2)}_${loc.longitude.toFixed(2)}`;
+      const cacheKey = `tylerOS_weather_widget_${loc.latitude.toFixed(2)}_${loc.longitude.toFixed(2)}`;
       let weatherData = getCached(cacheKey);
       if (!weatherData) {
         const res = await fetch(

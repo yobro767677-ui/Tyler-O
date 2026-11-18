@@ -29,7 +29,7 @@ export const MODE_DEFS = {
     cssClass: "3d-mode",
     cssTarget: "html",
     storageKey: null,
-    label: "Yuki 3D Desktop",
+    label: "Tyler 3D Desktop",
   },
   [MODES.CHROME_OS]: {
     cssClass: "chromeos-mode",

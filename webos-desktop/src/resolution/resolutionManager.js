@@ -73,7 +73,7 @@ export function applyResolution(value, guiScale) {
 }
 
 function fixWallpaperLayer(totalScale) {
-  const styleId = "yukios-resolution-wallpaper-fix";
+  const styleId = "tyleros-resolution-wallpaper-fix";
   const existing = $("#" + styleId);
   if (totalScale === 1) {
     existing?.remove();

@@ -97,7 +97,7 @@ export const PANIC_PRESETS = {
 };
 
 export const DEFAULT_DECOY = "https://classroom.google.com";
-const ABOUT_BLANK_DONE_KEY = "yukiOS_about_blank_done";
+const ABOUT_BLANK_DONE_KEY = "tylerOS_about_blank_done";
 
 function getFaviconLink() {
   let link = document.querySelector("link[rel~='icon']");
@@ -147,7 +147,7 @@ class TabCloak {
     } catch {
       /* ignore */
     }
-    window.__yukiCloakActive = true;
+    window.__tylerCloakActive = true;
   }
 
   resetCloak() {
@@ -156,7 +156,7 @@ class TabCloak {
     } catch {
       /* ignore */
     }
-    window.__yukiCloakActive = false;
+    window.__tylerCloakActive = false;
     try {
       const wm = os.windowManager || os.window;
       if (wm && typeof wm.resetToDefaultState === "function") {
@@ -175,7 +175,7 @@ class TabCloak {
   }
 
   isCloakActive() {
-    return window.__yukiCloakActive === true;
+    return window.__tylerCloakActive === true;
   }
 
   setBeforeunloadProtect(enabled) {
@@ -316,7 +316,7 @@ class TabCloak {
       } catch {
         /* ignore */
       }
-      window.__yukiCloakActive = true;
+      window.__tylerCloakActive = true;
     }
     this.applyBeforeunloadProtect();
     this.enablePanicListener();

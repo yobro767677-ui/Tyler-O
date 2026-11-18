@@ -319,7 +319,7 @@ function makeFake(url){return {closed:false,focus:function(){},close:function(){
 function patchInner(innerWin){
 if(!innerWin) return;
 try{
-if(innerWin.open&&innerWin.open.yukiPopupPatched) return;
+if(innerWin.open&&innerWin.open.tylerPopupPatched) return;
 var orig=null;try{orig=innerWin.open;}catch(err){}
 var handler=function(raw,target,specs){
 try{
@@ -333,15 +333,15 @@ var pageTitle="";try{pageTitle=innerWin.document.title||"";}catch(err){}
 sendOpen(resolved,name,pageTitle);return makeFake(resolved);
 }catch(err){try{if(orig) return orig.apply(this,arguments);}catch(err2){}return null;}
 };
-handler.yukiPopupPatched=true;
+handler.tylerPopupPatched=true;
 try{innerWin.open=handler;}catch(err){}
-try{if(innerWin.Window&&innerWin.Window.prototype){if(!innerWin.Window.prototype.open||!innerWin.Window.prototype.open.yukiPopupPatched){try{innerWin.Window.prototype.open=handler;}catch(err){}}}}catch(err){}
+try{if(innerWin.Window&&innerWin.Window.prototype){if(!innerWin.Window.prototype.open||!innerWin.Window.prototype.open.tylerPopupPatched){try{innerWin.Window.prototype.open=handler;}catch(err){}}}}catch(err){}
 try{for(var i=0;i<innerWin.frames.length;i++){try{patchInner(innerWin.frames[i]);}catch(err){}}}catch(err){}
 }catch(err){}
 }
 function bindClicks(innerDoc){
-if(!innerDoc||innerDoc.yukiPopupClicksBound) return;
-try{innerDoc.yukiPopupClicksBound=true;}catch(err){}
+if(!innerDoc||innerDoc.tylerPopupClicksBound) return;
+try{innerDoc.tylerPopupClicksBound=true;}catch(err){}
 try{
 innerDoc.addEventListener("click",function(ev){
 try{
@@ -379,7 +379,7 @@ sendOpen(resolved,"_blank",pageTitle);
 }catch(err){}
 }
 function tryPatch(){
-var frame=window.yukiScramjetFrame;var cw=null;try{cw=frame?frame.element.contentWindow:null;}catch(err){}
+var frame=window.tylerScramjetFrame;var cw=null;try{cw=frame?frame.element.contentWindow:null;}catch(err){}
 if(!cw) return;
 try{patchInner(cw);}catch(err){}
 try{

@@ -1,4 +1,4 @@
-const DB_NAME = "yukios-fs";
+const DB_NAME = "tyleros-fs";
 const STORE_NAME = "files";
 const DB_VERSION = 1;
 

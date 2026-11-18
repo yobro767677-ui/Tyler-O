@@ -11,7 +11,7 @@ export class Room extends DurableObject {
   async getTurnCreds() {
     if (!this.env.TURN_SECRET || !this.env.TURN_URL) return null;
     const expiry = Math.floor(Date.now() / 1000) + 86400;
-    const username = expiry + ":yukios";
+    const username = expiry + ":tyleros";
     const key = await crypto.subtle.importKey(
       "raw",
       new TextEncoder().encode(this.env.TURN_SECRET),

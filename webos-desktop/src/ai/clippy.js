@@ -119,7 +119,7 @@ async function disableClippyLive() {
 export function initClippy() {
   if (!clippyEventBound) {
     clippyEventBound = true;
-    window.addEventListener("yukios:clippy-toggle", (e) =>
+    window.addEventListener("tyleros:clippy-toggle", (e) =>
       setClippyEnabled(!!e?.detail?.enabled),
     );
 

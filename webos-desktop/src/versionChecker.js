@@ -1,4 +1,4 @@
-import { YUKIOS_VERSION } from "./apps/about.js";
+import { TYLEROS_VERSION } from "./apps/about.js";
 import { StorageKeys, os, MODES } from "./framework.js";
 
 const VERSION_URL =
@@ -33,7 +33,7 @@ class VersionChecker {
       const remoteVersion = (await response.text()).trim();
       if (!remoteVersion) return;
 
-      const currentVersion = YUKIOS_VERSION;
+      const currentVersion = TYLEROS_VERSION;
       const lastKnownRemote = os.storage.get(
         StorageKeys.lastKnownRemoteVersion,
       );

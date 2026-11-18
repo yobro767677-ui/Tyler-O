@@ -457,7 +457,7 @@
   color: white;
 }
 
-.yuki-convert-landing {
+.tyler-convert-landing {
   background: rgba(18, 18, 24, 0.85);
   backdrop-filter: blur(12px);
   color: #fff;
@@ -471,14 +471,14 @@
   box-sizing: border-box;
 }
 
-.yuki-convert-landing-view {
+.tyler-convert-landing-view {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.yuki-convert-icon-box {
+.tyler-convert-icon-box {
   background: var(--brand);
   width: 64px;
   height: 64px;
@@ -491,18 +491,18 @@
   box-shadow: 0 8px 24px var(--brand-glow);
 }
 
-.yuki-convert-icon-box i {
+.tyler-convert-icon-box i {
   font-size: 32px;
   color: white;
 }
 
-.yuki-convert-landing-title {
+.tyler-convert-landing-title {
   margin: 0 0 12px 0;
   font-weight: 600;
   font-size: 22px;
 }
 
-.yuki-convert-landing-desc {
+.tyler-convert-landing-desc {
   color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
   margin-bottom: 36px;
@@ -510,14 +510,14 @@
   line-height: var(--lh-body);
 }
 
-.yuki-convert-btn-row {
+.tyler-convert-btn-row {
   display: flex;
   gap: 16px;
   width: 100%;
   justify-content: center;
 }
 
-.yuki-convert-btn-primary {
+.tyler-convert-btn-primary {
   background: var(--brand);
   border: none;
   border-radius: 8px;
@@ -535,7 +535,7 @@
   justify-content: center;
 }
 
-.yuki-convert-btn-secondary {
+.tyler-convert-btn-secondary {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
@@ -553,24 +553,24 @@
   justify-content: center;
 }
 
-.yuki-convert-loading-view {
+.tyler-convert-loading-view {
   display: none;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.yuki-convert-loading-view i {
+.tyler-convert-loading-view i {
   font-size: 32px;
   color: var(--brand);
   margin-bottom: 16px;
 }
 
-.yuki-convert-loading-text {
+.tyler-convert-loading-text {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.yuki-convert-file-input {
+.tyler-convert-file-input {
   display: none;
 }

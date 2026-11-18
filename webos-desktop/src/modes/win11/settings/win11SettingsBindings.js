@@ -202,7 +202,7 @@ export const WIN11_ICON_PACK_OPTIONS = [
 ];
 
 export const WIN11_CONTEXT_MENU_OPTIONS = [
-  { value: CM_STYLES.YUKIOS, label: "Tyler OS" },
+  { value: CM_STYLES.TYLEROS, label: "Tyler OS" },
   { value: CM_STYLES.WIN11, label: "Windows 11" },
 ];
 

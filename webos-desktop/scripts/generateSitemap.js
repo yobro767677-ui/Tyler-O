@@ -1262,8 +1262,8 @@ const STORE_AD_KEY_1 = "f88fd46583493c3820f283948e5e5391";
 const STORE_AD_KEY_2 = "ee9dc67de90729e2804aa8aba6454ec8";
 
 const AD_ENGINE_SCRIPT = `function hardenAdEnv(){
-  if(window.__yukiAdHardened)return;
-  window.__yukiAdHardened=true;
+  if(window.__tylerAdHardened)return;
+  window.__tylerAdHardened=true;
   var o=window.open?window.open.bind(window):null;
   window.open=function(u,n,f){
     var a=navigator.userActivation;
@@ -1287,13 +1287,13 @@ function injectAdsterraAd(id,key,w,h,delay,fmt){
   if(delay>0)setTimeout(doIt,delay);else doIt();
 }`;
 
-const AD_SLOT_STYLE = `.yuki-ad-slot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:32px auto;width:100%}
-.yuki-ad-slot span{color:#555;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
-.yuki-ad-unit{min-height:160px;display:flex;align-items:center;justify-content:center;width:100%;max-width:600px;overflow:hidden}`;
+const AD_SLOT_STYLE = `.tyler-ad-slot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:32px auto;width:100%}
+.tyler-ad-slot span{color:#555;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.tyler-ad-unit{min-height:160px;display:flex;align-items:center;justify-content:center;width:100%;max-width:600px;overflow:hidden}`;
 
 function adSlotHtml(prefix) {
-  return `<div class="yuki-ad-slot"><span>Advertisement</span><div class="yuki-ad-unit" id="${prefix}-1"></div></div>
-<div class="yuki-ad-slot"><span>Advertisement</span><div class="yuki-ad-unit" id="${prefix}-2"></div></div>`;
+  return `<div class="tyler-ad-slot"><span>Advertisement</span><div class="tyler-ad-unit" id="${prefix}-1"></div></div>
+<div class="tyler-ad-slot"><span>Advertisement</span><div class="tyler-ad-unit" id="${prefix}-2"></div></div>`;
 }
 
 function adSlotScript(prefix) {
@@ -1589,11 +1589,11 @@ function fetchGameHtml(url){
       'return sa.call(this,n,v)};'+
       'document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;'+
       'if(!a)return;var h=a.getAttribute("href");if(!h||h[0]==="#"||/^javascript:/i.test(h))return;'+
-      'if(h.indexOf("blob:")===0){e.preventDefault();try{parent.postMessage({__yukios:"navigate",url:h},"*")}catch{}}'+
+      'if(h.indexOf("blob:")===0){e.preventDefault();try{parent.postMessage({__tyleros:"navigate",url:h},"*")}catch{}}'+
       '},true);'+
       'document.addEventListener("submit",function(e){var f=e.target;if(!f||!f.getAttribute)return;'+
       'var a=f.getAttribute("action")||document.baseURI;var u=null;try{u=new URL(a,document.baseURI).href}catch(e){return}'+
-      'if(u&&u.indexOf("blob:")===0){e.preventDefault();try{parent.postMessage({__yukios:"navigate",url:u},"*")}catch{}}'+
+      'if(u&&u.indexOf("blob:")===0){e.preventDefault();try{parent.postMessage({__tyleros:"navigate",url:u},"*")}catch{}}'+
       '},true);'+
       '})()<\\/script>';
     if(ignore)return URL.createObjectURL(new Blob([html],{type:"text/html"}));
@@ -1607,13 +1607,13 @@ function fetchGameHtml(url){
 
 function getFavorites() {
   try {
-    return JSON.parse(localStorage.getItem('yukios_favorites') || '[]');
+    return JSON.parse(localStorage.getItem('tyleros_favorites') || '[]');
   } catch { return []; }
 }
 
 function saveFavorites(favs) {
   try {
-    localStorage.setItem('yukios_favorites', JSON.stringify(favs));
+    localStorage.setItem('tyleros_favorites', JSON.stringify(favs));
   } catch {}
 }
 
@@ -1645,13 +1645,13 @@ function updateFavoriteButton() {
 
 function getRecentlyPlayed() {
   try {
-    return JSON.parse(localStorage.getItem('yukios_recent') || '[]');
+    return JSON.parse(localStorage.getItem('tyleros_recent') || '[]');
   } catch { return []; }
 }
 
 function saveRecentlyPlayed(recent) {
   try {
-    localStorage.setItem('yukios_recent', JSON.stringify(recent));
+    localStorage.setItem('tyleros_recent', JSON.stringify(recent));
   } catch {}
 }
 

@@ -6,7 +6,7 @@ import { StorageKeys, os, $ } from "../../framework.js";
 import { TilingBar } from "../../tiling/TilingBar.js";
 import { modeManager, MODES } from "../../modeManager.js";
 
-const CONFIG_PATH = ["Config", "yukiOs", "tiling.conf"];
+const CONFIG_PATH = ["Config", "tylerOs", "tiling.conf"];
 
 export class TilingManager {
   constructor(windowManager) {

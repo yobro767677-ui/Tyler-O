@@ -870,7 +870,7 @@ export class SystemUtilities {
     const fetchAndRender = async () => {
       try {
         const loc = await detectUserLocation();
-        const cacheKey = `yukiOS_weather_taskbar_${loc.latitude.toFixed(2)}_${loc.longitude.toFixed(2)}`;
+        const cacheKey = `tylerOS_weather_taskbar_${loc.latitude.toFixed(2)}_${loc.longitude.toFixed(2)}`;
         const cached = getCached(cacheKey);
 
         let weatherData;

@@ -40,7 +40,7 @@ import { getPresence } from "../../social/presence.js";
 import { getCurrentUser } from "../../desktopui/startMenu.js";
 import { resolveAvatarUrl } from "../../social/avatarResolver.js";
 import { BusEvents } from "../../core/EventBus.js";
-import { YUKIOS_VERSION } from "../../apps/about.js";
+import { TYLEROS_VERSION } from "../../apps/about.js";
 
 const QTA_TABS = [
   { id: "notifications", icon: "fa-bell", label: "Notifications" },
@@ -1238,12 +1238,12 @@ export class QuickAccessPanel {
 
   renderHelp(bodyEl) {
     const items = [
-      { icon: "fa-book-open", label: "Tyler OS Guide", app: "yukiOsGuideApp" },
+      { icon: "fa-book-open", label: "Tyler OS Guide", app: "tylerOsGuideApp" },
       { icon: "fa-keyboard", label: "Shortcuts", app: "shortcutsApp" },
       { icon: "fa-info-circle", label: "About Tyler OS", app: "aboutApp" },
     ];
     const infoRows = [
-      { icon: "fa-tag", label: "Version", value: `Tyler OS ${YUKIOS_VERSION}` },
+      { icon: "fa-tag", label: "Version", value: `Tyler OS ${TYLEROS_VERSION}` },
       { icon: "fa-display", label: "Platform", value: navigator.platform },
       {
         icon: "fa-expand",

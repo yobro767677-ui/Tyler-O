@@ -48,7 +48,7 @@ export function getAchievementCatalog() {
 }
 
 export class AchievementsApp extends BaseApp {
-  singletonWindowIds = ["achievements-yukios"];
+  singletonWindowIds = ["achievements-tyleros"];
 
   constructor(services) {
     super(services);
@@ -92,13 +92,13 @@ export class AchievementsApp extends BaseApp {
 
   open(opts = {}) {
     const win = os.window.create(
-      "achievements-yukios",
+      "achievements-tyleros",
       "Achievements",
       "800px",
       "40em",
       {
         icon: "papirus:actions/games-achievements",
-        appId: "achievements-yukios",
+        appId: "achievements-tyleros",
       },
     );
 
@@ -733,7 +733,7 @@ export class AchievementsApp extends BaseApp {
   }
 
   refresh() {
-    const win = $("#achievements-yukios");
+    const win = $("#achievements-tyleros");
     if (!win) return;
     const scroll = win.querySelector(".achievements-scroll");
     if (!scroll) return;

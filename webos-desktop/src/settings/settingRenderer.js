@@ -5,7 +5,7 @@ import {
   resolvePapirusUrl,
 } from "../shared/assetResolver.js";
 import { audioMixer } from "../audioMixer.js";
-import { YUKIOS_VERSION } from "../apps/about.js";
+import { TYLEROS_VERSION } from "../apps/about.js";
 import {
   getBasicThemes,
   getCustomThemes,
@@ -282,16 +282,16 @@ export function buildSettingsHTML(settings, wm) {
     ${wm.getWindowControls()}
   </div>
   <div class="window-content" style="padding: 0; gap: 0;">
-    <div class="yuki-settings-layout">
-      <div class="yuki-settings-sidebar">
-        <div class="yuki-settings-search">
+    <div class="tyler-settings-layout">
+      <div class="tyler-settings-sidebar">
+        <div class="tyler-settings-search">
           <input type="text" id="settingsSearch" placeholder="Find a setting...">
         </div>
-        <ul class="yuki-settings-nav ${settings.sidebarCompact === false ? "flat" : ""}">
+        <ul class="tyler-settings-nav ${settings.sidebarCompact === false ? "flat" : ""}">
           ${renderNavList(tilingActive, chromeOsActive, settings.sidebarCompact !== false, win11Active)}
         </ul>
       </div>
-        <div class="yuki-settings-content">
+        <div class="tyler-settings-content">
           ${renderQuickSettings(settings)}
           ${renderGeneralBehaviorSettings(settings)}
           ${renderSystemSettings(settings)}
@@ -335,29 +335,29 @@ function renderNavList(
   compact,
   win11Active = false,
 ) {
-  let html = `<li class="active yuki-settings-quick" data-target="${QUICK_SETTINGS_ID}">${navIconHtml("fas fa-cog")}<span>Quick Settings</span></li>`;
+  let html = `<li class="active tyler-settings-quick" data-target="${QUICK_SETTINGS_ID}">${navIconHtml("fas fa-cog")}<span>Quick Settings</span></li>`;
   SETTINGS_GROUPS.forEach((group, gi) => {
     const key = `g${gi}`;
-    html += `<li class="yuki-settings-nav-group ${compact ? "" : "expanded"}" data-group="${key}">${navIconHtml(group.icon)}<span>${group.title}</span><i class="fas fa-chevron-right yuki-nav-group-chevron"></i></li>`;
-    html += `<ul class="yuki-settings-sublist" data-group="${key}">`;
+    html += `<li class="tyler-settings-nav-group ${compact ? "" : "expanded"}" data-group="${key}">${navIconHtml(group.icon)}<span>${group.title}</span><i class="fas fa-chevron-right tyler-nav-group-chevron"></i></li>`;
+    html += `<ul class="tyler-settings-sublist" data-group="${key}">`;
     for (const item of group.items) {
       const ds = item.target ? ` data-scroll="${item.target}"` : "";
       const dl = item.launch ? ` data-launch="${item.launch}"` : "";
-      html += `<li class="yuki-settings-nav-item" data-group="${key}" data-id="${item.id}" data-target="${item.pane}"${ds}${dl}>${navIconHtml(item.icon)}<span>${item.title}</span></li>`;
+      html += `<li class="tyler-settings-nav-item" data-group="${key}" data-id="${item.id}" data-target="${item.pane}"${ds}${dl}>${navIconHtml(item.icon)}<span>${item.title}</span></li>`;
     }
     html += `</ul>`;
   });
   if (tilingActive) {
-    html += `<li class="yuki-settings-nav-group ${compact ? "" : "expanded"}" data-group="g-tiling">${navIconHtml("fas fa-th-large")}<span>Window Management</span><i class="fas fa-chevron-right yuki-nav-group-chevron"></i></li>`;
-    html += `<ul class="yuki-settings-sublist" data-group="g-tiling"><li class="yuki-settings-nav-item" data-group="g-tiling" data-target="pane-tiling">${navIconHtml("fas fa-th-large")}<span>Tiling</span></li></ul>`;
+    html += `<li class="tyler-settings-nav-group ${compact ? "" : "expanded"}" data-group="g-tiling">${navIconHtml("fas fa-th-large")}<span>Window Management</span><i class="fas fa-chevron-right tyler-nav-group-chevron"></i></li>`;
+    html += `<ul class="tyler-settings-sublist" data-group="g-tiling"><li class="tyler-settings-nav-item" data-group="g-tiling" data-target="pane-tiling">${navIconHtml("fas fa-th-large")}<span>Tiling</span></li></ul>`;
   }
   if (chromeOsActive) {
-    html += `<li class="yuki-settings-nav-group ${compact ? "" : "expanded"}" data-group="g-chromeos"><i class="fab fa-chrome"></i><span>Chrome OS</span><i class="fas fa-chevron-right yuki-nav-group-chevron"></i></li>`;
-    html += `<ul class="yuki-settings-sublist" data-group="g-chromeos"><li class="yuki-settings-nav-item" data-group="g-chromeos" data-target="pane-chromeos"><i class="fab fa-chrome"></i><span>Chrome OS</span></li></ul>`;
+    html += `<li class="tyler-settings-nav-group ${compact ? "" : "expanded"}" data-group="g-chromeos"><i class="fab fa-chrome"></i><span>Chrome OS</span><i class="fas fa-chevron-right tyler-nav-group-chevron"></i></li>`;
+    html += `<ul class="tyler-settings-sublist" data-group="g-chromeos"><li class="tyler-settings-nav-item" data-group="g-chromeos" data-target="pane-chromeos"><i class="fab fa-chrome"></i><span>Chrome OS</span></li></ul>`;
   }
   if (win11Active) {
-    html += `<li class="yuki-settings-nav-group ${compact ? "" : "expanded"}" data-group="g-win11"><i class="fab fa-windows"></i><span>Windows 11</span><i class="fas fa-chevron-right yuki-nav-group-chevron"></i></li>`;
-    html += `<ul class="yuki-settings-sublist" data-group="g-win11"><li class="yuki-settings-nav-item" data-group="g-win11" data-target="pane-win11"><i class="fab fa-windows"></i><span>Windows 11</span></li></ul>`;
+    html += `<li class="tyler-settings-nav-group ${compact ? "" : "expanded"}" data-group="g-win11"><i class="fab fa-windows"></i><span>Windows 11</span><i class="fas fa-chevron-right tyler-nav-group-chevron"></i></li>`;
+    html += `<ul class="tyler-settings-sublist" data-group="g-win11"><li class="tyler-settings-nav-item" data-group="g-win11" data-target="pane-win11"><i class="fab fa-windows"></i><span>Windows 11</span></li></ul>`;
   }
   return html;
 }
@@ -398,7 +398,7 @@ function renderIconPackChooser(currentPack, prefix = "quick") {
 function renderContextMenuChooser() {
   const current = getContextMenuStyle();
   const isWin11 = current === CM_STYLES.WIN11;
-  const isYukios = !isWin11;
+  const isTyleros = !isWin11;
   const mock = (style) => `
       <div class="cm-preview" data-cmstyle="${style}">
         <div class="context-menu">
@@ -418,9 +418,9 @@ function renderContextMenuChooser() {
           <span class="settings-label-desc">Preview each style live. Click a style to apply it across desktop menus.</span>
         </div>
         <div class="cm-style-chooser" id="cmstyle-appearance" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;width:100%;">
-          <button class="cm-style-option ${isYukios ? "active" : ""}" data-cm-style="${CM_STYLES.YUKIOS}" style="display:flex;flex-direction:column;align-items:center;padding:10px;border:1.5px solid ${isYukios ? "var(--brand)" : "var(--glass-border)"};border-radius:8px;background:${isYukios ? "color-mix(in srgb, var(--brand) 12%, transparent)" : "var(--glass)"};cursor:pointer;gap:6px;">
+          <button class="cm-style-option ${isTyleros ? "active" : ""}" data-cm-style="${CM_STYLES.TYLEROS}" style="display:flex;flex-direction:column;align-items:center;padding:10px;border:1.5px solid ${isTyleros ? "var(--brand)" : "var(--glass-border)"};border-radius:8px;background:${isTyleros ? "color-mix(in srgb, var(--brand) 12%, transparent)" : "var(--glass)"};cursor:pointer;gap:6px;">
             <span class="cm-style-label" style="font-weight:600;font-size:13px;"><i class="fas fa-desktop" style="margin-right:6px;"></i>Tyler OS CM Style</span>
-            ${mock(CM_STYLES.YUKIOS)}
+            ${mock(CM_STYLES.TYLEROS)}
             <span class="cm-style-desc" style="font-size:11px;color:var(--text-secondary)">Rounded glass menu</span>
           </button>
           <button class="cm-style-option ${isWin11 ? "active" : ""}" data-cm-style="${CM_STYLES.WIN11}" style="display:flex;flex-direction:column;align-items:center;padding:10px;border:1.5px solid ${isWin11 ? "var(--brand)" : "var(--glass-border)"};border-radius:8px;background:${isWin11 ? "color-mix(in srgb, var(--brand) 12%, transparent)" : "var(--glass)"};cursor:pointer;gap:6px;">
@@ -1415,8 +1415,8 @@ export function renderAppearanceSettings(s) {
         </div>
         <div class="settings-row" id="settingsMyThemesActions" style="display:flex;gap:8px;margin-top:8px;">
           <button class="settings-btn" id="settingsCreateThemeBtn"><i class="fas fa-plus"></i> Create Theme</button>
-          <button class="settings-btn" id="settingsImportThemeBtn"><i class="fas fa-file-import"></i> Import .yukiotheme</button>
-          <input type="file" id="settingsImportThemeInput" accept=".yukiotheme,.json" style="display:none"/>
+          <button class="settings-btn" id="settingsImportThemeBtn"><i class="fas fa-file-import"></i> Import .tylerotheme</button>
+          <input type="file" id="settingsImportThemeInput" accept=".tylerotheme,.json" style="display:none"/>
         </div>
         <div class="settings-row">
           <div class="settings-label-group">
@@ -2163,7 +2163,7 @@ export function renderAboutSettings() {
           <div style="display: flex; align-items: center; gap: 16px;">
             <img src="${resolveIconUrl("static/icons/logo.png")}" style="width: 48px; height: 48px; object-fit: contain;" onerror="this.src='favicon.ico'"/>
             <div>
-              <h2 style="margin:0;font-size:1.3em;font-weight:600;display:flex;align-items:center;gap:8px;color:var(--text-primary);">Tyler OS <span style="font-size:0.65em;background:var(--brand-dim);color:var(--brand);padding:2px 8px;border-radius:4px;font-weight:500;">${YUKIOS_VERSION}</span></h2>
+              <h2 style="margin:0;font-size:1.3em;font-weight:600;display:flex;align-items:center;gap:8px;color:var(--text-primary);">Tyler OS <span style="font-size:0.65em;background:var(--brand-dim);color:var(--brand);padding:2px 8px;border-radius:4px;font-weight:500;">${TYLEROS_VERSION}</span></h2>
               <p style="margin:4px 0 0 0;color:var(--text-secondary);font-size:0.8em;">Desktop, in your browser</p>
             </div>
           </div>
@@ -2181,7 +2181,7 @@ export function renderAboutSettings() {
         <div class="settings-card-header"><i class="fab fa-discord"></i> Community</div>
         <div class="settings-row">
           <div class="settings-label-group">
-            <span class="settings-label-title">YukiCord</span>
+            <span class="settings-label-title">TylerCord</span>
             <span class="settings-label-desc">Join our Discord server</span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">

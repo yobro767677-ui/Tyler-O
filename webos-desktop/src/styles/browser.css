@@ -1007,16 +1007,16 @@
   background: var(--brand-hover);
 }
 
-.__yuki_dark_mode__ html {
+.__tyler_dark_mode__ html {
   filter: invert(1) hue-rotate(180deg) !important;
 }
 
-.__yuki_dark_mode__ img,
-.__yuki_dark_mode__ video,
-.__yuki_dark_mode__ canvas,
-.__yuki_dark_mode__ svg,
-.__yuki_dark_mode__ picture,
-.__yuki_dark_mode__ iframe {
+.__tyler_dark_mode__ img,
+.__tyler_dark_mode__ video,
+.__tyler_dark_mode__ canvas,
+.__tyler_dark_mode__ svg,
+.__tyler_dark_mode__ picture,
+.__tyler_dark_mode__ iframe {
   filter: invert(1) hue-rotate(180deg) !important;
 }
 

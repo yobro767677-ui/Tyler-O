@@ -1401,3 +1401,21 @@ html[data-theme="light"] .login-tip {
 html[data-theme="light"] .login-tip i {
   color: #111;
 }
+
+.session-welcome-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--success);
+  text-shadow: 0 1px 8px oklch(72% 0.19 150 / 0.35);
+  text-align: center;
+  padding: 2px 4px;
+}
+
+.session-welcome-text {
+  animation: welcomeFadeIn 0.6s ease both;
+}
+
+@keyframes welcomeFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

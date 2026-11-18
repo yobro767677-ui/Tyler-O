@@ -14,11 +14,11 @@ import { EmulatorApp } from "./apps/emulator.js";
 import { AchievementsApp } from "./achievements.js";
 import { RuffleApp } from "./apps/ruffle.js";
 import { ShortcutsApp } from "./apps/shortcuts.js";
-import { YukiConvertApp } from "./apps/yukiConvert.js";
+import { TylerConvertApp } from "./apps/tylerConvert.js";
 import { SetupApp } from "./apps/setupApp.js";
 import { DataEditorApp } from "./apps/dataEditor.js";
 import { DefaultAppsApp } from "./apps/defaultApps.js";
-import { YukiOsGuideApp } from "./apps/yukiOsGuide.js";
+import { TylerOsGuideApp } from "./apps/tylerOsGuide.js";
 import { ClipboardManagerApp } from "./apps/clipboardApp.js";
 import { AIAssistantApp } from "./apps/aiAssistant.js";
 import { DisplayPerformanceApp } from "./apps/displayPerformanceApp.js";
@@ -72,11 +72,11 @@ const APP_CLASS_MAP = {
   achievementsApp: AchievementsApp,
   ruffleApp: RuffleApp,
   shortcutsApp: ShortcutsApp,
-  yukiConvertApp: YukiConvertApp,
+  tylerConvertApp: TylerConvertApp,
   setupApp: SetupApp,
   dataEditorApp: DataEditorApp,
   defaultApps: DefaultAppsApp,
-  yukiOsGuideApp: YukiOsGuideApp,
+  tylerOsGuideApp: TylerOsGuideApp,
   introTourApp: IntroTourApp,
   clipboardManagerApp: ClipboardManagerApp,
   aiAssistantApp: AIAssistantApp,

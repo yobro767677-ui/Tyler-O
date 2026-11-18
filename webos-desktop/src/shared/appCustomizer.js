@@ -1,6 +1,6 @@
 import { StorageKeys, os } from "../framework.js";
 import { showIconPicker } from "./iconPicker.js";
-import { resolveIconUrl, resolveYukiAsset } from "./assetResolver.js";
+import { resolveIconUrl, resolveTylerAsset } from "./assetResolver.js";
 import { createElement, $ } from "./domUtils.js";
 
 function getCustomIcons() {
@@ -92,7 +92,7 @@ function resolveImageUrl(value) {
     return value;
   if (value.startsWith("static/") || value.startsWith("/static/"))
     return resolveIconUrl(value);
-  if (!value.includes("/")) return resolveYukiAsset(`static/icons/${value}`);
+  if (!value.includes("/")) return resolveTylerAsset(`static/icons/${value}`);
   return value;
 }
 
@@ -238,7 +238,7 @@ export function showAppCustomizer(appId, currentTitle, currentIcon) {
       !currentIcon.includes("/") &&
       !currentIcon.startsWith("fa")
     )
-      return resolveYukiAsset(`static/icons/${currentIcon}`);
+      return resolveTylerAsset(`static/icons/${currentIcon}`);
     return "";
   }
   const initialPreview = pendingIcon

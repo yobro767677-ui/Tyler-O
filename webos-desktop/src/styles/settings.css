@@ -1,4 +1,4 @@
-#yukiOS-settings {
+#tylerOS-settings {
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -362,31 +362,31 @@
   color: white;
 }
 
-html[data-theme-mode="light"] .yuki-settings-layout {
+html[data-theme-mode="light"] .tyler-settings-layout {
   background: var(--bg-primary) !important;
   color: var(--text-primary) !important;
 }
 
-html[data-theme-mode="light"] .yuki-settings-sidebar {
+html[data-theme-mode="light"] .tyler-settings-sidebar {
   background: var(--bg-secondary) !important;
   border-right: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme-mode="light"] .yuki-settings-nav li {
+html[data-theme-mode="light"] .tyler-settings-nav li {
   color: var(--text-secondary) !important;
   font-weight: 500 !important;
 }
 
-html[data-theme-mode="light"] .yuki-settings-nav li i {
+html[data-theme-mode="light"] .tyler-settings-nav li i {
   color: var(--text-secondary) !important;
 }
 
-html[data-theme-mode="light"] .yuki-settings-nav li:hover {
+html[data-theme-mode="light"] .tyler-settings-nav li:hover {
   background: var(--surface-hover) !important;
   color: var(--text-primary) !important;
 }
 
-html[data-theme-mode="light"] .yuki-settings-nav li.active {
+html[data-theme-mode="light"] .tyler-settings-nav li.active {
   background: var(--brand-dim) !important;
   color: var(--brand) !important;
   border-left: 3px solid var(--brand) !important;
@@ -432,7 +432,7 @@ html[data-theme-mode="light"] .settings-select {
   color: var(--text-color, #fff);
 }
 
-.yuki-settings-layout {
+.tyler-settings-layout {
   display: flex;
   flex: 1;
   min-height: 0;
@@ -440,7 +440,7 @@ html[data-theme-mode="light"] .settings-select {
   height: 100%;
 }
 
-.yuki-settings-sidebar {
+.tyler-settings-sidebar {
   width: var(--settings-sidebar-w, 280px);
   min-width: 140px;
   max-width: 320px;
@@ -452,7 +452,7 @@ html[data-theme-mode="light"] .settings-select {
   flex-shrink: 0;
 }
 
-.yuki-settings-resizer,
+.tyler-settings-resizer,
 .settings-resizer {
   width: 4px;
   cursor: col-resize;
@@ -465,8 +465,8 @@ html[data-theme-mode="light"] .settings-select {
   align-self: stretch;
 }
 
-.yuki-settings-resizer:hover,
-.yuki-settings-resizer.active,
+.tyler-settings-resizer:hover,
+.tyler-settings-resizer.active,
 .settings-resizer:hover,
 .settings-resizer.active {
   background: color-mix(in oklch, var(--brand) 30%, transparent);
@@ -477,12 +477,12 @@ body.pane-resizing {
   user-select: none;
 }
 
-.yuki-settings-search {
+.tyler-settings-search {
   padding: var(--spacing-lg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.yuki-settings-search input {
+.tyler-settings-search input {
   width: 100%;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 8px;
@@ -496,13 +496,13 @@ body.pane-resizing {
     border-color var(--transition-base) ease;
 }
 
-.yuki-settings-search input:focus {
+.tyler-settings-search input:focus {
   border-color: var(--brand, #0078d7);
   box-shadow: 0 0 0 2px var(--brand-glow, rgba(0, 120, 215, 0.2));
   background: rgba(0, 0, 0, 0.35);
 }
 
-.yuki-settings-nav {
+.tyler-settings-nav {
   list-style: none;
   padding: var(--spacing-sm) var(--spacing-xs);
   margin: 0;
@@ -515,24 +515,24 @@ body.pane-resizing {
   scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
 }
 
-.yuki-settings-nav::-webkit-scrollbar {
+.tyler-settings-nav::-webkit-scrollbar {
   width: 8px;
 }
 
-.yuki-settings-nav::-webkit-scrollbar-track {
+.tyler-settings-nav::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.yuki-settings-nav::-webkit-scrollbar-thumb {
+.tyler-settings-nav::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 8px;
 }
 
-.yuki-settings-nav::-webkit-scrollbar-thumb:hover {
+.tyler-settings-nav::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.22);
 }
 
-.yuki-settings-nav li {
+.tyler-settings-nav li {
   padding: var(--spacing-sm) var(--spacing-md);
   cursor: pointer;
   display: flex;
@@ -546,7 +546,7 @@ body.pane-resizing {
     color var(--transition-fast) ease;
 }
 
-.yuki-settings-nav li i {
+.tyler-settings-nav li i {
   width: 16px;
   text-align: center;
   font-size: 1.11em;
@@ -554,18 +554,18 @@ body.pane-resizing {
   flex-shrink: 0;
 }
 
-.yuki-settings-nav li:not(.yuki-settings-nav-group):hover {
+.tyler-settings-nav li:not(.tyler-settings-nav-group):hover {
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
 }
 
-.yuki-settings-nav li.active {
+.tyler-settings-nav li.active {
   background: var(--brand-dim, rgba(0, 120, 215, 0.15));
   color: var(--brand, #0078d7);
   font-weight: 600;
 }
 
-.yuki-settings-nav-group {
+.tyler-settings-nav-group {
   position: relative;
   display: flex;
   align-items: center;
@@ -582,16 +582,16 @@ body.pane-resizing {
     color var(--transition-fast) ease,
     background var(--transition-fast) ease;
 }
-.yuki-settings-nav-group i:first-child {
+.tyler-settings-nav-group i:first-child {
   width: 16px;
   text-align: center;
   font-size: 1.01em;
 }
-.yuki-settings-nav-group:hover {
+.tyler-settings-nav-group:hover {
   color: rgba(255, 255, 255, 0.85);
   background: rgba(255, 255, 255, 0.04);
 }
-.yuki-nav-group-chevron {
+.tyler-nav-group-chevron {
   margin-left: auto;
   font-size: 0.74em;
   opacity: 0.4;
@@ -599,15 +599,15 @@ body.pane-resizing {
     transform var(--transition-fast) ease,
     opacity var(--transition-fast) ease;
 }
-.yuki-settings-nav-group.expanded .yuki-nav-group-chevron {
+.tyler-settings-nav-group.expanded .tyler-nav-group-chevron {
   transform: rotate(90deg);
   opacity: 0.85;
 }
-.yuki-settings-nav-group.active {
+.tyler-settings-nav-group.active {
   color: var(--brand, #0078d7);
   background: transparent;
 }
-.yuki-settings-nav-group::before {
+.tyler-settings-nav-group::before {
   content: "";
   position: absolute;
   left: 6px;
@@ -623,11 +623,11 @@ body.pane-resizing {
     opacity var(--transition-base) ease,
     transform var(--transition-base) ease;
 }
-.yuki-settings-nav-group.active::before {
+.tyler-settings-nav-group.active::before {
   opacity: 1;
   transform: scaleX(1);
 }
-.yuki-settings-sublist {
+.tyler-settings-sublist {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -639,28 +639,28 @@ body.pane-resizing {
     opacity 0.18s ease;
 }
 
-.yuki-settings-nav-group.expanded + .yuki-settings-sublist,
-.yuki-settings-sublist.expanded {
+.tyler-settings-nav-group.expanded + .tyler-settings-sublist,
+.tyler-settings-sublist.expanded {
   max-height: none;
   overflow: visible;
   opacity: 1;
 }
-.yuki-settings-sublist .yuki-settings-nav-item {
+.tyler-settings-sublist .tyler-settings-nav-item {
   padding-left: calc(var(--spacing-md) + 38px);
   font-size: 0.89em;
 }
 
-.yuki-settings-nav.flat .yuki-settings-sublist {
+.tyler-settings-nav.flat .tyler-settings-sublist {
   display: block;
   max-height: none;
   overflow: visible;
   opacity: 1;
 }
-.yuki-settings-nav.flat .yuki-nav-group-chevron {
+.tyler-settings-nav.flat .tyler-nav-group-chevron {
   display: none;
 }
 
-.yuki-settings-nav-item {
+.tyler-settings-nav-item {
   position: relative;
   padding-left: calc(var(--spacing-md) + 20px);
   padding-right: var(--spacing-md);
@@ -671,13 +671,13 @@ body.pane-resizing {
     color var(--transition-fast) ease;
 }
 
-.yuki-settings-nav-item.active {
+.tyler-settings-nav-item.active {
   background: var(--brand-dim, rgba(0, 120, 215, 0.15));
   color: var(--brand, #0078d7);
   font-weight: 600;
 }
 
-.yuki-settings-nav-item.active::before {
+.tyler-settings-nav-item.active::before {
   content: "";
   position: absolute;
   left: 4px;
@@ -688,18 +688,18 @@ body.pane-resizing {
   background: var(--brand, #0078d7);
 }
 
-.yuki-settings-quick {
+.tyler-settings-quick {
   font-weight: 600;
   color: var(--text-primary);
 }
 
-.yuki-settings-nav li.yuki-settings-quick.active {
+.tyler-settings-nav li.tyler-settings-quick.active {
   background: var(--brand, #0078d7);
   color: #fff;
   box-shadow: 0 4px 14px var(--brand-glow, rgba(0, 120, 215, 0.35));
 }
 
-.yuki-settings-content {
+.tyler-settings-content {
   flex: 1;
   overflow-y: auto;
   padding: var(--spacing-2xl) var(--spacing-xl) 200px;

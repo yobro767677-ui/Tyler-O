@@ -26,19 +26,19 @@ export function buildWindowOpenInterceptorScript() {
       return v!=="false";
     }catch(e){return true;}
   }
-  window.__yukiWindowOpenInterceptEnabled=isEnabled();
+  window.__tylerWindowOpenInterceptEnabled=isEnabled();
   window.addEventListener("storage",function(e){
-    if(e.key===FLAG_KEY) window.__yukiWindowOpenInterceptEnabled=e.newValue!=="false";
+    if(e.key===FLAG_KEY) window.__tylerWindowOpenInterceptEnabled=e.newValue!=="false";
   });
-  window.__yukiSetWindowOpenIntercept=function(v){
+  window.__tylerSetWindowOpenIntercept=function(v){
     try{localStorage.setItem(FLAG_KEY,v?"true":"false");}catch(e){}
-    window.__yukiWindowOpenInterceptEnabled=!!v;
+    window.__tylerWindowOpenInterceptEnabled=!!v;
     try{localStorage.setItem("scramjet_tab_state","");}catch(e){}
-    var ev=new CustomEvent("yuki:windowOpenInterceptChanged",{detail:{enabled:!!v}});
+    var ev=new CustomEvent("tyler:windowOpenInterceptChanged",{detail:{enabled:!!v}});
     window.dispatchEvent(ev);
   };
   function createFakeWindow(tabId){
-    var f={closed:false,__yukiTabId:tabId,focus:function(){try{window.switchTab&&window.switchTab(tabId);}catch(e){}},close:function(){try{window.closeTab&&window.closeTab(tabId);}catch(e){}},closed:false};
+    var f={closed:false,__tylerTabId:tabId,focus:function(){try{window.switchTab&&window.switchTab(tabId);}catch(e){}},close:function(){try{window.closeTab&&window.closeTab(tabId);}catch(e){}},closed:false};
     try{
       Object.defineProperty(f,"location",{get:function(){try{var t=window.tabs&&window.tabs.find(function(x){return x.id===tabId;});return t&&t.frame&&t.frame.element&&t.frame.element.contentWindow&&t.frame.element.contentWindow.location||{href:"about:blank"};}catch(e){return{href:"about:blank"};}},set:function(v){try{var t=window.tabs&&window.tabs.find(function(x){return x.id===tabId;});if(t&&t.frame) t.frame.go(String(v));}catch(e){}}});
     }catch(e){}
@@ -49,11 +49,11 @@ export function buildWindowOpenInterceptorScript() {
     try{
       var current=win.open;
       if(!current) return;
-      if(current.__yukiIsHandler) return;
+      if(current.__tylerIsHandler) return;
       var orig=current;
       var handler=function(url,name,specs){
         try{
-          var enabled=window.__yukiWindowOpenInterceptEnabled;
+          var enabled=window.__tylerWindowOpenInterceptEnabled;
           if(enabled===undefined) enabled=isEnabled();
           if(!enabled) return orig.apply(this,arguments);
           if(name==="_self"||name==="_parent"||name==="_top"){
@@ -104,15 +104,15 @@ export function buildWindowOpenInterceptorScript() {
           try{return orig.apply(this,arguments);}catch(e2){return null;}
         }
       };
-      handler.__yukiIsHandler=true;
-      handler.__yukiOriginal=orig;
-      win.__yukiOriginalOpen=orig;
-      win.__yukiWindowOpenPatched=true;
+      handler.__tylerIsHandler=true;
+      handler.__tylerOriginal=orig;
+      win.__tylerOriginalOpen=orig;
+      win.__tylerWindowOpenPatched=true;
       try{win.open=handler;}catch(e){}
       try{
         if(win.Window&&win.Window.prototype){
           var proto=win.Window.prototype;
-          if(proto.open&&!proto.open.__yukiIsHandler) try{proto.open=handler;}catch(e){}
+          if(proto.open&&!proto.open.__tylerIsHandler) try{proto.open=handler;}catch(e){}
         }
       }catch(e){}
       try{
@@ -134,9 +134,9 @@ export function buildWindowOpenInterceptorScript() {
       }
     }catch(e){}
   }
-  window.__yukiPatchWindowForOpen=patchWindow;
+  window.__tylerPatchWindowForOpen=patchWindow;
   window.patchAllSubframes=patchAllSubframes;
-  window.__yukiInstallWindowOpenInterceptor=function(tab){
+  window.__tylerInstallWindowOpenInterceptor=function(tab){
     try{
       if(!tab||!tab.frame||!tab.frame.element) return;
       var cw=tab.frame.element.contentWindow;
@@ -151,7 +151,7 @@ export function buildWindowOpenInterceptorScript() {
         if(doc){
           var obs=new MutationObserver(function(){ tryPatch(); });
           obs.observe(doc,{childList:true,subtree:true});
-          tab._yukiOpenObs=obs;
+          tab._tylerOpenObs=obs;
         }
       }catch(e){}
       try{ cw.addEventListener&&cw.addEventListener("load",tryPatch);}catch(e){}

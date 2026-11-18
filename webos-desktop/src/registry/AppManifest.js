@@ -246,13 +246,13 @@ export const APP_MANIFESTS = [
     description: "View and manage keyboard shortcuts for system-wide commands.",
   },
   {
-    serviceKey: "yukiConvertApp",
+    serviceKey: "tylerConvertApp",
     enhanced: false,
     type: "system",
     title: "Tyler Convert",
     icon: "papirus:actions/swap-panels",
     launchType: "instance",
-    windowIdPatterns: ["yuki-convert"],
+    windowIdPatterns: ["tyler-convert"],
     category: "office",
     clippy: {
       message: "Drop in a file and I'll turn it into the format you need.",
@@ -293,13 +293,13 @@ export const APP_MANIFESTS = [
       "View and edit IndexedDB storage data for debugging and advanced users.",
   },
   {
-    serviceKey: "yukiOsGuideApp",
+    serviceKey: "tylerOsGuideApp",
     enhanced: true,
     type: "system",
     title: "Tyler OS Guide",
     icon: "papirus:apps/accessories-dictionary",
     launchType: "instance",
-    windowIdPatterns: ["yuki-os-guide", "yukios-guide"],
+    windowIdPatterns: ["tyler-os-guide", "tyleros-guide"],
     category: "help",
     clippy: {
       message: "Open the guide and learn the parts that matter fastest.",
@@ -1177,20 +1177,20 @@ export const APP_MANIFESTS = [
     windowSize: ["90vw", "85vh"],
   },
   {
-    serviceKey: "yukiDevToolsApp",
+    serviceKey: "tylerDevToolsApp",
     type: "system",
     title: "Tyler Dev Tools",
     icon: "papirus:apps/vscode",
     launchType: "method",
-    launchMethod: "openYukiDevToolsApp",
-    windowIdPatterns: ["yukidevtools", "yuki-dev-tools"],
+    launchMethod: "openTylerDevToolsApp",
+    windowIdPatterns: ["tylerdevtools", "tyler-dev-tools"],
     category: "development",
     clippy: {
-      message: "Open IT Tools with Yuki styling and a live iframe bridge.",
+      message: "Open IT Tools with Tyler styling and a live iframe bridge.",
       animation: ClippyAnimation.GetWizardy,
     },
     description:
-      "IT Tools wrapped in a Yuki-themed iframe with live CSS bridging.",
+      "IT Tools wrapped in a Tyler-themed iframe with live CSS bridging.",
   },
   {
     serviceKey: "erudaApp",

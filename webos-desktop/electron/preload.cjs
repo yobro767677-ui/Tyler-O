@@ -1,6 +1,6 @@
 const { contextBridge, ipcRenderer, shell } = require("electron");
 
-const isDev = process.argv.includes("--yukios-dev=true");
+const isDev = process.argv.includes("--tyleros-dev=true");
 
 contextBridge.exposeInMainWorld("electronAPI", {
   isDev,

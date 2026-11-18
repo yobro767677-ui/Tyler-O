@@ -819,12 +819,12 @@ function buildContentArea(suffix, fireAction, els) {
   errorContent.appendChild(errorMessage);
   errorOverlay.appendChild(errorContent);
   iframeContainer.appendChild(errorOverlay);
-  const yukiContainer = createElement("div", {
-    className: "yuki-page-container",
-    id: makeId("yuki-page-container", suffix),
+  const tylerContainer = createElement("div", {
+    className: "tyler-page-container",
+    id: makeId("tyler-page-container", suffix),
     attributes: { style: "display:none;" },
   });
-  iframeContainer.appendChild(yukiContainer);
+  iframeContainer.appendChild(tylerContainer);
   const localContainer = createElement("div", {
     className: "local-page-container",
     id: makeId("local-page-container", suffix),
@@ -937,7 +937,7 @@ function buildContentArea(suffix, fireAction, els) {
   els.skipBtn = skipBtn;
   els.errorOverlay = errorOverlay;
   els.errorMessage = errorMessage;
-  els.yukiContainer = yukiContainer;
+  els.tylerContainer = tylerContainer;
   els.localContainer = localContainer;
   els.findBar = findBar;
   els.findInput = findInput;
@@ -1491,11 +1491,11 @@ export function buildBrowserView(rootContainer, opts = {}) {
     setProgress(percent) {
       handleLoadProgress(percent);
     },
-    openYukiPage(kind) {
-      return store.openYukiPage(kind);
+    openTylerPage(kind) {
+      return store.openTylerPage(kind);
     },
-    closeYukiPage() {
-      return store.closeYukiPage();
+    closeTylerPage() {
+      return store.closeTylerPage();
     },
     toggleSidebar() {
       return toggleSidebarMode();

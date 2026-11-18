@@ -1,5 +1,5 @@
 import { createElement } from "../../framework.js";
-import { resolveYukiAsset } from "../../shared/assetResolver.js";
+import { resolveTylerAsset } from "../../shared/assetResolver.js";
 import { SteamSettings } from "../../games/steamSettings.js";
 import { KeybindManager } from "../../keybindManager.js";
 
@@ -20,7 +20,7 @@ function getBootVideoUrl() {
   const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
   return isLocal
     ? "http://localhost:4001/static/videos/deckboot.mp4"
-    : resolveYukiAsset("static/videos/deckboot.mp4");
+    : resolveTylerAsset("static/videos/deckboot.mp4");
 }
 
 export function playDeckBootVideo() {

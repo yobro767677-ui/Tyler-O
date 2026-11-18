@@ -110,7 +110,7 @@ function escapeHtml(str) {
 
 function getCurrentWin(win) {
   if (win && win.querySelector) return win;
-  return $("#yukiOS-settings");
+  return $("#tylerOS-settings");
 }
 
 function buildWindowPreviewHTML(colors, title) {
@@ -221,7 +221,7 @@ export function exportTheme(themeValue) {
   });
   const url = URL.createObjectURL(blob);
   const a = createElement("a", {
-    attributes: { href: url, download: theme.label + ".yukiotheme" },
+    attributes: { href: url, download: theme.label + ".tylerotheme" },
   });
   document.body.appendChild(a);
   a.click();

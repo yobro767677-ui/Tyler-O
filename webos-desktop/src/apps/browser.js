@@ -1119,7 +1119,7 @@ export class BrowserApp extends BaseApp {
         entry.view?.tabsApi?.refresh?.();
       } catch {}
     };
-    if (/^yuki:/i.test(urlText)) {
+    if (/^tyler:/i.test(urlText)) {
       active = entry.view?.tabsApi?.getActive?.() || active;
       let moved = null;
       try {
@@ -1672,7 +1672,7 @@ export class BrowserApp extends BaseApp {
         <span class="tor-bar-label"><i class="fas fa-shield-halved"></i> Tor Active</span>
         <button class="tor-exit-btn">Exit Tor</button>
       </div>
-      <div class="tor-loading yuki-loading-indicator">
+      <div class="tor-loading tyler-loading-indicator">
         <div class="loading-spinner"></div>
         <div class="tor-loading-text">Starting Tor...</div>
       </div>

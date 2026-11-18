@@ -168,7 +168,7 @@ export class RunApp extends BaseApp {
     if (value.includes("://")) {
       if (/^https?:\/\//i.test(value)) {
         os.app.launch("browserApp", { openUrl: value });
-      } else if (/^yuki:\/\//i.test(value)) {
+      } else if (/^tyler:\/\//i.test(value)) {
         os.app.launch("browserApp", { openUrl: value });
       } else {
         window.open(value, "_blank");

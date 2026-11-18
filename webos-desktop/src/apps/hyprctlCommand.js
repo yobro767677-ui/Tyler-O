@@ -276,7 +276,7 @@ export async function cmdHyprctl(terminal, args) {
       target[lastKey] = parsed;
       tm.configString = JSON.stringify(tm.config, null, 2);
       os.fs
-        .write(["Config", "yukiOs", "tiling.conf"], tm.configString)
+        .write(["Config", "tylerOs", "tiling.conf"], tm.configString)
         .catch(() => {});
       if (tm.enabled) {
         tm.rebuildTreeForCurrentWorkspace();

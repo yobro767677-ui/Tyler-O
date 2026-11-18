@@ -1,6 +1,87 @@
 [
   {
     "date": "November 18, 2026",
+    "label": "Polish and Controls",
+    "sections": [
+      {
+        "icon": "fas fa-wand-magic-sparkles",
+        "title": "Admin and Login",
+        "items": [
+          [
+            "fas fa-pen",
+            "Editable Welcome",
+            "Change the green login message from the Admin Panel."
+          ],
+          [
+            "fas fa-bolt",
+            "One Tap Speed",
+            "Performance mode also turns off particle effects for less lag."
+          ],
+          [
+            "fas fa-right-to-bracket",
+            "Smoother Login",
+            "The welcome message fades in cleanly on the login screen."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "date": "November 18, 2026",
+    "label": "Accounts Fixed",
+    "sections": [
+      {
+        "icon": "fas fa-user-check",
+        "title": "Local Accounts",
+        "items": [
+          [
+            "fas fa-user-plus",
+            "Create an Account",
+            "Make a nickname and password that save on your device."
+          ],
+          [
+            "fas fa-right-to-bracket",
+            "Sign Back In",
+            "Log out and back in with the account you created."
+          ],
+          [
+            "fas fa-wand-magic-sparkles",
+            "Cleaner Inputs",
+            "Login fields keep the dark theme instead of turning white."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "date": "November 18, 2026",
+    "label": "Announcements and Performance",
+    "sections": [
+      {
+        "icon": "fas fa-bullhorn",
+        "title": "New Admin Tools",
+        "items": [
+          [
+            "fas fa-bullhorn",
+            "Announcements",
+            "Post a banner from the Admin Panel that stays until dismissed."
+          ],
+          [
+            "fas fa-bolt",
+            "Performance Mode",
+            "Toggle a lighter interface from the Admin Panel to reduce lag."
+          ],
+          [
+            "fas fa-signature",
+            "Tyler OS Everywhere",
+            "Every Yuki name across the system reads Tyler OS."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "date": "November 18, 2026",
     "label": "Admin Panel",
     "sections": [
       {
@@ -191,7 +272,7 @@
   },
   {
     "date": "October 17, 2026",
-    "label": "YukiOS v5.2",
+    "label": "TylerOS v5.2",
     "sections": [
       {
         "icon": "fas fa-tornado",
@@ -317,7 +398,7 @@
   },
   {
     "date": "October 7, 2026",
-    "label": "YukiOS V5.0.0",
+    "label": "TylerOS V5.0.0",
     "sections": [
       {
         "icon": "fa-gamepad",
@@ -397,7 +478,7 @@
           [
             "fa-shield-halved",
             "Automatic Boot Stealth",
-            "Launch YukiOS in a clean about:blank tab automatically on boot."
+            "Launch TylerOS in a clean about:blank tab automatically on boot."
           ],
           [
             "fa-bolt",
@@ -544,7 +625,7 @@
           [
             "fa-external-link-alt",
             "Links Open as Windows",
-            "External app links open as titled YukiOS windows."
+            "External app links open as titled TylerOS windows."
           ],
           [
             "fa-clone",
@@ -819,7 +900,7 @@
   },
   {
     "date": "September 6, 2026",
-    "label": "YukiOS v4.0.0",
+    "label": "TylerOS v4.0.0",
     "sections": [
       {
         "icon": "fa-gamepad",
@@ -1049,7 +1130,7 @@
           [
             "fa-pen",
             "Customize Any App",
-            "Change icon and title for any Yuki app"
+            "Change icon and title for any Tyler app"
           ]
         ]
       },
@@ -1154,7 +1235,7 @@
           [
             "fa-power-off",
             "Autostart Manager",
-            "Choose which system apps launch with YukiOS for quick management."
+            "Choose which system apps launch with TylerOS for quick management."
           ],
           [
             "fa-hdd",
@@ -1195,7 +1276,7 @@
           [
             "fa-file-code",
             "Browse OS Source",
-            "Open the System folder in Files to explore every YukiOS source code!"
+            "Open the System folder in Files to explore every TylerOS source code!"
           ]
         ]
       }
@@ -1203,7 +1284,7 @@
   },
   {
     "date": "August 18, 2026",
-    "label": "YukiOS v3.0.0",
+    "label": "TylerOS v3.0.0",
     "sections": [
       {
         "icon": "fa-users",
@@ -1223,7 +1304,7 @@
           [
             "fa-layer-group",
             "Mode Switcher App",
-            "Preview and switch between desktop modes: MacOS, SteamDeck, ChromeOS, Tiling, and YukiOS."
+            "Preview and switch between desktop modes: MacOS, SteamDeck, ChromeOS, Tiling, and TylerOS."
           ]
         ]
       },
@@ -1474,12 +1555,12 @@
       },
       {
         "icon": "fa-user-lock",
-        "title": "YukiOS Account & Cloud Sync",
+        "title": "TylerOS Account & Cloud Sync",
         "items": [
           [
             "fa-user-lock",
-            "YukiOS Account",
-            "Sign in to a YukiOS Account to carry your identity (nickname, avatar, bio) across every device."
+            "TylerOS Account",
+            "Sign in to a TylerOS Account to carry your identity (nickname, avatar, bio) across every device."
           ],
           [
             "fa-cloud-arrow-up",
@@ -1490,7 +1571,7 @@
       },
       {
         "icon": "fa-comment-dots",
-        "title": "Yuki Steam-style Friends panel",
+        "title": "Tyler Steam-style Friends panel",
         "items": [
           [
             "fa-unlock",
@@ -1501,12 +1582,12 @@
       },
       {
         "icon": "fa-map-signs",
-        "title": "Live Tour for Yuki Steam",
+        "title": "Live Tour for Tyler Steam",
         "items": [
           [
             "fa-map-signs",
-            "Yuki Steam Tour",
-            "Yuki Steam greets you with a quick walkthrough of the store, library, quests, and community on first open."
+            "Tyler Steam Tour",
+            "Tyler Steam greets you with a quick walkthrough of the store, library, quests, and community on first open."
           ]
         ]
       },
@@ -1528,7 +1609,7 @@
           [
             "fa-store",
             "Profile Store",
-            "Spend YukiCoins on profile banners, frames, name tags, and badges."
+            "Spend TylerCoins on profile banners, frames, name tags, and badges."
           ]
         ]
       },
@@ -1539,7 +1620,7 @@
           [
             "fa-clipboard-list",
             "Daily Quests",
-            "Complete quests each day to earn YukiCoins and keep your streak alive."
+            "Complete quests each day to earn TylerCoins and keep your streak alive."
           ],
           [
             "fa-fire",
@@ -1548,8 +1629,8 @@
           ],
           [
             "fa-coins",
-            "YukiCoins",
-            "Earn YukiCoins from quests and watch your balance on your profile."
+            "TylerCoins",
+            "Earn TylerCoins from quests and watch your balance on your profile."
           ]
         ]
       }
@@ -1581,12 +1662,12 @@
       },
       {
         "icon": "fa-users",
-        "title": "Yuki Steam Community Profiles",
+        "title": "Tyler Steam Community Profiles",
         "items": [
           [
             "fa-users",
-            "Yuki Steam Community Profiles",
-            "Yuki Steam Community profiles now show every player's achievements, playtime, current activity, and editable bios publicly."
+            "Tyler Steam Community Profiles",
+            "Tyler Steam Community profiles now show every player's achievements, playtime, current activity, and editable bios publicly."
           ]
         ]
       },
@@ -1618,12 +1699,12 @@
           [
             "fa-user-gear",
             "Account Hub",
-            "Turn your local profile into a registered account on a dedicated Yuki Steam login page."
+            "Turn your local profile into a registered account on a dedicated Tyler Steam login page."
           ],
           [
             "fa-user-slash",
             "Disable Social",
-            "Turn off friends, community, and activity completely from Yuki Steam Settings."
+            "Turn off friends, community, and activity completely from Tyler Steam Settings."
           ]
         ]
       }
@@ -1767,12 +1848,12 @@
     "sections": [
       {
         "icon": "fa-bell",
-        "title": "Yuki Steam Notifications",
+        "title": "Tyler Steam Notifications",
         "items": [
           [
             "fa-bell",
             "Now Playing Popup Toggle",
-            "Disable currently playing popups in Yuki Steam settings, or click one to open Yuki Steam Settings."
+            "Disable currently playing popups in Tyler Steam settings, or click one to open Tyler Steam Settings."
           ]
         ]
       }
@@ -1974,7 +2055,7 @@
       },
       {
         "icon": "fa-layer-group",
-        "title": "Tiling & Yuki Steam",
+        "title": "Tiling & Tyler Steam",
         "items": [
           [
             "fa-layer-group",
@@ -1983,8 +2064,8 @@
           ],
           [
             "fa-newspaper",
-            "Yuki Steam News System",
-            "Real news and updates feed inside the Yuki Steam app so you never miss a game announcement."
+            "Tyler Steam News System",
+            "Real news and updates feed inside the Tyler Steam app so you never miss a game announcement."
           ]
         ]
       }
@@ -1995,7 +2076,7 @@
     "sections": [
       {
         "icon": "fa-desktop",
-        "title": "Yuki Remote Desktop",
+        "title": "Tyler Remote Desktop",
         "items": [
           [
             "fa-share",
@@ -2010,7 +2091,7 @@
           [
             "fa-rocket",
             "Electron App",
-            "Download the native YukiOS desktop app for persistent storage, system tray, and remote host."
+            "Download the native TylerOS desktop app for persistent storage, system tray, and remote host."
           ]
         ]
       },
@@ -2146,7 +2227,7 @@
           [
             "fa-sliders-h",
             "Live Config Editing",
-            "Edit Config/yukiOs/tiling.conf to tweak gaps, borders."
+            "Edit Config/tylerOs/tiling.conf to tweak gaps, borders."
           ],
           [
             "fa-keyboard",
@@ -2336,7 +2417,7 @@
           [
             "fa-hdd",
             "Mount Real Folders",
-            "Mount real local directories into the YukiOS filesystem via the File System Access API with full read/write support."
+            "Mount real local directories into the TylerOS filesystem via the File System Access API with full read/write support."
           ]
         ]
       }
@@ -2352,7 +2433,7 @@
           [
             "fa-cloud-arrow-down",
             "Automatic Update Detection",
-            "YukiOS now checks for new versions automatically and shows a tray icon when an update is available."
+            "TylerOS now checks for new versions automatically and shows a tray icon when an update is available."
           ]
         ]
       },
@@ -2475,8 +2556,8 @@
         "items": [
           [
             "fa-layer-group",
-            "Yuki Steam Overlay",
-            "Press Shift+Tab in any game to open the Yuki Steam overlay with playtime, achievements, friends, notes, and a built-in browser."
+            "Tyler Steam Overlay",
+            "Press Shift+Tab in any game to open the Tyler Steam overlay with playtime, achievements, friends, notes, and a built-in browser."
           ]
         ]
       },
@@ -2913,8 +2994,8 @@
         "items": [
           [
             "fa-code",
-            "Yuki Dev Tools",
-            "Run IT Tools that look nice with yukios themes."
+            "Tyler Dev Tools",
+            "Run IT Tools that look nice with tyleros themes."
           ]
         ]
       },
@@ -3036,12 +3117,12 @@
           [
             "fa-mouse-pointer",
             "Tray Context Menus",
-            "Right-click tray icons for quick actions. Power modes, brightness presets,network settings, clipboard app, Yuki Steam library/store, and recent games."
+            "Right-click tray icons for quick actions. Power modes, brightness presets,network settings, clipboard app, Tyler Steam library/store, and recent games."
           ],
           [
             "fa-user-friends",
             "Live Friends Stats",
-            "Track active users and trending OS apps inside your Yuki Steam Friends List."
+            "Track active users and trending OS apps inside your Tyler Steam Friends List."
           ],
           ["fa-mask", "Incognito mode", "Add incognito mode in browser"]
         ]
@@ -3079,7 +3160,7 @@
         "items": [
           [
             "fa-robot",
-            "Yuki AI Assistant",
+            "Tyler AI Assistant",
             "Local AI assistant that runs in your browser - launch apps, manage files, and chat without sending data anywhere."
           ],
           [
@@ -3089,7 +3170,7 @@
           ],
           [
             "fa-book-open",
-            "YukiOS Guide",
+            "TylerOS Guide",
             "A built-in guide that walks you through apps, features, and how everything fits together."
           ],
           [
@@ -3184,7 +3265,7 @@
         "items": [
           [
             "fa-cube",
-            "Yuki Blender",
+            "Tyler Blender",
             "Added new blender app with enchanced 3d functionality."
           ],
           ["fa-database", "Storage Editor", "Added new Storage Editor app."],
@@ -3226,7 +3307,7 @@
           ],
           [
             "fa-video",
-            "Yuki Convert Upgrade",
+            "Tyler Convert Upgrade",
             "Added video and audio format support for file conversion."
           ],
           [
@@ -3369,8 +3450,8 @@
         "items": [
           [
             "fa-star",
-            "Yuki Steam Improvement",
-            "Improved Yuki Steam UI and added settings."
+            "Tyler Steam Improvement",
+            "Improved Tyler Steam UI and added settings."
           ],
           ["fa-film", "Ruffle App", "Added ruffle."],
           ["fa-star", "Slime Rancher and TABS", "Added Slime Rancher and TABS."]
@@ -3387,14 +3468,14 @@
         "items": [
           [
             "fa-steam-symbol",
-            "Yuki Steam Improvement",
-            "Improved Yuki Steam UI and settings, with a data pack install option and faster loading."
+            "Tyler Steam Improvement",
+            "Improved Tyler Steam UI and settings, with a data pack install option and faster loading."
           ],
           ["fa-film", "Ruffle App", "Added ruffle."],
           [
             "fa-mobile-screen",
             "PWA Support",
-            "Added progressive web app support for YukiOS."
+            "Added progressive web app support for TylerOS."
           ],
           [
             "fa-sliders",
@@ -3497,8 +3578,8 @@
           ],
           [
             "fa-house",
-            "Yuki Steam Home Button",
-            "Added a add to home button in the Yuki Steam app."
+            "Tyler Steam Home Button",
+            "Added a add to home button in the Tyler Steam app."
           ],
           [
             "fa-ellipsis",
@@ -3518,8 +3599,8 @@
         "items": [
           [
             "fa-magnifying-glass",
-            "Yuki Steam Launch from Search",
-            "Launch Yuki Steam apps directly from the search/query experience."
+            "Tyler Steam Launch from Search",
+            "Launch Tyler Steam apps directly from the search/query experience."
           ],
           [
             "fa-book-open",
@@ -3575,7 +3656,7 @@
         "items": [
           [
             "fa-code",
-            "Yuki Code",
+            "Tyler Code",
             "A full code editor powered by VS Code, built right into your desktop."
           ],
           [
@@ -3654,7 +3735,7 @@
           ],
           [
             "fa-video",
-            "Yuki Convert",
+            "Tyler Convert",
             "Convert any file to other formats fuly locally without uploading to a server."
           ],
           [

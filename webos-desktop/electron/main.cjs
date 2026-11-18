@@ -121,7 +121,7 @@ function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: false,
-      additionalArguments: [`--yukios-dev=${!app.isPackaged}`],
+      additionalArguments: [`--tyleros-dev=${!app.isPackaged}`],
     },
     icon: ICON_PATH,
   });
@@ -795,7 +795,7 @@ const TURNS_URL = process.env.TURNS_URL || "turns:turn.example.com:5349";
 function getTurnCreds() {
   if (!TURN_SECRET) return null;
   const expiry = Math.floor(Date.now() / 1000) + 86400;
-  const username = expiry + ":yukios";
+  const username = expiry + ":tyleros";
   const credential = crypto
     .createHmac("sha1", TURN_SECRET)
     .update(username)

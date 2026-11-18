@@ -4,7 +4,7 @@ import {
   getPackageLicenses,
   getRuntimeInfo,
 } from "../../../../settings/systemInfo.js";
-import { YUKIOS_VERSION } from "../../../../apps/about.js";
+import { TYLEROS_VERSION } from "../../../../apps/about.js";
 import { registerWin11Binding } from "../win11SettingsBindings.js";
 import { escapeHtml } from "../win11Controls.js";
 
@@ -36,7 +36,7 @@ function renderOsInformation() {
     <div class="win11-control win11-control--stacked">
       <div class="win11-control__text">
         <p class="win11-control__title">
-          Tyler OS <span class="win11-badge">${escapeHtml(YUKIOS_VERSION)}</span>
+          Tyler OS <span class="win11-badge">${escapeHtml(TYLEROS_VERSION)}</span>
         </p>
         <p class="win11-control__desc">Desktop, in your browser</p>
       </div>
@@ -61,7 +61,7 @@ function renderCommunity() {
     <div class="subHeading">Community</div>
     <div class="win11-control">
       <div class="win11-control__text">
-        <p class="win11-control__title">YukiCord</p>
+        <p class="win11-control__title">TylerCord</p>
         <p class="win11-control__desc">Join our Discord server</p>
       </div>
       <div class="win11-chip-row">

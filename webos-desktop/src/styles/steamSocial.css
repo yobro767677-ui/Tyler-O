@@ -1530,36 +1530,36 @@
   color: var(--brand);
 }
 
-.yukios-account-body {
+.tyleros-account-body {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.yukios-account-note {
+.tyleros-account-note {
   margin: 0;
   font-size: 13px;
   line-height: 1.5;
   color: var(--text-secondary);
 }
 
-.yukios-account-meta {
+.tyleros-account-meta {
   font-size: 13px;
   color: var(--text-secondary);
 }
 
-.yukios-account-meta strong {
+.tyleros-account-meta strong {
   color: var(--text-primary);
 }
 
-.yukios-account-actions {
+.tyleros-account-actions {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.yukios-account-btn {
+.tyleros-account-btn {
   padding: 8px 14px;
   border-radius: 8px;
   border: 1px solid var(--glass-border);
@@ -1577,45 +1577,45 @@
     border-color var(--transition-fast);
 }
 
-.yukios-account-btn:hover {
+.tyleros-account-btn:hover {
   border-color: var(--brand);
   color: var(--brand);
 }
 
-.yukios-account-btn--primary {
+.tyleros-account-btn--primary {
   background: var(--surface-2);
   border-color: var(--brand);
   color: var(--text-on-brand);
 }
 
-.yukios-account-btn--primary:hover {
+.tyleros-account-btn--primary:hover {
   background: var(--brand-hover);
   color: var(--text-on-brand);
 }
 
-.yukios-account-btn:disabled {
+.tyleros-account-btn:disabled {
   opacity: 0.6;
   cursor: default;
 }
 
-.yukios-account-form {
+.tyleros-account-form {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.yukios-account-label {
+.tyleros-account-label {
   font-size: 12px;
   font-weight: 600;
   color: var(--text-secondary);
 }
 
-.yukios-account-label span {
+.tyleros-account-label span {
   color: var(--text-muted);
   font-weight: 400;
 }
 
-.yukios-account-input {
+.tyleros-account-input {
   width: 100%;
   padding: 9px 12px;
   border-radius: 8px;
@@ -1628,17 +1628,26 @@
   transition: border-color var(--transition-fast);
 }
 
-.yukios-account-input:focus {
+.tyleros-account-input:focus {
   border-color: var(--brand);
 }
 
-.yukios-account-error {
+.tyleros-account-input:-webkit-autofill,
+.tyleros-account-input:-webkit-autofill:hover,
+.tyleros-account-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-primary);
+  caret-color: var(--text-primary);
+  box-shadow: 0 0 0 1000px var(--bg-base) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.tyleros-account-error {
   font-size: 12px;
   color: var(--error);
   line-height: 1.4;
 }
 
-.yukios-account-disclaimer {
+.tyleros-account-disclaimer {
   margin: 0;
   font-size: 11px;
   line-height: 1.5;

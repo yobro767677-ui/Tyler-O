@@ -134,7 +134,7 @@ export class V86App extends BaseApp {
       kind: "other",
       icon: resolveIconUrl("static/icons/v86.webp"),
       emitChanged: false,
-      spinnerHTML: `<div class="yuki-loading-indicator"><i class="fa-solid fa-spinner fa-spin v86-loading-icon emu-state-icon" style="animation-duration:1.4s;opacity:0.7"></i><div class="v86-loading-text emu-state-text">Saving <strong>${file.name}</strong>…</div></div>`,
+      spinnerHTML: `<div class="tyler-loading-indicator"><i class="fa-solid fa-spinner fa-spin v86-loading-icon emu-state-icon" style="animation-duration:1.4s;opacity:0.7"></i><div class="v86-loading-text emu-state-text">Saving <strong>${file.name}</strong>…</div></div>`,
       successHTML: `<i class="fa-solid fa-circle-check v86-success-icon emu-state-icon"></i><div class="v86-success-text emu-state-text">Saved!</div>`,
       errorHTML: (msg) =>
         `<i class="fa-solid fa-triangle-exclamation v86-error-icon emu-state-icon emu-state--error"></i><div class="v86-error-text emu-state-text emu-state--error">${msg}</div>`,
@@ -257,7 +257,7 @@ export class V86App extends BaseApp {
         iconClass:
           "fa-solid fa-microchip fa-spin v86-state-icon emu-state-icon",
         wrapperClass:
-          "yuki-loading-indicator v86-loading emu-state emu-load-wrap",
+          "tyler-loading-indicator v86-loading emu-state emu-load-wrap",
         textClass: "v86-state-text emu-state-text",
         logClass: "v86-log emu-state-text--muted",
         displayName,

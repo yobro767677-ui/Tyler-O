@@ -2,7 +2,7 @@ import { BusEvents } from "./core/EventBus.js";
 import { PREDEFINED_AVATARS } from "./utils/avatarData.js";
 import { SystemUtilities } from "./system.js";
 import { playSfx, SystemSfx } from "./sfx/systemSfx.js";
-import { YUKIOS_VERSION } from "./apps/about.js";
+import { TYLEROS_VERSION } from "./apps/about.js";
 import { resolveAvatarUrl } from "./social/avatarResolver.js";
 import { $, createElement } from "./shared/domUtils.js";
 import { resolveAppId, generateUUID, timeAgo } from "./utils/utils.js";
@@ -308,15 +308,7 @@ export class SessionManager {
         </div>
 
         <div class="session-extra">
-        <div class="session-support-btn" id="session-support-btn" title="Support Tyler OS">
-          <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/emotes/face-smile.svg" class="papirus-icon papirus-icon--22" alt="" />
-        </div>
-        <a class="session-github-btn" href="https://github.com/Reeyuki/YukiOS" target="_blank" rel="noopener" title="Star Us On Github">
-          <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/apps/github.svg" class="papirus-icon papirus-icon--22" alt="" />
-        </a>
-        <a class="session-discord-btn" href="https://discord.gg/wufbWFwr4G" target="_blank" rel="noopener" title="Join Discord">
-          <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/apps/discord.svg" class="papirus-icon papirus-icon--22" alt="" />
-        </a>
+        <div class="session-welcome-text">Welcome Summit Questa Students To Tyler's Website</div>
         <div class="session-status-widget" id="session-status-widget">
           <button class="session-status-toggle" id="session-status-toggle" title="System status" type="button">
             <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/help-about.svg" class="papirus-icon papirus-icon--22" alt="" />
@@ -326,7 +318,7 @@ export class SessionManager {
           <div class="session-status-panel" id="session-status-panel">
             <div class="status-info-row">
               <span class="status-info-label">Version</span>
-              <span class="status-info-value">Tyler OS ${YUKIOS_VERSION}</span>
+              <span class="status-info-value">Tyler OS ${TYLEROS_VERSION}</span>
             </div>
             <div class="status-info-row">
               <span class="status-info-label">Build</span>
@@ -934,6 +926,14 @@ export class SessionManager {
       if (el) el.style.display = prefs.showSocial ? "" : "none";
     });
 
+    const welcomeEl = this.container.querySelector(".session-welcome-text");
+    if (welcomeEl) {
+      const customWelcome = os.storage.get(StorageKeys.welcomeText);
+      if (typeof customWelcome === "string" && customWelcome.trim()) {
+        welcomeEl.textContent = customWelcome.trim();
+      }
+    }
+
     ["online", "live", "news"].forEach((block) => {
       const el = this.container.querySelector(
         `.status-block[data-block="${block}"]`,
@@ -1418,7 +1418,7 @@ export class SessionManager {
       mac: "Tyler Mac Desktop",
       chromeos: "Tyler Chrome OS",
       tiling: "Tyler Tiling VM",
-      "3d": "Yuki 3D Desktop",
+      "3d": "Tyler 3D Desktop",
       steamdeck: "Tyler Deck Mode",
       win11: "Tyler Windows 11",
     };
@@ -1427,7 +1427,7 @@ export class SessionManager {
       "Tyler Mac Desktop": "mac",
       "Tyler Chrome OS": "chromeos",
       "Tyler Tiling VM": "tiling",
-      "Yuki 3D Desktop": "3d",
+      "Tyler 3D Desktop": "3d",
       "Tyler Deck Mode": "steamdeck",
       "Tyler Windows 11": "win11",
       tiling: "tiling",
@@ -1753,7 +1753,7 @@ export class SessionManager {
     }
     this.addToUserHistory(this.currentSession);
 
-    if (this.selectedSession !== "Yuki 3D Desktop") {
+    if (this.selectedSession !== "Tyler 3D Desktop") {
       await os.fs.setSession(name);
     }
 
@@ -1793,7 +1793,7 @@ export class SessionManager {
       disableWin11Settings();
     }
 
-    if (this.selectedSession === "Yuki 3D Desktop") {
+    if (this.selectedSession === "Tyler 3D Desktop") {
       await this.apply3DSettings();
     } else {
       this.disable3DSettings();

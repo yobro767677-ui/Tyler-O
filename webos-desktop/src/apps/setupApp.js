@@ -250,7 +250,7 @@ export const FEATURE_DATA = {
       { id: "browser", title: "Browser", icon: "static/icons/chrome.webp" },
       { id: "explorer", title: "Explorer", icon: "fas fa-folder" },
       { id: "settings", title: "Settings", icon: "fas fa-cog" },
-      { id: "yukiOsGuide", title: "Tyler OS Guide", icon: "fas fa-book-open" },
+      { id: "tylerOsGuide", title: "Tyler OS Guide", icon: "fas fa-book-open" },
     ],
     transparencyLevels: [
       { value: "high", title: "High Transparency", desc: "More glass effect" },
@@ -1121,7 +1121,7 @@ export class SetupApp extends BaseApp {
     const launchGuideBtn = $("#setup-launch-guide", win);
     if (launchGuideBtn) {
       launchGuideBtn.addEventListener("click", () => {
-        os.app.launch("yukiOsGuideApp");
+        os.app.launch("tylerOsGuideApp");
       });
     }
 

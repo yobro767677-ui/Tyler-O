@@ -190,7 +190,7 @@ export class RuffleApp extends BaseApp {
     const save = (patch) => {
       saveRuffleConfig(patch);
       os.events.emit(BusEvents.SETTINGS_CHANGED, {
-        key: "yukiOS_ruffle_config",
+        key: "tylerOS_ruffle_config",
         value: patch,
       });
     };
@@ -250,9 +250,9 @@ export class RuffleApp extends BaseApp {
           ))
         )
           return;
-        os.storage.remove("yukiOS_ruffle_config");
+        os.storage.remove("tylerOS_ruffle_config");
         os.events.emit(BusEvents.SETTINGS_CHANGED, {
-          key: "yukiOS_ruffle_config",
+          key: "tylerOS_ruffle_config",
           value: null,
         });
         panel.remove();
@@ -306,7 +306,7 @@ export class RuffleApp extends BaseApp {
       icon: CDN_BASES.MAIN + "/static/icons/ruffle.webp",
       extraDirs: [{ dir: DESKTOP_DIR }],
       emitChanged: true,
-      spinnerHTML: `<div class="yuki-loading-indicator"><i class="fa-solid fa-spinner fa-spin emu-state-icon ruf-state-icon" style="animation-duration:1.4s;opacity:0.7"></i><div class="emu-state-text ruf-state-text">Saving ${files.length} file(s)...</div></div>`,
+      spinnerHTML: `<div class="tyler-loading-indicator"><i class="fa-solid fa-spinner fa-spin emu-state-icon ruf-state-icon" style="animation-duration:1.4s;opacity:0.7"></i><div class="emu-state-text ruf-state-text">Saving ${files.length} file(s)...</div></div>`,
       successHTML: `<i class="fa-solid fa-circle-check emu-state-icon ruf-state-icon"></i><div class="emu-state-text ruf-state-text">Saved ${files.length} file(s)!</div>`,
       errorHTML: (msg) =>
         `<i class="fa-solid fa-triangle-exclamation emu-state-icon ruf-state-icon emu-state--error"></i><div class="emu-state-text ruf-state-text emu-state--error">${msg}</div>`,
@@ -349,7 +349,7 @@ export class RuffleApp extends BaseApp {
         winId,
         iconClass: "fa-solid fa-film fa-spin ruf-state-icon emu-state-icon",
         wrapperClass:
-          "yuki-loading-indicator emu-state ruf-loading emu-load-wrap",
+          "tyler-loading-indicator emu-state ruf-loading emu-load-wrap",
         textClass: "emu-state-text ruf-state-text",
         logClass: "emu-state-text--muted ruf-log",
         displayName,

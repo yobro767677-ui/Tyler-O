@@ -604,14 +604,14 @@ export function showDynamicContextMenu(e, buildFn, options = {}) {
   bindDismissal();
 }
 
-export function showYukiDynamicContextMenu(e, buildFn) {
+export function showTylerDynamicContextMenu(e, buildFn) {
   const existing = getMenu();
   if (existing) existing.remove();
   const menu = createElement("div");
   menu.id = MENU_ID;
   menu.classList.add("context-menu-glass");
   document.body.appendChild(menu);
-  showDynamicContextMenu(e, buildFn, { style: CM_STYLES.YUKIOS });
+  showDynamicContextMenu(e, buildFn, { style: CM_STYLES.TYLEROS });
   return menu;
 }
 

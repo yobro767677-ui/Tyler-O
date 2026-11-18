@@ -1,10 +1,10 @@
 import { getAppRegistry } from "../appRegistry.js";
-import { YUKIOS_VERSION } from "./about.js";
+import { TYLEROS_VERSION } from "./about.js";
 import { appMap } from "../games/gamesList.js";
 const gamesListAppMap = appMap;
 import { APP_DESCRIPTIONS, descriptionMap } from "../games/gameDescriptions.js";
 const gameDescriptions = descriptionMap;
-import "../styles/yukiOsGuide.css";
+import "../styles/tylerOsGuide.css";
 import { $, $$ } from "../shared/domUtils.js";
 import { BaseApp, os } from "../framework.js";
 import { buildTilingKeybindHTML } from "../tiling/TilingKeybindOverlay.js";
@@ -90,8 +90,8 @@ const SHOWCASE = [
   },
 ];
 
-export class YukiOsGuideApp extends BaseApp {
-  singletonWindowIds = ["yuki-os-guide"];
+export class TylerOsGuideApp extends BaseApp {
+  singletonWindowIds = ["tyler-os-guide"];
 
   constructor(services) {
     super(services);
@@ -102,13 +102,13 @@ export class YukiOsGuideApp extends BaseApp {
 
   async open(opts = {}) {
     const win = os.window.create(
-      "yuki-os-guide",
+      "tyler-os-guide",
       "Tyler OS Guide",
       "980px",
       "720px",
       {
         icon: "fas fa-book-open",
-        appId: "yuki-os-guide",
+        appId: "tyler-os-guide",
       },
     );
 
@@ -128,9 +128,9 @@ export class YukiOsGuideApp extends BaseApp {
 
     return `
       <div class="window-content" style="height: calc(100% - 40px); overflow: hidden;">
-        <div class="yuki-guide-container">
-          <div class="yuki-guide-sidebar">
-            <div class="yuki-guide-search">
+        <div class="tyler-guide-container">
+          <div class="tyler-guide-sidebar">
+            <div class="tyler-guide-search">
               <input type="text" id="guide-search" placeholder="Search apps & features..." value="${this.searchQuery}">
               <i class="fas fa-search"></i>
             </div>
@@ -154,7 +154,7 @@ export class YukiOsGuideApp extends BaseApp {
               </button>
             </nav>
           </div>
-          <div class="yuki-guide-main">
+          <div class="tyler-guide-main">
             ${this.buildContent(filteredApps)}
           </div>
         </div>
@@ -199,7 +199,7 @@ export class YukiOsGuideApp extends BaseApp {
             <p class="guide-tagline">A full desktop inside one browser tab. No installs, nothing to block, everything saved.</p>
             <p class="guide-blurb">Everything on this page is real and running right now. Drag windows, browse the web, open a terminal, or boot a retro game, then close the tab and come back later. It all remembers.</p>
             <button class="guide-tour-btn" type="button"><i class="fas fa-play"></i> Take the 60-second tour</button>
-            <p class="guide-tech-note"><i class="fas fa-code"></i> Built with pure JavaScript, no React and no framework, all in one HTML file. Running v${YUKIOS_VERSION}.</p>
+            <p class="guide-tech-note"><i class="fas fa-code"></i> Built with pure JavaScript, no React and no framework, all in one HTML file. Running v${TYLEROS_VERSION}.</p>
           </div>
         </div>
 
@@ -400,7 +400,7 @@ export class YukiOsGuideApp extends BaseApp {
           <div class="feature-card" style="margin-bottom:12px;margin-top:16px">
             <div class="feature-icon"><i class="fas fa-gear"></i></div>
             <h3>Configuration File</h3>
-            <p>All tiling settings are stored in <code>Config/yukiOs/tiling.conf</code>, a JSON file in your virtual filesystem. Edit it with the Explorer or any text editor; changes are auto-detected and applied within seconds.</p>
+            <p>All tiling settings are stored in <code>Config/tylerOs/tiling.conf</code>, a JSON file in your virtual filesystem. Edit it with the Explorer or any text editor; changes are auto-detected and applied within seconds.</p>
           </div>
           <div class="config-doc">
             <table class="config-table">
@@ -479,7 +479,7 @@ export class YukiOsGuideApp extends BaseApp {
       monacoApp: "productivity",
       vscode: "productivity",
       officeApp: "productivity",
-      yukiConvertApp: "productivity",
+      tylerConvertApp: "productivity",
       calculatorApp: "productivity",
       dataEditorApp: "productivity",
 
@@ -518,7 +518,7 @@ export class YukiOsGuideApp extends BaseApp {
       achievementsApp: "system",
 
       systemAppsApp: "system",
-      yukiOsGuideApp: "system",
+      tylerOsGuideApp: "system",
     };
 
     return categoryMap[appId] || "other";
@@ -568,7 +568,7 @@ export class YukiOsGuideApp extends BaseApp {
     });
 
     this.appCardBinder = () => {
-      const mainContent = $(".yuki-guide-main", win);
+      const mainContent = $(".tyler-guide-main", win);
       if (!mainContent) return;
 
       $$(".showcase-card", mainContent).forEach((card) => {
@@ -610,7 +610,7 @@ export class YukiOsGuideApp extends BaseApp {
         ? this.appRegistry.getAllApps(appMap)
         : this.appRegistry.getAllApps(gamesListAppMap);
     const filteredApps = this.filterApps(allApps);
-    const mainContent = $(".yuki-guide-main", win);
+    const mainContent = $(".tyler-guide-main", win);
 
     if (mainContent) {
       mainContent.innerHTML = this.buildContent(filteredApps);

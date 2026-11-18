@@ -143,8 +143,8 @@ export class BaseApp {
         return AppSource.CLIPBOARD_MANAGER;
       case "ExplorerApp":
         return AppSource.EXPLORER;
-      case "YukiConvertApp":
-        return AppSource.YUKI_CONVERT;
+      case "TylerConvertApp":
+        return AppSource.TYLER_CONVERT;
       case "SetupApp":
         return AppSource.SETUP;
       case "InstalledAppsApp":
@@ -181,8 +181,8 @@ export class BaseApp {
         return AppSource.SHORTCUTS;
       case "AppCreatorApp":
         return AppSource.APP_CREATOR;
-      case "YukiOsGuideApp":
-        return AppSource.YUKI_OS_GUIDE;
+      case "TylerOsGuideApp":
+        return AppSource.TYLER_OS_GUIDE;
       case "AIAssistantApp":
         return AppSource.AI_ASSISTANT;
       case "ClockApp":

@@ -400,7 +400,7 @@ export class SettingsApp extends BaseApp {
   }
 
   open(options = {}) {
-    const winId = "yukiOS-settings";
+    const winId = "tylerOS-settings";
     const existing = $("#" + winId);
     if (existing) {
       os.window.focus(existing);
@@ -433,7 +433,7 @@ export class SettingsApp extends BaseApp {
   }
 
   openWin11Settings(options = {}) {
-    const winId = "yukiOS-settings";
+    const winId = "tylerOS-settings";
     const win = os.window.create(winId, "Settings", "1040px", "720px", {
       ...options,
       icon: "fas fa-cog",
@@ -451,7 +451,7 @@ export class SettingsApp extends BaseApp {
   }
 
   rebuildForWin11Mode() {
-    const win = $("#yukiOS-settings");
+    const win = $("#tylerOS-settings");
     if (!win) return;
     if (modeManager.isActive(MODES.WIN11)) {
       win.innerHTML = buildWin11SettingsHTML(this.wm);
@@ -479,12 +479,12 @@ export class SettingsApp extends BaseApp {
     let navItem = null;
     if (target) {
       navItem = win.querySelector(
-        `.yuki-settings-nav li[data-target="${section}"][data-scroll="${target}"]`,
+        `.tyler-settings-nav li[data-target="${section}"][data-scroll="${target}"]`,
       );
     }
     if (!navItem) {
       navItem = win.querySelector(
-        `.yuki-settings-nav li[data-target="${section}"]`,
+        `.tyler-settings-nav li[data-target="${section}"]`,
       );
     }
     if (navItem) {
@@ -493,7 +493,7 @@ export class SettingsApp extends BaseApp {
       const pane = win.querySelector(`#${section}`);
       if (pane) {
         win
-          .querySelectorAll(".yuki-settings-nav li[data-target]")
+          .querySelectorAll(".tyler-settings-nav li[data-target]")
           .forEach((n) => n.classList.remove("active"));
         win
           .querySelectorAll(".settings-category-pane")
@@ -501,7 +501,7 @@ export class SettingsApp extends BaseApp {
         pane.classList.add("active");
         animateSettingsPane(pane, () => {
           if (!target) {
-            const scroller = win.querySelector(".yuki-settings-content");
+            const scroller = win.querySelector(".tyler-settings-content");
             if (scroller) {
               const prev = scroller.style.scrollBehavior;
               scroller.style.scrollBehavior = "auto";

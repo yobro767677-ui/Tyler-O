@@ -27,7 +27,7 @@ class ClipboardManager {
 
   setupBroadcastChannel() {
     try {
-      this.broadcastChannel = new BroadcastChannel("yukios-clipboard");
+      this.broadcastChannel = new BroadcastChannel("tyleros-clipboard");
       this.broadcastChannel.onmessage = (event) => {
         const { type, data } = event.data;
         if (type === "update") {

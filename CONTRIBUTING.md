@@ -13,7 +13,7 @@ Check out our [Roadmap](ROADMAP.md)
 
 ```bash
 git clone <your-fork>
-cd yukios/webos-desktop
+cd tyleros/webos-desktop
 pnpm install
 pnpm run dev     # start dev server
 ```

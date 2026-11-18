@@ -9,8 +9,8 @@ export const ADSTERRA_KEYS = {
 };
 
 export function hardenAdEnvironment() {
-  if (window.__yukiAdHardened) return;
-  window.__yukiAdHardened = true;
+  if (window.__tylerAdHardened) return;
+  window.__tylerAdHardened = true;
   const originalOpen = window.open ? window.open.bind(window) : null;
   window.open = function (url, name, features) {
     const activation = navigator.userActivation;
@@ -91,25 +91,25 @@ export function suppressAdBlocks(container) {
 }
 
 export function buildGameAdBannerHtml(key) {
-  return `<div id="yukios-game-ad-banner">
-  <div class="yukios-game-ad-label">Advertisement</div>
-  <button class="yukios-game-ad-close" title="Close advertisement">&times;</button>
-  <div id="yukios-game-ad-slot"></div>
+  return `<div id="tyleros-game-ad-banner">
+  <div class="tyleros-game-ad-label">Advertisement</div>
+  <button class="tyleros-game-ad-close" title="Close advertisement">&times;</button>
+  <div id="tyleros-game-ad-slot"></div>
 </div>
 <style>
-#yukios-game-ad-banner{position:fixed;top:0;left:0;right:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;gap:12px;padding:8px;background:rgba(16,16,22,0.92);border-bottom:1px solid rgba(255,255,255,0.08);font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
-#yukios-game-ad-banner .yukios-game-ad-label{font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
-#yukios-game-ad-banner .yukios-game-ad-close{position:absolute;top:8px;right:8px;border:none;background:rgba(255,255,255,0.1);color:#fff;width:24px;height:24px;border-radius:6px;cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
-#yukios-game-ad-banner .yukios-game-ad-close:hover{background:rgba(255,255,255,0.2)}
+#tyleros-game-ad-banner{position:fixed;top:0;left:0;right:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;gap:12px;padding:8px;background:rgba(16,16,22,0.92);border-bottom:1px solid rgba(255,255,255,0.08);font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
+#tyleros-game-ad-banner .tyleros-game-ad-label{font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+#tyleros-game-ad-banner .tyleros-game-ad-close{position:absolute;top:8px;right:8px;border:none;background:rgba(255,255,255,0.1);color:#fff;width:24px;height:24px;border-radius:6px;cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
+#tyleros-game-ad-banner .tyleros-game-ad-close:hover{background:rgba(255,255,255,0.2)}
 </style>
 <script>
 (function(){
   function init(){
-    var banner=document.getElementById('yukios-game-ad-banner');
+    var banner=document.getElementById('tyleros-game-ad-banner');
     if(!banner) return;
-    var close=banner.querySelector('.yukios-game-ad-close');
+    var close=banner.querySelector('.tyleros-game-ad-close');
     if(close) close.addEventListener('click',function(){ banner.remove(); });
-    var slot=document.getElementById('yukios-game-ad-slot');
+    var slot=document.getElementById('tyleros-game-ad-slot');
     if(!slot) return;
     var cfg=document.createElement('script');
     cfg.text="atOptions = { 'key': '${key}', 'format': 'iframe', 'height': 90, 'width': 728, 'params': {} };";
