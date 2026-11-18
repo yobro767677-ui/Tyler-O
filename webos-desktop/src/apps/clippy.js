@@ -4,7 +4,7 @@ import { parseBool } from "../utils/utils.js";
 function setClippyEnabled(enabled) {
   os.storage.set(StorageKeys.clippy, String(enabled));
   window.dispatchEvent(
-    new CustomEvent("tyleros:clippy-toggle", { detail: { enabled } }),
+    new CustomEvent("yukios:clippy-toggle", { detail: { enabled } }),
   );
 }
 

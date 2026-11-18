@@ -1,7 +1,7 @@
 import { ICON_REGISTRY } from "../generated/iconRegistry.js";
 import {
   resolveIconUrl,
-  resolveTylerAsset,
+  resolveYukiAsset,
   resolvePapirusUrl,
 } from "./assetResolver.js";
 import { createElement, $ } from "./domUtils.js";
@@ -18,7 +18,7 @@ function resolveImageUrl(value) {
     return value;
   if (value.startsWith("static/") || value.startsWith("/static/"))
     return resolveIconUrl(value);
-  if (!value.includes("/")) return resolveTylerAsset(`static/icons/${value}`);
+  if (!value.includes("/")) return resolveYukiAsset(`static/icons/${value}`);
   return value;
 }
 
@@ -70,16 +70,16 @@ export function showIconPicker(options = {}) {
 
   const tabs = createElement("div");
   tabs.className = "start-picker-tabs";
-  tabs.innerHTML = `<button class="start-picker-tab active" data-tab="tyler">Tyler Icons</button><button class="start-picker-tab" data-tab="upload">Upload</button>`;
+  tabs.innerHTML = `<button class="start-picker-tab active" data-tab="yuki">Tyler Icons</button><button class="start-picker-tab" data-tab="upload">Upload</button>`;
   dialog.appendChild(tabs);
 
   const content = createElement("div");
   content.className = "start-picker-content";
   dialog.appendChild(content);
 
-  const tylerPanel = createElement("div");
-  tylerPanel.className = "start-picker-panel active";
-  tylerPanel.dataset.panel = "tyler";
+  const yukiPanel = createElement("div");
+  yukiPanel.className = "start-picker-panel active";
+  yukiPanel.dataset.panel = "yuki";
   const searchWrap = createElement("div");
   searchWrap.className = "start-picker-search-wrap";
   const searchInput = createElement("input");
@@ -87,11 +87,11 @@ export function showIconPicker(options = {}) {
   searchInput.placeholder = "Search icons...";
   searchInput.type = "text";
   searchWrap.appendChild(searchInput);
-  tylerPanel.appendChild(searchWrap);
+  yukiPanel.appendChild(searchWrap);
   const grid = createElement("div");
   grid.className = "start-picker-grid";
-  tylerPanel.appendChild(grid);
-  content.appendChild(tylerPanel);
+  yukiPanel.appendChild(grid);
+  content.appendChild(yukiPanel);
 
   const uploadPanel = createElement("div");
   uploadPanel.className = "start-picker-panel";
@@ -153,7 +153,7 @@ export function showIconPicker(options = {}) {
       ? ICON_REGISTRY.filter((n) => n.toLowerCase().includes(q))
       : ICON_REGISTRY;
     filtered.forEach((name) => {
-      const url = resolveTylerAsset(`static/icons/${name}`);
+      const url = resolveYukiAsset(`static/icons/${name}`);
       const item = createElement("div");
       item.className = "start-picker-icon";
       item.dataset.value = name;

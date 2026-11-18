@@ -73,7 +73,7 @@ Planned features and improvements for Tyler OS.
 
 - [✅] Notepad, Markdown Viewer, Tyler Code, Calculator, Clock, Weather, News, Paint, Camera, Media Viewer, Office Viewer
 - [✅] Terminal, Explorer, Settings, Task Manager, Shortcuts, Achievements, Profile Customizer, Tyler AI Assistant
-- [✅] Clipboard Manager, Emoji Selector, TylerDevTools, Dev Tools (Eruda), Storage Editor, Tyler Convert
+- [✅] Clipboard Manager, Emoji Selector, YukiDevTools, Dev Tools (Eruda), Storage Editor, Tyler Convert
 - [✅] Browser, WebTorrent, Tor Manager, VNC Client, Steam-like launcher
 - [💡] **Control Center / storage dashboard** — Centralized system data overview with storage usage breakdown
 - [💡] **Media tray app** — Replace the "now playing" indicator with a dedicated tray player showing album art,
@@ -120,10 +120,10 @@ Planned features and improvements for Tyler OS.
 
 - [✅] Command palette with app search, file search, calculator, terminal commands, system actions
 - [✅] Custom App Creator with auto-detected favicons and per-app CORS proxy
-- [✅] Eruda and TylerDevTools inspector
+- [✅] Eruda and YukiDevTools inspector
 - [✅] Storage Editor for browsing IndexedDB
 - [✅] **Visual theme editor** — Live-preview theme builder with color pickers and sliders
-- [💡] **Multi-language IDE in TylerCode** — Plugable runtime system supporting Python (Pyodide), C/C++ (Emscripten), Lua
+- [💡] **Multi-language IDE in YukiCode** — Plugable runtime system supporting Python (Pyodide), C/C++ (Emscripten), Lua
   (Fengari) in a single editor
 
 ## Polish & UX Improvements

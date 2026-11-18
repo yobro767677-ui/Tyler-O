@@ -11,8 +11,8 @@ export function renderPrompt(env, format) {
 
   let result = format;
   result = result.replace(/\\u/g, user);
-  result = result.replace(/\\h/g, env.get("HOSTNAME") || "tyler-os");
-  result = result.replace(/\\H/g, env.get("HOSTNAME") || "tyler-os");
+  result = result.replace(/\\h/g, env.get("HOSTNAME") || "yuki-os");
+  result = result.replace(/\\H/g, env.get("HOSTNAME") || "yuki-os");
   result = result.replace(/\\w/g, () => {
     if (cwd === home) return "~";
     if (cwd.startsWith(home)) return "~" + cwd.slice(home.length);

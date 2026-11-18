@@ -93,8 +93,8 @@ function explorerIcon(
   return `<i class="${combined}" style="${style}"${idAttr}${titleAttr}></i>`;
 }
 
-const EXPLORER_DRAG_TYPE = "application/x-tyleros-explorer";
-const EXPLORER_TAB_TYPE = "application/x-tyleros-tab";
+const EXPLORER_DRAG_TYPE = "application/x-yukios-explorer";
+const EXPLORER_TAB_TYPE = "application/x-yukios-tab";
 
 function hasTabPayload(e) {
   return [...(e.dataTransfer?.types || [])].includes(EXPLORER_TAB_TYPE);

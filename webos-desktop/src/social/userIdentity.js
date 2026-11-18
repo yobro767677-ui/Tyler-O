@@ -9,7 +9,7 @@ import { setSession, getSession } from "../account/session.js";
 
 let cachedUserId = null;
 const REGISTER_THROTTLE_MS = 5 * 60 * 1000;
-const LIVE_REGISTER_TS_KEY = "tyler_live_register_ts";
+const LIVE_REGISTER_TS_KEY = "yuki_live_register_ts";
 let lastRegisterTs = 0;
 
 function currentProfile() {

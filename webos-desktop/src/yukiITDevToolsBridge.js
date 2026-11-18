@@ -1,6 +1,6 @@
-export const TYLER_DEV_TOOLS_URL = "https://it-tools.tech/";
+export const YUKI_DEV_TOOLS_URL = "https://it-tools.tech/";
 
-const BRIDGE_STYLE_ID = "tyler-css-bridge-style";
+const BRIDGE_STYLE_ID = "yuki-css-bridge-style";
 const BRIDGE_CSS = `
 :root {
   color-scheme: dark;
@@ -227,7 +227,7 @@ function buildBridgeScript() {
   }
 
   window.addEventListener("message", (event) => {
-    if (!event || !event.data || event.data.__tylerCssBridge !== "sync") return;
+    if (!event || !event.data || event.data.__yukiCssBridge !== "sync") return;
     syncFromParent();
   });
 
@@ -272,7 +272,7 @@ function injectBridgeIntoHtml(html, baseHref) {
   return `${injected}\n${sanitizedHtml}`;
 }
 
-export async function tylerITDevToolsBridge(url) {
+export async function yukiITDevToolsBridge(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`HTTP ${response.status} fetching ${url}`);
 

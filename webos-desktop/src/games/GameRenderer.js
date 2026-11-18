@@ -592,7 +592,7 @@ export class GameRenderer {
         </div>
       </div>
       <div class="store-ad-block"><div class="store-ad-label">Advertisement</div><div id="ad-library-top"></div></div>
-      <div class="steam-tyleros-content">
+      <div class="steam-yukios-content">
         <div class="steam-whats-new">
           <div class="steam-whats-new-header steam-section-header" data-title="What's New" style="cursor: pointer; display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
             <i class="fas ${isNewsExpanded ? "fa-chevron-down" : "fa-chevron-right"}" style="font-size: 10px; color: var(--text-secondary);"></i>

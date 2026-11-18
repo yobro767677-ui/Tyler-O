@@ -1645,7 +1645,7 @@ function getGridItems() {
       icon: "papirus:devices/input-keyboard",
     },
     {
-      app: "tylerConvertApp",
+      app: "yukiConvertApp",
       title: "Tyler Convert",
       icon: "papirus:actions/swap-panels",
     },
@@ -1666,7 +1666,7 @@ function getGridItems() {
     },
     { app: "weatherApp", title: "Weather", icon: "papirus:apps/weather" },
     {
-      app: "tylerOsGuideApp",
+      app: "yukiOsGuideApp",
       title: "Tyler OS Guide",
       icon: "papirus:apps/accessories-dictionary",
     },

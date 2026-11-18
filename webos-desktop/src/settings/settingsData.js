@@ -46,7 +46,7 @@ export async function exportData(fs, showStatus = () => {}) {
       type: "application/json",
     });
     const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-    downloadBlob(blob, `tylerOS-backup-${stamp}.json`);
+    downloadBlob(blob, `yukiOS-backup-${stamp}.json`);
     showStatus("Exported");
   } catch (e) {
     console.error("Export failed:", e);
@@ -222,7 +222,7 @@ async function deleteAllIndexedDBDatabases() {
 }
 
 function generateDatabaseNameVariations() {
-  const prefixes = ["tyler", "tylerOS", "app", "data", "cache", "store"];
+  const prefixes = ["yuki", "yukiOS", "app", "data", "cache", "store"];
   const suffixes = [
     "db",
     "DB",

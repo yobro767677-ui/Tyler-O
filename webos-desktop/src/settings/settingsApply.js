@@ -43,10 +43,10 @@ export function applyTheme(theme, getCustomColors) {
   });
 
   requestAnimationFrame(() => {
-    let styleEl = $("#tyleros-theme-override");
+    let styleEl = $("#yukios-theme-override");
     if (!styleEl) {
       styleEl = createElement("style");
-      styleEl.id = "tyleros-theme-override";
+      styleEl.id = "yukios-theme-override";
       document.head.appendChild(styleEl);
     }
 
@@ -75,10 +75,10 @@ export function applyTheme(theme, getCustomColors) {
 
 export function applyWindowTransparency(value) {
   const opacity = Math.max(0.2, Math.min(1, Number(value)));
-  let styleEl = $("#tyleros-transparency-override");
+  let styleEl = $("#yukios-transparency-override");
   if (!styleEl) {
     styleEl = createElement("style");
-    styleEl.id = "tyleros-transparency-override";
+    styleEl.id = "yukios-transparency-override";
     document.head.appendChild(styleEl);
   }
   styleEl.textContent =
@@ -147,7 +147,7 @@ export function applyFontSize(size) {
 }
 
 export function applyCursor(dataUrl) {
-  const styleId = "tyleros-custom-cursor";
+  const styleId = "yukios-custom-cursor";
   const existing = $("#" + styleId);
   if (!dataUrl) {
     existing?.remove();
@@ -168,7 +168,7 @@ export function applyCursor(dataUrl) {
 }
 
 export function applyMikuCursor(enabled) {
-  const styleId = "tyleros-miku-cursor";
+  const styleId = "yukios-miku-cursor";
   const existing = $("#" + styleId);
   if (!enabled) {
     existing?.remove();

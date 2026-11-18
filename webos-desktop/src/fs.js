@@ -266,7 +266,7 @@ export const defaultStorage = {
     },
   },
   Config: {
-    tylerOs: {
+    yukiOs: {
       "tiling.conf": {
         type: "file",
         content: DEFAULT_TILING_CONFIG,

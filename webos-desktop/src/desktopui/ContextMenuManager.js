@@ -2,7 +2,7 @@ import { $, $$, createElement } from "../shared/domUtils.js";
 import {
   showContextMenu,
   showDynamicContextMenu,
-  showTylerDynamicContextMenu,
+  showYukiDynamicContextMenu,
   hideMenu,
 } from "../shared/contextMenu.js";
 import {
@@ -1171,7 +1171,7 @@ export class DesktopContextMenuManager {
         item(
           "Show more options",
           () => {
-            this.showTylerDesktopContextMenu(e);
+            this.showYukiDesktopContextMenu(e);
           },
           "fa-ellipsis-h",
         ),
@@ -1179,7 +1179,7 @@ export class DesktopContextMenuManager {
     });
   }
 
-  showTylerDesktopContextMenu(e) {
+  showYukiDesktopContextMenu(e) {
     const currentSort = this.currentSortMode();
     const storedAutoSort = os.storage.get(StorageKeys.desktopAutoSort);
     const currentAutoSort =
@@ -1187,7 +1187,7 @@ export class DesktopContextMenuManager {
         ? Boolean(storedAutoSort)
         : false;
 
-    showTylerDynamicContextMenu(e, (menu, item, hr, submenu) => {
+    showYukiDynamicContextMenu(e, (menu, item, hr, submenu) => {
       menu.appendChild(
         submenu(
           "New",

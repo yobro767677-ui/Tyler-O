@@ -187,7 +187,7 @@ export class ActionParser {
       { regex: /list\s+games/gi, action: "list_games", target: "" },
       { regex: /list\s+themes/gi, action: "list_themes", target: "" },
       {
-        regex: /whats?\s+new|latest\s+(?:tyler)?(?:os\s+)?news/gi,
+        regex: /whats?\s+new|latest\s+(?:yuki)?(?:os\s+)?news/gi,
         action: "get_news",
         target: "3",
       },

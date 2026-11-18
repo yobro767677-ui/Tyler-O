@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/Reeyuki/yukios?style=for-the-badge&color=blue)](LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord)](https://discord.gg/wufbWFwr4G)
 
-**Try it now:** [tyleros.pages.dev](https://yukios.pages.dev) · [yukios.vercel.app](https://yukios.vercel.app) ·
+**Try it now:** [yukios.pages.dev](https://yukios.pages.dev) · [yukios.vercel.app](https://yukios.vercel.app) ·
 [yukios.netlify.app](https://yukios.netlify.app) · [yukiwebos.github.io](https://yukiwebos.github.io)
 
 </div>
@@ -27,7 +27,7 @@ client-side filesystem, and it is built entirely in vanilla JavaScript without a
 
 |                                                                                                             |                                                                                            |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Mac Mode](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/mac.png)                          | ![TylerDeck](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/yuki-deck.png)   |
+| ![Mac Mode](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/mac.png)                          | ![YukiDeck](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/yuki-deck.png)   |
 | ![ChromeOS Mode](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/chromeos.png)                | ![Start Menu](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/startmenu.png) |
 | ![Workspaces](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/workspaces.png)                 | ![Widgets](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/widgets.png)      |
 | ![WASM Terminal Apps](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/btop-lavat-cmatrix.png) | ![3D Os Mode](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/3d.png)        |
@@ -99,7 +99,7 @@ picker, with per-workspace tree layouts and live config reloading.
   floating, **Alt+T** spawns terminal
 - **Drag-to-swap**: drag a tiled window onto another to swap positions in the tree
 - **Live config**: gap, border width, and split ratio adjustable from Settings > Tiling or the config file at
-  `Config/tylerOs/tiling.conf` (live-reload on save); customizable with gaps (inner/outer), split ratio, border
+  `Config/yukiOs/tiling.conf` (live-reload on save); customizable with gaps (inner/outer), split ratio, border
   width/radius, resize step, animation duration/easing, mouse resize toggle, workspace switch delay, and resize debounce
 - **hyprctl** terminal command for Hyprland-style CLI control
 
@@ -323,7 +323,7 @@ applications, file system, or workspace context. The UI layout engine morphs aro
   - `file` command with content-based magic byte detection (10+ formats)
   - `neofetch` with GPU/RAM/browser/engine detection
   - Pipeline (`|`), redirects (`>`/`>>`), command chaining (`&&`/`||`/`;`), Ctrl+R reverse search
-  - `tyler` command for OS control (power mode, brightness, themes, wallpaper, workspaces, app management, DND,
+  - `yuki` command for OS control (power mode, brightness, themes, wallpaper, workspaces, app management, DND,
     notifications)
   - `python -m http.server [port]` (virtual, Tyler OS only) serves VFS dir on `localhost:PORT` for preview in Tyler Browser
     inside Tyler OS

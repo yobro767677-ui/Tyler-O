@@ -189,8 +189,8 @@ export class GameLauncher {
     const isExpanded = collapsed.includes(sectionTitle);
     const base = this.getArchiveBase();
 
-    const tylerosContent = target.querySelector(".steam-tyleros-content");
-    if (!tylerosContent) return;
+    const yukiosContent = target.querySelector(".steam-yukios-content");
+    if (!yukiosContent) return;
 
     const placeholder = createElement("div");
     placeholder.id = "archive-section-placeholder";
@@ -203,7 +203,7 @@ export class GameLauncher {
         <span style="font-size: 11px; color: var(--text-secondary); margin-left: 8px;">Loading...</span>
       </div>
     `;
-    tylerosContent.appendChild(placeholder);
+    yukiosContent.appendChild(placeholder);
 
     try {
       const data = await this.fetchFirstJson([`${base}games.json`]);
@@ -433,8 +433,8 @@ export class GameLauncher {
     const sectionId = `steam-section-${sectionTitle.toLowerCase().replace(/\s+/g, "-")}`;
     const isExpanded = collapsed.includes(sectionTitle);
 
-    const tylerosContent = target.querySelector(".steam-tyleros-content");
-    if (!tylerosContent) return;
+    const yukiosContent = target.querySelector(".steam-yukios-content");
+    if (!yukiosContent) return;
 
     const placeholder = createElement("div");
     placeholder.id = "luminsdk-section-placeholder";
@@ -454,7 +454,7 @@ export class GameLauncher {
         <iframe id="luminsdk-iframe" allowfullscreen class="steam-luminsdk-iframe"></iframe>
       </div>
     `;
-    tylerosContent.appendChild(placeholder);
+    yukiosContent.appendChild(placeholder);
 
     const iframe = placeholder.querySelector("#luminsdk-iframe");
     if (iframe) {

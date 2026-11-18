@@ -1,5 +1,5 @@
-const CACHE = "tyleros-pwa-cache-v1";
-const OVERRIDES_CACHE = "tyleros-system-overrides-v1";
+const CACHE = "yukios-pwa-cache-v1";
+const OVERRIDES_CACHE = "yukios-system-overrides-v1";
 
 const overrideMap = new Map();
 
@@ -63,7 +63,7 @@ self.addEventListener("activate", (event) => {
       const keys = await caches.keys();
       await Promise.all(
         keys
-          .filter((k) => k.startsWith("tyleros-pwa-cache-") && k !== CACHE)
+          .filter((k) => k.startsWith("yukios-pwa-cache-") && k !== CACHE)
           .map((k) => caches.delete(k)),
       );
       await self.clients.claim();

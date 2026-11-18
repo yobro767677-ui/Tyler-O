@@ -23,7 +23,7 @@ export function buildLoadingStateHTML({
   logClass,
   displayName,
 }) {
-  const wc = wrapperClass || "tyler-loading-indicator emu-state emu-load-wrap";
+  const wc = wrapperClass || "yuki-loading-indicator emu-state emu-load-wrap";
   const ic = iconClass || "fas fa-spinner fa-spin";
   const indicator = buildLoadingIndicator({
     label: `Starting <strong>${displayName}</strong>…`,
@@ -117,7 +117,7 @@ export async function renderEmulatorFileList({
 }
 
 function defaultSpinner(count) {
-  return `<div class="tyler-loading-indicator"><i class="fa-solid fa-spinner fa-spin emu-state-icon" style="animation-duration:1.4s;opacity:0.7"></i><div class="emu-state-text">Saving ${count} file(s)…</div></div>`;
+  return `<div class="yuki-loading-indicator"><i class="fa-solid fa-spinner fa-spin emu-state-icon" style="animation-duration:1.4s;opacity:0.7"></i><div class="emu-state-text">Saving ${count} file(s)…</div></div>`;
 }
 
 function defaultSuccess(count) {
@@ -166,9 +166,9 @@ export async function handleEmulatorUpload({
 }
 
 export const SNAPSHOT_DIR = ["Snapshots"];
-export const EMULATOR_LAST_PLAYED_KEY = "tyleros:emulator:lastPlayed";
-export const EMULATOR_SAVE_REQUEST = "tyler-emu-export-save";
-export const EMULATOR_SAVE_RESPONSE = "tyler-emu-save-data";
+export const EMULATOR_LAST_PLAYED_KEY = "yukios:emulator:lastPlayed";
+export const EMULATOR_SAVE_REQUEST = "yuki-emu-export-save";
+export const EMULATOR_SAVE_RESPONSE = "yuki-emu-save-data";
 
 export function snapshotKeyForRom(fileName) {
   const base = String(fileName ?? "")
@@ -287,7 +287,7 @@ export async function readDirectEmulatorSave(iframe) {
   try {
     const innerWin = iframe?.contentWindow;
     if (!innerWin) return null;
-    const pending = normalizeSavePayload(innerWin.tylerPendingSave);
+    const pending = normalizeSavePayload(innerWin.yukiPendingSave);
     if (pending) return pending;
     const emu = innerWin.EJS_emulator;
     if (emu && typeof emu.saveState === "function") {
@@ -343,18 +343,18 @@ export async function exportEmulatorSave(iframe) {
 }
 
 export function buildEmulatorBridgeScript() {
-  return `window.tylerPendingSave = null;
+  return `window.yukiPendingSave = null;
 try {
-  var tylerNativeSave = window.EJS_onSaveState;
+  var yukiNativeSave = window.EJS_onSaveState;
   window.EJS_onSaveState = function (state) {
-    window.tylerPendingSave = state;
-    if (typeof tylerNativeSave === 'function') { try { tylerNativeSave(state); } catch {} }
+    window.yukiPendingSave = state;
+    if (typeof yukiNativeSave === 'function') { try { yukiNativeSave(state); } catch {} }
   };
 } catch {}
 window.addEventListener('message', async (event) => {
   var incoming = event.data;
   var kind = typeof incoming === 'string' ? incoming : incoming && incoming.type;
-  if (kind !== 'tyler-emu-export-save') return;
+  if (kind !== 'yuki-emu-export-save') return;
   var reply = function (payload) {
     var target = null;
     try {
@@ -364,16 +364,16 @@ window.addEventListener('message', async (event) => {
       else if (payload && payload.buffer instanceof ArrayBuffer) target = new Blob([payload]);
     } catch {}
     if (!target || target.size === 0) {
-      try { event.source.postMessage({ type: 'tyler-emu-save-data', dataUrl: null }, '*'); } catch {}
+      try { event.source.postMessage({ type: 'yuki-emu-save-data', dataUrl: null }, '*'); } catch {}
       return;
     }
     try {
       var reader = new FileReader();
       reader.onload = function () {
-        try { event.source.postMessage({ type: 'tyler-emu-save-data', dataUrl: reader.result }, '*'); } catch {}
+        try { event.source.postMessage({ type: 'yuki-emu-save-data', dataUrl: reader.result }, '*'); } catch {}
       };
       reader.onerror = function () {
-        try { event.source.postMessage({ type: 'tyler-emu-save-data', dataUrl: null }, '*'); } catch {}
+        try { event.source.postMessage({ type: 'yuki-emu-save-data', dataUrl: null }, '*'); } catch {}
       };
       reader.readAsDataURL(target);
     } catch {}
@@ -382,7 +382,7 @@ window.addEventListener('message', async (event) => {
     var emu = window.EJS_emulator;
     if (emu && typeof emu.saveState === 'function') { reply(await emu.saveState()); return; }
     if (typeof window.EJS_saveState === 'function') { reply(await window.EJS_saveState()); return; }
-    reply(window.tylerPendingSave);
+    reply(window.yukiPendingSave);
   } catch { reply(null); }
 });`;
 }

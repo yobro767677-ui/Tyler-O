@@ -3,7 +3,7 @@ import { inferKind, mimeFromName } from "../shared/fileKindDetector.js";
 import { resolveIconUrl } from "../shared/assetResolver.js";
 
 const MOUNTS_BASE = "Mounts";
-const HANDLE_DB = "tyleros-mount-handles";
+const HANDLE_DB = "yukios-mount-handles";
 const HANDLE_STORE = "handles";
 
 export class MountManager {

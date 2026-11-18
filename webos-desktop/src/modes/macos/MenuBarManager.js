@@ -470,7 +470,7 @@ const ACTION_MAP = {
     const next = current === "true" ? "false" : "true";
     os.storage.set(StorageKeys.clippy, next);
     window.dispatchEvent(
-      new CustomEvent("tyleros:clippy-toggle", {
+      new CustomEvent("yukios:clippy-toggle", {
         detail: { enabled: next === "true" },
       }),
     );
@@ -693,7 +693,7 @@ const ACTION_MAP = {
       os.window.bringToFront(win);
     });
   },
-  "guide:open": (os) => os.app.launch("tylerOsGuideApp").catch(() => {}),
+  "guide:open": (os) => os.app.launch("yukiOsGuideApp").catch(() => {}),
   "news:open": (os) => os.app.launch("newsApp").catch(() => {}),
   "shortcuts:open": (os) => os.app.launch("shortcutsApp").catch(() => {}),
   "help:report": () =>

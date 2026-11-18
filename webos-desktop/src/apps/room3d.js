@@ -1202,7 +1202,7 @@ export class Room3DApp extends BaseApp {
           const ts = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}-${pad(now.getMinutes())}-${pad(now.getSeconds())}`;
           const a = createElement("a");
           a.href = dataUrl;
-          a.download = `tyleros-room-${ts}.png`;
+          a.download = `yukios-room-${ts}.png`;
           a.style.display = "none";
           document.body.appendChild(a);
           a.click();

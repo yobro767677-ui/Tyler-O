@@ -1494,35 +1494,35 @@ html[data-theme="nier"] .overlay-dialog {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
-html[data-theme="nier"] .tyler-settings-search {
+html[data-theme="nier"] .yuki-settings-search {
   border-bottom: 0.5px solid rgba(58, 52, 37, 0.1);
 }
 
-html[data-theme="nier"] .tyler-settings-search input {
+html[data-theme="nier"] .yuki-settings-search input {
   background: rgba(58, 52, 37, 0.07);
   border: 0.5px solid rgba(58, 52, 37, 0.14);
   color: #3a3425;
   font-family: "Share Tech Mono", "Courier New", monospace;
 }
 
-html[data-theme="nier"] .tyler-settings-search input:focus {
+html[data-theme="nier"] .yuki-settings-search input:focus {
   border-color: #0e0d0a;
   background: rgba(58, 52, 37, 0.11);
 }
 
-html[data-theme="nier"] .tyler-settings-search input::placeholder {
+html[data-theme="nier"] .yuki-settings-search input::placeholder {
   color: #7a7362;
 }
 
-html[data-theme="nier"] .tyler-settings-nav li {
+html[data-theme="nier"] .yuki-settings-nav li {
   color: #3a3425;
 }
 
-html[data-theme="nier"] .tyler-settings-nav li:hover {
+html[data-theme="nier"] .yuki-settings-nav li:hover {
   background: rgba(58, 52, 37, 0.06);
 }
 
-html[data-theme="nier"] .tyler-settings-nav li.active {
+html[data-theme="nier"] .yuki-settings-nav li.active {
   background: rgba(14, 13, 10, 0.1);
   color: #3a3425;
   font-weight: 600;

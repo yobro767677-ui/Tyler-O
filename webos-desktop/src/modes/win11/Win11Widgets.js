@@ -8,7 +8,7 @@ import {
 } from "../../framework.js";
 import { getWeatherInfo } from "../../shared/weatherCodes.js";
 import { detectUserLocation } from "../../apps/weather.js";
-import tylerUpdates from "../../news.json";
+import yukiUpdates from "../../news.json";
 import { playSfx, SystemSfx } from "../../sfx/systemSfx.js";
 
 let boardRoot = null;
@@ -228,9 +228,9 @@ function normalizeArticle(raw) {
   };
 }
 
-function flattenTylerNews(limit) {
+function flattenYukiNews(limit) {
   const out = [];
-  const list = Array.isArray(tylerUpdates) ? tylerUpdates : [];
+  const list = Array.isArray(yukiUpdates) ? yukiUpdates : [];
   for (let i = 0; i < list.length; i++) {
     if (out.length >= limit) break;
     const update = list[i];
@@ -250,8 +250,8 @@ function flattenTylerNews(limit) {
   return out;
 }
 
-function buildTylerRow(entry) {
-  const row = createElement("div", { className: "tylerNewsRow" });
+function buildYukiRow(entry) {
+  const row = createElement("div", { className: "yukiNewsRow" });
   const source = createElement("div", { className: "tpSource" });
   setText(source, entry.section || "Tyler OS");
   row.appendChild(source);
@@ -259,7 +259,7 @@ function buildTylerRow(entry) {
   setText(article, entry.title || "Update");
   row.appendChild(article);
   if (entry.desc) {
-    const descNode = createElement("div", { className: "tylerNewsDesc" });
+    const descNode = createElement("div", { className: "yukiNewsDesc" });
     setText(descNode, entry.desc);
     row.appendChild(descNode);
   }
@@ -380,11 +380,11 @@ function renderNewsStories(stories) {
     story.showDesc = index % 5 === 4;
     allNewsListNode.appendChild(buildArticle(story));
   });
-  const head = createElement("div", { className: "tylerNewsHead" });
+  const head = createElement("div", { className: "yukiNewsHead" });
   setText(head, "Tyler OS");
   allNewsListNode.appendChild(head);
-  flattenTylerNews(10).forEach((entry) =>
-    allNewsListNode.appendChild(buildTylerRow(entry)),
+  flattenYukiNews(10).forEach((entry) =>
+    allNewsListNode.appendChild(buildYukiRow(entry)),
   );
   rest.slice(mid).forEach((story, offset) => {
     story.showDesc = (mid + offset) % 5 === 4;

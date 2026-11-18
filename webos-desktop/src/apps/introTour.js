@@ -54,7 +54,7 @@ const GAME_WINDOW_KEY = "games-app";
 const GAMES_WIN_SELECTOR = "#games-app-win";
 const PALETTE_WIN_SELECTOR = "#command-palette-overlay";
 const PALETTE_ROOT_SELECTOR = ".command-palette-root";
-const SETTINGS_WIN_SELECTOR = "#tylerOS-settings";
+const SETTINGS_WIN_SELECTOR = "#yukiOS-settings";
 const BROWSER_WIN_SELECTOR = '[id^="scramjet-window-"]';
 
 const POLL_INTERVAL = 300;
@@ -366,7 +366,7 @@ function runAction(action) {
   if (action === "advance") {
     advance();
   } else if (action === "guide") {
-    os.app.launch("tylerOsGuideApp").catch(() => {});
+    os.app.launch("yukiOsGuideApp").catch(() => {});
     finish();
   } else if (action === "settings") {
     os.app

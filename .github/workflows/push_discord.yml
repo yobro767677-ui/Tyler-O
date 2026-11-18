@@ -245,19 +245,19 @@ jobs:
 
           SINGLE_HTML="dist-single/index.html"
           if [ -f "$SINGLE_HTML" ]; then
-            RESPONSE=$(upload_file "$SINGLE_HTML" "text/html" "$(build_content "🚀 Single-file HTML for TylerOS")")
+            RESPONSE=$(upload_file "$SINGLE_HTML" "text/html" "$(build_content "🚀 Single-file HTML for YukiOS")")
             if echo "$RESPONSE" | grep -q '40005\|Request entity too large'; then
               echo "Single HTML exceeds Discord upload limit, uploading zipped instead"
-              (cd dist-single && zip ../tyleros-single.zip index.html)
-              if [ -f "tyleros-single.zip" ]; then
-                upload_file "tyleros-single.zip" "application/zip" "$(build_content "📄 Single-file HTML (zipped) for TylerOS")"
+              (cd dist-single && zip ../yukios-single.zip index.html)
+              if [ -f "yukios-single.zip" ]; then
+                upload_file "yukios-single.zip" "application/zip" "$(build_content "📄 Single-file HTML (zipped) for YukiOS")"
               fi
             fi
           fi
 
           if [ -f "$SINGLE_HTML" ]; then
             INPUT_FILE="$SINGLE_HTML"
-            OUTPUT_FILE="tyleros.svg"
+            OUTPUT_FILE="yukios.svg"
             ENCODED=$(base64 -w 0 "$INPUT_FILE")
             cat <<EOF > "$OUTPUT_FILE"
           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="position:fixed;top:0;left:0;">
@@ -274,7 +274,7 @@ jobs:
           EOF
             echo "Successfully converted $INPUT_FILE to $OUTPUT_FILE"
             if [ -f "$OUTPUT_FILE" ]; then
-              upload_file "$OUTPUT_FILE" "image/svg+xml" "$(build_content "🖼️ SVG variant for TylerOS")"
+              upload_file "$OUTPUT_FILE" "image/svg+xml" "$(build_content "🖼️ SVG variant for YukiOS")"
             fi
           fi
 
@@ -283,7 +283,7 @@ jobs:
             zip -r "$ZIP_FILE" dist-web -x "dist-web/wasm/*" -x "dist-web/class/*"
 
             if [ -f "$ZIP_FILE" ]; then
-              upload_file "$ZIP_FILE" "application/zip" "$(build_content "📦 Build archive for TylerOS")"
+              upload_file "$ZIP_FILE" "application/zip" "$(build_content "📦 Build archive for YukiOS")"
             fi
           fi
 

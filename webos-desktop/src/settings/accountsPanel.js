@@ -201,7 +201,7 @@ export function renderAccountsSettings() {
       <div class="accounts-cloud" id="accounts-cloud">
         <div class="accounts-cloud-head"><i class="fas fa-user-lock"></i> <span>Tyler OS Account</span></div>
         <div class="accounts-cloud-host" id="accounts-cloud-host"></div>
-        <p class="tyleros-account-disclaimer">${escapeHtml(ACCOUNT_DISCLAIMER)}</p>
+        <p class="yukios-account-disclaimer">${escapeHtml(ACCOUNT_DISCLAIMER)}</p>
       </div>
       <div class="accounts-sync" id="accounts-sync">
         <div class="accounts-sync-head"><i class="fas fa-cloud-arrow-up"></i> <span>Cloud Sync</span></div>

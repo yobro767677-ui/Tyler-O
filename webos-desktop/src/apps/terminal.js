@@ -18,11 +18,11 @@ import { formatSize } from "../utils/utils.js";
 import { getExt } from "../shared/fileKindDetector.js";
 import { getPyodide, runPython } from "../services/PyodideManager.js";
 import { runNode } from "../services/WebContainerManager.js";
-import { cmdTyler } from "./tylerCommand.js";
+import { cmdYuki } from "./yukiCommand.js";
 import { cmdHyprctl } from "./hyprctlCommand.js";
 import { processManager } from "../services/ProcessManager.js";
 import { audioMixer } from "../audioMixer.js";
-import { TYLEROS_VERSION } from "./about.js";
+import { YUKIOS_VERSION } from "./about.js";
 import { CDN_BASES } from "../shared/assetResolver.js";
 import { ShellEnvironment } from "../terminal/shellEnvironment.js";
 import { ShellParser } from "../terminal/shellParser.js";
@@ -51,7 +51,7 @@ export class TerminalApp extends BaseApp {
     this.historyIndex = this.history.length;
     this.displayName = os.storage.get(StorageKeys.username) || "guest";
     this.username = this.displayName;
-    this.hostname = "tyler-os";
+    this.hostname = "yuki-os";
     this.setupSessionListener();
     this.commands = {};
     this.pageLoadTime = Date.now();
@@ -1977,7 +1977,7 @@ export class TerminalApp extends BaseApp {
     await this.print("rm: removing all files...", "var(--error)");
 
     const overlay = createElement("div");
-    overlay.id = "tyleros-nuke-overlay";
+    overlay.id = "yukios-nuke-overlay";
     overlay.style.position = "fixed";
     overlay.style.top = "0";
     overlay.style.left = "0";
@@ -2287,7 +2287,7 @@ export class TerminalApp extends BaseApp {
     );
     this.registerCommand("node", (args, flags) => this.cmdNode(args, flags));
     this.registerCommand("bash", (args) => this.cmdBash(args));
-    this.registerCommand("tyler", (args) => cmdTyler(this, args));
+    this.registerCommand("yuki", (args) => cmdYuki(this, args));
     const textEditor = (args) => this.cmdNotepad(args);
     this.registerCommand("notepad", textEditor);
     this.registerCommand("vim", textEditor);
@@ -2899,7 +2899,7 @@ export class TerminalApp extends BaseApp {
         const data = {
           type: "btop-data",
           coreCount,
-          hostname: "tyleros",
+          hostname: "yukios",
           username: displayName,
           uptime,
           cpuName: "Tyler OS Virtual CPU",
@@ -4515,7 +4515,7 @@ export class TerminalApp extends BaseApp {
       "                     " + this.displayName + "@" + this.hostname,
       `        /\\           OS          ${osText}`,
       `       /  \\          KERNEL      ${engine}`,
-      `      /\\   \\         Tyler OS      ${TYLEROS_VERSION}`,
+      `      /\\   \\         Tyler OS      ${YUKIOS_VERSION}`,
       `     / > ω <\\        CPU Cores   ${coresText}`,
       `    /   __   \\       GPU         ${gpu}`,
       `   / __|  |__-\\      MEMOWY      ${ram}`,
@@ -4774,7 +4774,7 @@ export class TerminalApp extends BaseApp {
       ["logout", "Sign out and return to login screen"],
       ["signout", "Sign out and return to login screen"],
       ["exit", "Close the terminal"],
-      ["tyler", "OS control command - see 'tyler help'"],
+      ["yuki", "OS control command - see 'yuki help'"],
       ["notepad", "Edit a file in Notepad"],
       ["vim/nano/gedit", "Aliases for notepad"],
       ["hyprctl", "Hyprland-style window manager control - see 'hyprctl help'"],

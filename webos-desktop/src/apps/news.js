@@ -112,7 +112,7 @@ const getRenderableUpdates = () =>
   );
 
 export class NewsApp extends BaseApp {
-  singletonWindowIds = ["news-tyleros"];
+  singletonWindowIds = ["news-yukios"];
 
   constructor(services) {
     super(services);
@@ -150,7 +150,7 @@ export class NewsApp extends BaseApp {
     `;
 
     const win = os.window.create(
-      "news-tyleros",
+      "news-yukios",
       "What's New",
       "720px",
       "520px",

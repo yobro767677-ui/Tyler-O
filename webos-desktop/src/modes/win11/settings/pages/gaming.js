@@ -93,7 +93,7 @@ registerWin11Binding("gamingOverlay", {
       <div class="win11-control win11-control--stacked">
         <div class="win11-control__text">
           <p class="win11-control__title">Shift+Tab Overlay in Games</p>
-          <p class="win11-control__desc">Show the draggable Tyler overlay while a game is focused</p>
+          <p class="win11-control__desc">Show the draggable Yuki overlay while a game is focused</p>
         </div>
         <div class="win11-range">
           ${switchMarkup(overlayEnabled, "overlay")}

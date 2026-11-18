@@ -15,7 +15,7 @@ export function animateThemeChange(changeFn) {
   }
 
   styleEl = createElement("style");
-  styleEl.id = "tyleros-theme-transition";
+  styleEl.id = "yukios-theme-transition";
   styleEl.textContent = `:root, .window, .window-header, .taskbar, .start-menu, .desktop,
 .desktop-context-menu, .taskbar-preview, .dialog-box,
 .dialog-overlay, .notification-toast, .context-menu,

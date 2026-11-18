@@ -250,7 +250,7 @@ export class EmulatorApp extends BaseApp {
       icon: resolveIconUrl(EMULATOR_ICON),
       extraDirs: [{ dir: DESKTOP_DIR, kind: "rom" }],
       emitChanged: true,
-      spinnerHTML: `<div class="tyler-loading-indicator"><i class="fa-solid fa-spinner fa-spin emu-state-icon ruf-state-icon" style="animation-duration:1.4s;opacity:0.7"></i><div class="emu-state-text ruf-state-text">Saving ${files.length} file(s)…</div></div>`,
+      spinnerHTML: `<div class="yuki-loading-indicator"><i class="fa-solid fa-spinner fa-spin emu-state-icon ruf-state-icon" style="animation-duration:1.4s;opacity:0.7"></i><div class="emu-state-text ruf-state-text">Saving ${files.length} file(s)…</div></div>`,
       successHTML: `<i class="fa-solid fa-circle-check emu-state-icon ruf-state-icon"></i><div class="emu-state-text ruf-state-text">Saved ${files.length} file(s)!</div>`,
       errorHTML: (msg) =>
         `<i class="fa-solid fa-triangle-exclamation emu-state-icon ruf-state-icon emu-state--error"></i><div class="emu-state-text ruf-state-text emu-state--error">${msg}</div>`,
@@ -334,9 +334,9 @@ export class EmulatorApp extends BaseApp {
       ${buildLoadingStateHTML({
         winId,
         iconClass:
-          "fa-solid fa-gamepad fa-spin ruf-state-icon emu-state-icon tyler-loading-indicator",
+          "fa-solid fa-gamepad fa-spin ruf-state-icon emu-state-icon yuki-loading-indicator",
         wrapperClass:
-          "tyler-loading-indicator emu-state ruf-loading emu-load-wrap",
+          "yuki-loading-indicator emu-state ruf-loading emu-load-wrap",
         textClass: "emu-state-text ruf-state-text",
         logClass: "emu-state-text--muted ruf-log",
         displayName,

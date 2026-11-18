@@ -242,8 +242,8 @@ function isLocalDevHost() {
   }
 }
 
-function isTylerosRepo(repo) {
-  return typeof repo === "string" && repo.toLowerCase() === "tyleros";
+function isYukiosRepo(repo) {
+  return typeof repo === "string" && repo.toLowerCase() === "yukios";
 }
 
 export function getCdnMirror() {
@@ -278,7 +278,7 @@ export function resolveGhUrl(url) {
   const b = match[4] || "main";
   const p = match[5];
 
-  if (isLocalDevHost() && isTylerosRepo(r)) {
+  if (isLocalDevHost() && isYukiosRepo(r)) {
     const localPath = (p || "").replace(/^\/+/, "");
     return localPath
       ? `${LOCAL_DEV_STATIC_BASE}/${localPath}`
@@ -402,7 +402,7 @@ export function initializeMirrors(appMap) {
       }
     })();
     if (!customStartIcon) {
-      const logoUrl = resolveTylerAsset("static/icons/logo.png");
+      const logoUrl = resolveYukiAsset("static/icons/logo.png");
       document.documentElement.style.setProperty(
         "--start-logo-url",
         `url("${logoUrl}")`,
@@ -448,7 +448,7 @@ function getCdnProvider(url) {
   );
 }
 
-export function resolveTylerAsset(path) {
+export function resolveYukiAsset(path) {
   if (typeof path !== "string") return path;
 
   const cleanPath = path.startsWith("/") ? path.substring(1) : path;
@@ -459,7 +459,7 @@ export function resolveTylerAsset(path) {
     CDN_MIRRORS.find((m) => m.id === getCdnMirror()) || CDN_MIRRORS[0];
 
   const user = "Reeyuki";
-  const repo = "tyleros";
+  const repo = "yukios";
   const branch = "main";
 
   return mirror.ghTemplate
@@ -544,7 +544,7 @@ export function resolveIconUrl(url) {
   }
 
   if (normalizedUrl.startsWith("/static/")) {
-    return resolveTylerAsset(normalizedUrl);
+    return resolveYukiAsset(normalizedUrl);
   }
 
   if (/^https?:\/\//.test(url)) {
@@ -552,7 +552,7 @@ export function resolveIconUrl(url) {
       const u = new URL(url);
       const isCdnUrl = isCdnHostname(u.hostname);
       if (isCdnUrl && u.pathname.startsWith("/static/")) {
-        return resolveTylerAsset(u.pathname + u.search + u.hash);
+        return resolveYukiAsset(u.pathname + u.search + u.hash);
       }
     } catch {}
     return resolveGhUrl(url);
@@ -570,7 +570,7 @@ export function resolveWallpaperUrl(url) {
         isCdnHostname(u.hostname) &&
         u.pathname.startsWith("/static/wallpapers/")
       ) {
-        return resolveTylerAsset(u.pathname + u.search + u.hash);
+        return resolveYukiAsset(u.pathname + u.search + u.hash);
       }
     } catch {}
     return resolveGhUrl(url);
@@ -579,7 +579,7 @@ export function resolveWallpaperUrl(url) {
     url.startsWith("/static/wallpapers/") ||
     url.startsWith("static/wallpapers/")
   ) {
-    return resolveTylerAsset(url);
+    return resolveYukiAsset(url);
   }
   return url;
 }

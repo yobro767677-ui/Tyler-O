@@ -1,4 +1,4 @@
-#about-tyleros .abx {
+#about-yukios .abx {
   background: var(--bg-primary);
   color: var(--text-primary);
   overflow-y: auto;
@@ -6,14 +6,14 @@
   font-family: var(--font-ui);
 }
 
-#about-tyleros .abx-shell {
+#about-yukios .abx-shell {
   padding: 20px;
   display: grid;
   gap: 16px;
   box-sizing: border-box;
 }
 
-#about-tyleros .abx-top {
+#about-yukios .abx-top {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@
   background: var(--surface-1);
 }
 
-#about-tyleros .abx-mark {
+#about-yukios .abx-mark {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@
   max-width: 72%;
 }
 
-#about-tyleros .abx-badge {
+#about-yukios .abx-badge {
   width: 76px;
   height: 76px;
   padding: 10px;
@@ -45,21 +45,21 @@
   border: 1px solid var(--glass-border);
 }
 
-#about-tyleros .abx-title {
+#about-yukios .abx-title {
   margin: 0;
   font-weight: 700;
   font-size: 1.4rem;
   color: var(--text-primary);
 }
 
-#about-tyleros .abx-sub {
+#about-yukios .abx-sub {
   margin: 0;
   color: var(--text-secondary);
   font-size: 0.85rem;
   line-height: var(--lh-normal);
 }
 
-#about-tyleros .abx-meta {
+#about-yukios .abx-meta {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -67,7 +67,7 @@
   align-items: center;
 }
 
-#about-tyleros .abx-pill {
+#about-yukios .abx-pill {
   background: var(--surface-2);
   padding: 6px 14px;
   border-radius: var(--r-full);
@@ -77,7 +77,7 @@
   color: var(--text-secondary);
 }
 
-#about-tyleros .abx-meta-link {
+#about-yukios .abx-meta-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -94,30 +94,30 @@
     border-color 0.15s ease;
 }
 
-#about-tyleros .abx-meta-link:hover {
+#about-yukios .abx-meta-link:hover {
   background: var(--glass-hover);
   border-color: var(--brand);
 }
 
-#about-tyleros .abx-meta-link i {
+#about-yukios .abx-meta-link i {
   color: var(--brand);
   font-size: 0.9rem;
 }
 
-#about-tyleros .abx-grid {
+#about-yukios .abx-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
 
-#about-tyleros .abx-panel {
+#about-yukios .abx-panel {
   border-radius: var(--r-lg);
   border: 1px solid var(--glass-border);
   background: var(--surface-1);
   overflow: hidden;
 }
 
-#about-tyleros .abx-panel-h {
+#about-yukios .abx-panel-h {
   display: flex;
   justify-content: space-between;
   padding: 13px 18px;
@@ -130,24 +130,24 @@
   color: var(--text-secondary);
 }
 
-#about-tyleros .abx-panel-b {
+#about-yukios .abx-panel-b {
   padding: 18px;
 }
 
-#about-tyleros .abx-caps {
+#about-yukios .abx-caps {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
-#about-tyleros .abx-cap {
+#about-yukios .abx-cap {
   border-radius: var(--r-md);
   padding: 14px;
   border: 1px solid var(--glass-border);
   background: var(--surface-2);
 }
 
-#about-tyleros .abx-cap-tag {
+#about-yukios .abx-cap-tag {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: var(--ls-wide);
@@ -156,36 +156,36 @@
   margin-bottom: 4px;
 }
 
-#about-tyleros .abx-cap-title {
+#about-yukios .abx-cap-title {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
 
-#about-tyleros .abx-cap-desc {
+#about-yukios .abx-cap-desc {
   font-size: 0.8rem;
   color: var(--text-secondary);
   line-height: var(--lh-normal);
 }
 
-#about-tyleros .abx-legal {
+#about-yukios .abx-legal {
   font-size: 0.82rem;
   color: var(--text-secondary);
   white-space: pre-wrap;
   line-height: var(--lh-relaxed);
 }
 
-#about-tyleros .abx-legal a {
+#about-yukios .abx-legal a {
   color: var(--brand);
   text-decoration: none;
 }
 
-#about-tyleros .abx-legal a:hover {
+#about-yukios .abx-legal a:hover {
   text-decoration: underline;
 }
 
-#about-tyleros .abx-sponsor {
+#about-yukios .abx-sponsor {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -195,7 +195,7 @@
   border-radius: var(--r-md);
 }
 
-#about-tyleros .abx-sponsor-icon {
+#about-yukios .abx-sponsor-icon {
   width: 48px;
   height: 48px;
   background: var(--brand-dim);
@@ -206,37 +206,37 @@
   flex-shrink: 0;
 }
 
-#about-tyleros .abx-sponsor-icon i {
+#about-yukios .abx-sponsor-icon i {
   font-size: 24px;
   color: var(--brand);
 }
 
-#about-tyleros .abx-sponsor-content {
+#about-yukios .abx-sponsor-content {
   flex: 1;
   min-width: 0;
 }
 
-#about-tyleros .abx-sponsor-title {
+#about-yukios .abx-sponsor-title {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
 
-#about-tyleros .abx-sponsor-desc {
+#about-yukios .abx-sponsor-desc {
   font-size: 0.8rem;
   color: var(--text-secondary);
   line-height: var(--lh-normal);
   margin-bottom: 12px;
 }
 
-#about-tyleros .abx-sponsor-buttons {
+#about-yukios .abx-sponsor-buttons {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-#about-tyleros .abx-sponsor-btn {
+#about-yukios .abx-sponsor-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -253,11 +253,11 @@
   transition: background 0.15s ease;
 }
 
-#about-tyleros .abx-sponsor-btn:hover {
+#about-yukios .abx-sponsor-btn:hover {
   background: var(--brand-hover);
 }
 
-#about-tyleros .abx-foot {
+#about-yukios .abx-foot {
   display: flex;
   justify-content: center;
   padding: 14px 18px;
@@ -268,7 +268,7 @@
   font-size: 0.82rem;
 }
 
-#about-tyleros .settings-credits-author {
+#about-yukios .settings-credits-author {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -276,7 +276,7 @@
   border-bottom: 1px solid var(--glass-border);
 }
 
-#about-tyleros .settings-credits-avatar {
+#about-yukios .settings-credits-avatar {
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -291,7 +291,7 @@
   background: var(--bg-secondary);
 }
 
-#about-tyleros .settings-credits-author-info {
+#about-yukios .settings-credits-author-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -299,7 +299,7 @@
   flex: 1;
 }
 
-#about-tyleros .settings-credits-author-name {
+#about-yukios .settings-credits-author-name {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -309,23 +309,23 @@
   color: var(--text-primary);
 }
 
-#about-tyleros .settings-credits-author-name > i {
+#about-yukios .settings-credits-author-name > i {
   color: var(--error);
   font-size: 12px;
 }
 
-#about-tyleros .settings-credits-author-sub {
+#about-yukios .settings-credits-author-sub {
   font-size: 12px;
   line-height: 1.2;
   color: var(--text-secondary);
 }
 
-#about-tyleros .settings-credits-author-links {
+#about-yukios .settings-credits-author-links {
   display: flex;
   gap: 8px;
 }
 
-#about-tyleros .settings-credits-author-link {
+#about-yukios .settings-credits-author-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -342,13 +342,13 @@
     border-color 0.15s ease;
 }
 
-#about-tyleros .settings-credits-author-link:hover {
+#about-yukios .settings-credits-author-link:hover {
   color: var(--brand);
   background: var(--brand-dim);
   border-color: var(--brand);
 }
 
-#about-tyleros .settings-credits-license {
+#about-yukios .settings-credits-license {
   padding: 8px 12px 0;
   font-size: 12px;
   font-weight: 500;
@@ -357,14 +357,14 @@
   opacity: 0.85;
 }
 
-#about-tyleros .settings-licenses {
+#about-yukios .settings-licenses {
   display: flex;
   flex-direction: column;
   gap: 4px;
   padding: 12px;
 }
 
-#about-tyleros .settings-license-item {
+#about-yukios .settings-license-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -378,31 +378,31 @@
     border-color 0.15s ease;
 }
 
-#about-tyleros .settings-license-item:hover {
+#about-yukios .settings-license-item:hover {
   background: var(--glass-hover);
   border-color: var(--brand);
 }
 
-#about-tyleros .settings-license-icon {
+#about-yukios .settings-license-icon {
   font-size: 14px;
   color: var(--brand);
   flex-shrink: 0;
 }
 
-#about-tyleros .settings-license-name {
+#about-yukios .settings-license-name {
   flex: 1;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-primary);
 }
 
-#about-tyleros .settings-license-version {
+#about-yukios .settings-license-version {
   font-size: 11px;
   color: var(--text-secondary);
   opacity: 0.8;
 }
 
-#about-tyleros .settings-license-badge {
+#about-yukios .settings-license-badge {
   font-size: 10px;
   padding: 2px 6px;
   border-radius: 4px;

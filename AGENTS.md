@@ -423,7 +423,7 @@ Always prefer these over reimplementing logic.
 | File                    | Exports                                                                                                                                                                                                                                                                                   |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `contextMenu.js`        | `showContextMenu`, `showDynamicContextMenu`, `showStartStyleMenu`, `positionMenu`, `bindDismissal`, `hideMenu`, `refreshIcons`                                                                                                                                                            |
-| `assetResolver.js`      | `resolveUrl`, `resolveTylerAsset`, `fetchHtmlAsBlobUrl`, `resolveIconUrl`, `resolveWallpaperUrl`, `resolveGhUrl`, `resolveNpmUrl`, `isCdnGhUrl`, `isCdnHostname`, `getCurrentCdnRepoBase`, `initializeMirrors`, `CDN_MIRRORS`                                                              |
+| `assetResolver.js`      | `resolveUrl`, `resolveYukiAsset`, `fetchHtmlAsBlobUrl`, `resolveIconUrl`, `resolveWallpaperUrl`, `resolveGhUrl`, `resolveNpmUrl`, `isCdnGhUrl`, `isCdnHostname`, `getCurrentCdnRepoBase`, `initializeMirrors`, `CDN_MIRRORS`                                                              |
 | `fileKindDetector.js`   | `FileKind`, `fileKindFromName`, `getExt`, plus extension arrays: `IMAGE_EXTS`, `VIDEO_EXTS`, `AUDIO_EXTS`, `OFFICE_EXTS`, `CODE_EXTS`, `TEXT_EXTS`, `HTML_EXTS`, `MARKDOWN_EXTS`, `ZIP_EXTS`, `ISO_EXTS`, `EXE_EXTS`, `SWF_EXTS`, `EBOOK_EXTS`, `FONT_EXTS`, `DISK_EXTS`, `SHORTCUT_EXTS` |
 | `cdnConfig.js`          | `CDN_CONFIG`, `getLibraryUrl`, `getRepoUrl`                                                                                                                                                                                                                                               |
 | `iconUtils.js`          | `isFontAwesomeIcon`, `resolveIconHtml`, `resolveDesktopIcon`                                                                                                                                                                                                                              |
@@ -512,7 +512,7 @@ entries — no app class needed.
 | Tyler Code      | `apps/monaco.js`         | Monaco editor (VSCode engine) integration             |
 | CalculatorApp  | `apps/calculator.js`     | Scientific calculator with memory                     |
 | OfficeAppProxy | `office/officeLoader.js` | Office 365 viewer for .docx/.xlsx/.pptx               |
-| Tyler Convert   | `apps/tylerConvert.js`    | Local file converter (image, audio, video, documents) |
+| Tyler Convert   | `apps/yukiConvert.js`    | Local file converter (image, audio, video, documents) |
 | Data Editor    | `apps/dataEditor.js`     | IndexedDB storage inspector for debugging             |
 
 ### Media & Emulators
@@ -542,7 +542,7 @@ entries — no app class needed.
 | AboutApp            | `apps/about.js`                 | System info, version, credits                                               |
 | What's New          | `apps/news.js`                  | News aggregation with unread bubble                                         |
 | WeatherApp          | `apps/weather.js`               | Current weather and forecast                                                |
-| Tyler OS Guide        | `apps/tylerOsGuide.js`           | Interactive guide and tutorial system                                       |
+| Tyler OS Guide        | `apps/yukiOsGuide.js`           | Interactive guide and tutorial system                                       |
 | Clipboard Manager   | `apps/clipboardApp.js`          | Clipboard history and management                                            |
 | Setup Wizard        | `apps/setupApp.js`              | First-run profile setup                                                     |
 | Intro Tour          | `apps/introTour.js`             | Replayable 60-second guided desktop tour                                    |

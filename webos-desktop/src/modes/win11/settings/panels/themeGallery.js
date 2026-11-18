@@ -121,10 +121,10 @@ function renderGalleryHtml() {
       </div>
       <div class="win11-theme-actions">
         <button type="button" class="win11-action primary" data-gallery-action="create">Create Theme</button>
-        <button type="button" class="win11-action" data-gallery-action="import">Import .tylerotheme</button>
+        <button type="button" class="win11-action" data-gallery-action="import">Import .yukiotheme</button>
         <button type="button" class="win11-action" data-gallery-action="save">Save Custom Theme</button>
       </div>
-      <input type="file" accept=".tylerotheme,.json" style="display:none" data-gallery-import />
+      <input type="file" accept=".yukiotheme,.json" style="display:none" data-gallery-import />
     </div>
 
     <div class="win11-control">
@@ -269,7 +269,7 @@ async function saveCustomTheme(refresh) {
 }
 
 function wireGallery(host, refresh) {
-  const winElement = host.closest("#tylerOS-settings");
+  const winElement = host.closest("#yukiOS-settings");
 
   $$(".win11-theme-swatch", host).forEach((swatch) => {
     bindEvent(swatch, "click", () =>

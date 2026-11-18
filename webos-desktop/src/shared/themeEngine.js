@@ -43,7 +43,7 @@ const BUILTIN_THEMES = [
     },
   },
   {
-    value: "tyleros",
+    value: "yukios",
     icon: "fas fa-dragon",
     label: "Tyler OS",
     category: "special",

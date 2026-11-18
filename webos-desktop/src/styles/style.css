@@ -95,7 +95,6 @@
   --shadow-depth: 0 24px 64px oklch(0% 0 0 / 0.65);
 
   --error: oklch(60% 0.2 25);
-  --success: oklch(72% 0.19 150);
   --error-bg: oklch(60% 0.2 25 / 0.12);
   --error-border: oklch(60% 0.2 25 / 0.25);
   --warn: oklch(78% 0.13 85);
@@ -610,27 +609,27 @@ html[data-theme="frutiger-aero"] .settings-category-header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
-html[data-theme="frutiger-aero"] .tyler-settings-sidebar {
+html[data-theme="frutiger-aero"] .yuki-settings-sidebar {
   background: rgba(0, 0, 0, 0.03) !important;
   border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
-html[data-theme="frutiger-aero"] .tyler-settings-search input {
+html[data-theme="frutiger-aero"] .yuki-settings-search input {
   background: rgba(255, 255, 255, 0.8) !important;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
   color: #1a1a2e !important;
 }
 
-html[data-theme="frutiger-aero"] .tyler-settings-nav li {
+html[data-theme="frutiger-aero"] .yuki-settings-nav li {
   color: #4a4a6e !important;
 }
 
-html[data-theme="frutiger-aero"] .tyler-settings-nav li:hover {
+html[data-theme="frutiger-aero"] .yuki-settings-nav li:hover {
   color: #1a1a2e !important;
   background: rgba(0, 0, 0, 0.04) !important;
 }
 
-html[data-theme="frutiger-aero"] .tyler-settings-nav li.active {
+html[data-theme="frutiger-aero"] .yuki-settings-nav li.active {
   color: var(--brand) !important;
 }
 
@@ -747,27 +746,27 @@ html[data-theme="arctic"] .settings-category-header {
   border-bottom: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme="arctic"] .tyler-settings-sidebar {
+html[data-theme="arctic"] .yuki-settings-sidebar {
   background: var(--surface-1) !important;
   border-right: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme="arctic"] .tyler-settings-search input {
+html[data-theme="arctic"] .yuki-settings-search input {
   background: var(--surface-1) !important;
   border: 1px solid var(--glass-border) !important;
   color: var(--text-primary) !important;
 }
 
-html[data-theme="arctic"] .tyler-settings-nav li {
+html[data-theme="arctic"] .yuki-settings-nav li {
   color: var(--text-secondary) !important;
 }
 
-html[data-theme="arctic"] .tyler-settings-nav li:hover {
+html[data-theme="arctic"] .yuki-settings-nav li:hover {
   color: var(--text-primary) !important;
   background: var(--glass-hover) !important;
 }
 
-html[data-theme="arctic"] .tyler-settings-nav li.active {
+html[data-theme="arctic"] .yuki-settings-nav li.active {
   color: var(--brand) !important;
 }
 
@@ -884,27 +883,27 @@ html[data-theme="sakura"] .settings-category-header {
   border-bottom: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme="sakura"] .tyler-settings-sidebar {
+html[data-theme="sakura"] .yuki-settings-sidebar {
   background: var(--surface-1) !important;
   border-right: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme="sakura"] .tyler-settings-search input {
+html[data-theme="sakura"] .yuki-settings-search input {
   background: var(--surface-1) !important;
   border: 1px solid var(--glass-border) !important;
   color: var(--text-primary) !important;
 }
 
-html[data-theme="sakura"] .tyler-settings-nav li {
+html[data-theme="sakura"] .yuki-settings-nav li {
   color: var(--text-secondary) !important;
 }
 
-html[data-theme="sakura"] .tyler-settings-nav li:hover {
+html[data-theme="sakura"] .yuki-settings-nav li:hover {
   color: var(--text-primary) !important;
   background: var(--glass-hover) !important;
 }
 
-html[data-theme="sakura"] .tyler-settings-nav li.active {
+html[data-theme="sakura"] .yuki-settings-nav li.active {
   color: var(--brand) !important;
 }
 
@@ -1021,27 +1020,27 @@ html[data-theme="nordic"] .settings-category-header {
   border-bottom: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme="nordic"] .tyler-settings-sidebar {
+html[data-theme="nordic"] .yuki-settings-sidebar {
   background: var(--surface-1) !important;
   border-right: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme="nordic"] .tyler-settings-search input {
+html[data-theme="nordic"] .yuki-settings-search input {
   background: var(--surface-1) !important;
   border: 1px solid var(--glass-border) !important;
   color: var(--text-primary) !important;
 }
 
-html[data-theme="nordic"] .tyler-settings-nav li {
+html[data-theme="nordic"] .yuki-settings-nav li {
   color: var(--text-secondary) !important;
 }
 
-html[data-theme="nordic"] .tyler-settings-nav li:hover {
+html[data-theme="nordic"] .yuki-settings-nav li:hover {
   color: var(--text-primary) !important;
   background: var(--glass-hover) !important;
 }
 
-html[data-theme="nordic"] .tyler-settings-nav li.active {
+html[data-theme="nordic"] .yuki-settings-nav li.active {
   color: var(--brand) !important;
 }
 
@@ -1158,27 +1157,27 @@ html[data-theme="gameboy"] .settings-category-header {
   border-bottom: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme="gameboy"] .tyler-settings-sidebar {
+html[data-theme="gameboy"] .yuki-settings-sidebar {
   background: var(--surface-1) !important;
   border-right: 1px solid var(--glass-border) !important;
 }
 
-html[data-theme="gameboy"] .tyler-settings-search input {
+html[data-theme="gameboy"] .yuki-settings-search input {
   background: var(--surface-1) !important;
   border: 1px solid var(--glass-border) !important;
   color: var(--text-primary) !important;
 }
 
-html[data-theme="gameboy"] .tyler-settings-nav li {
+html[data-theme="gameboy"] .yuki-settings-nav li {
   color: var(--text-secondary) !important;
 }
 
-html[data-theme="gameboy"] .tyler-settings-nav li:hover {
+html[data-theme="gameboy"] .yuki-settings-nav li:hover {
   color: var(--text-primary) !important;
   background: var(--glass-hover) !important;
 }
 
-html[data-theme="gameboy"] .tyler-settings-nav li.active {
+html[data-theme="gameboy"] .yuki-settings-nav li.active {
   color: var(--brand) !important;
 }
 

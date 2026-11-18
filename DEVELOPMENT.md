@@ -30,7 +30,7 @@ This guide covers how to create new applications, add functionalities, and contr
 
    ```bash
    git clone https://github.com/Reeyuki/YukiOS
-   cd tyleros
+   cd yukios
    ```
 
 2. **Install dependencies**
@@ -728,7 +728,7 @@ Common utility functions like `formatSize`, `isImageFile`, `isTextFile`, `plural
 | File                  | Exports                                                                                                       |
 | --------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `contextMenu.js`      | `showContextMenu`, `showDynamicContextMenu`, `showStartStyleMenu`, `positionMenu`, `hideMenu`, `refreshIcons` |
-| `assetResolver.js`    | `resolveUrl`, `resolveTylerAsset`, `fetchHtmlAsBlobUrl`, `resolveIconUrl`, `resolveWallpaperUrl`               |
+| `assetResolver.js`    | `resolveUrl`, `resolveYukiAsset`, `fetchHtmlAsBlobUrl`, `resolveIconUrl`, `resolveWallpaperUrl`               |
 | `fileKindDetector.js` | `FileKind`, `fileKindFromName`, `getExt`, plus extension arrays (`IMAGE_EXTS`, `CODE_EXTS`, ...)              |
 | `cdnConfig.js`        | `CDN_CONFIG`, `getLibraryUrl`, `getRepoUrl`                                                                   |
 | `iconUtils.js`        | `isFontAwesomeIcon`, `resolveIconHtml`, `resolveDesktopIcon`                                                  |
@@ -816,9 +816,9 @@ Single-file build output is supported for easy deployment.
 When running as an Electron app, the virtual IndexedDB filesystem is replaced with the real local filesystem:
 
 - **Root directory**: `<userData>/home/<sessionKey>/` where `userData` resolves to:
-  - **Linux**: `~/.config/tyleros-desktop/`
-  - **macOS**: `~/Library/Application Support/tyleros-desktop/`
-  - **Windows**: `%APPDATA%\tyleros-desktop\`
+  - **Linux**: `~/.config/yukios-desktop/`
+  - **macOS**: `~/Library/Application Support/yukios-desktop/`
+  - **Windows**: `%APPDATA%\yukios-desktop\`
 - Virtual paths like `/home/Guest/Desktop` map directly to real directories on disk
 - Binary files are stored as regular files (no separate blob store)
 - Metadata files (`.meta.json`) are real dotfiles in each directory

@@ -1,8 +1,8 @@
 import { openFileConverter } from "../utils/fileConverter.js";
 
 import { BaseApp, os } from "../framework.js";
-export class TylerConvertApp extends BaseApp {
-  singletonWindowIds = ["tyler-convert"];
+export class YukiConvertApp extends BaseApp {
+  singletonWindowIds = ["yuki-convert"];
 
   constructor(services) {
     super(services);
@@ -10,7 +10,7 @@ export class TylerConvertApp extends BaseApp {
 
   async open() {
     const win = os.window.create(
-      "tyler-convert",
+      "yuki-convert",
       "Tyler Convert",
       "540px",
       "420px",
@@ -18,47 +18,47 @@ export class TylerConvertApp extends BaseApp {
         icon: "fas fa-exchange-alt",
       },
     );
-    win.innerHTML = `<div class="window-content tyler-convert-landing">
+    win.innerHTML = `<div class="window-content yuki-convert-landing">
 
-        <div id="tyler-convert-main-view" class="tyler-convert-landing-view">
-          <div class="tyler-convert-icon-box">
+        <div id="yuki-convert-main-view" class="yuki-convert-landing-view">
+          <div class="yuki-convert-icon-box">
             <i class="fas fa-exchange-alt"></i>
           </div>
-          <h2 class="tyler-convert-landing-title">Tyler Convert</h2>
-          <p class="tyler-convert-landing-desc">
+          <h2 class="yuki-convert-landing-title">Tyler Convert</h2>
+          <p class="yuki-convert-landing-desc">
             Easily batch convert images, audio, video, structured data, and documents directly in your browser without any server uploads.
           </p>
           
-          <div class="tyler-convert-btn-row">
-            <button id="tyler-convert-btn-local" class="tyler-convert-btn-primary">
+          <div class="yuki-convert-btn-row">
+            <button id="yuki-convert-btn-local" class="yuki-convert-btn-primary">
               <i class="fas fa-laptop"></i> From Device
             </button>
-            <button id="tyler-convert-btn-tyler" class="tyler-convert-btn-secondary">
+            <button id="yuki-convert-btn-yuki" class="yuki-convert-btn-secondary">
               <i class="fas fa-folder-open"></i> Browse Tyler OS
             </button>
           </div>
         </div>
 
-        <div id="tyler-convert-loading-view" class="tyler-convert-loading-view">
+        <div id="yuki-convert-loading-view" class="yuki-convert-loading-view">
           <i class="fas fa-spinner fa-spin"></i>
-          <div class="tyler-convert-loading-text">Importing files to virtual filesystem...</div>
+          <div class="yuki-convert-loading-text">Importing files to virtual filesystem...</div>
         </div>
 
-        <input type="file" id="tyler-convert-file-input" class="tyler-convert-file-input" multiple>
+        <input type="file" id="yuki-convert-file-input" class="yuki-convert-file-input" multiple>
       </div>`;
 
-    const mainView = win.querySelector("#tyler-convert-main-view");
-    const loadingView = win.querySelector("#tyler-convert-loading-view");
-    const fileInput = win.querySelector("#tyler-convert-file-input");
-    const btnLocal = win.querySelector("#tyler-convert-btn-local");
-    const btnTyler = win.querySelector("#tyler-convert-btn-tyler");
+    const mainView = win.querySelector("#yuki-convert-main-view");
+    const loadingView = win.querySelector("#yuki-convert-loading-view");
+    const fileInput = win.querySelector("#yuki-convert-file-input");
+    const btnLocal = win.querySelector("#yuki-convert-btn-local");
+    const btnYuki = win.querySelector("#yuki-convert-btn-yuki");
 
     btnLocal.addEventListener("click", (e) => {
       e.stopPropagation();
       fileInput.click();
     });
 
-    btnTyler.addEventListener("click", (e) => {
+    btnYuki.addEventListener("click", (e) => {
       e.stopPropagation();
       const closeBtn = win.querySelector(".close-btn");
       if (closeBtn) closeBtn.click();

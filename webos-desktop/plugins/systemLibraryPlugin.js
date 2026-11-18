@@ -14,9 +14,9 @@ const generatedDir = resolve(sourceDir, "generated");
 const manifestPath = resolve(generatedDir, "systemLibraryManifest.js");
 const overridesCachePath = resolve(
   projectRoot,
-  "node_modules/.cache/tyleros-system-overrides.json",
+  "node_modules/.cache/yukios-system-overrides.json",
 );
-const OVERRIDES_ROUTE = "/__tyleros-overrides";
+const OVERRIDES_ROUTE = "/__yukios-overrides";
 
 const overrideStore = new Map();
 
@@ -143,7 +143,7 @@ function isSameOriginRequest(req) {
 
 export function systemLibraryPlugin() {
   return {
-    name: "tyleros-system-library",
+    name: "yukios-system-library",
     buildStart() {
       regenerateSystemLibraryManifest();
     },

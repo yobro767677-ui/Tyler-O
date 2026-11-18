@@ -452,7 +452,7 @@ class PerformanceManager {
     const effective = mode || "high";
     if (!this.styleEl) {
       this.styleEl = createElement("style");
-      this.styleEl.id = "tyleros-performance-override";
+      this.styleEl.id = "yukios-performance-override";
       document.head.appendChild(this.styleEl);
     }
     if (effective === "performance") {

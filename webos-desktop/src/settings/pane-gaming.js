@@ -55,7 +55,7 @@ export function renderGamingSettings() {
         <div class="settings-row">
           <div class="settings-label-group">
             <span class="settings-label-title">Shift+Tab Overlay in Games</span>
-            <span class="settings-label-desc">Show draggable Tyler overlay while a game is focused</span>
+            <span class="settings-label-desc">Show draggable Yuki overlay while a game is focused</span>
           </div>
           <label class="settings-toggle">
             <input type="checkbox" id="settingsGamingOverlay" ${overlayEnabled ? "checked" : ""}/>

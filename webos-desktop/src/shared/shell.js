@@ -253,7 +253,7 @@ export class Shell {
       output(this.sessionKey),
     );
     this.registerCommand("hostname", (args, flags, output) =>
-      output("tyler-os"),
+      output("yuki-os"),
     );
     this.registerCommand("date", (args, flags, output) =>
       output(new Date().toString()),
@@ -616,7 +616,7 @@ export class Shell {
     const lines = [
       "",
       "",
-      "                     " + this.sessionKey + "@tyler-os",
+      "                     " + this.sessionKey + "@yuki-os",
       `        /\\           OS     ${osText}`,
       `       /  \\          KERNEL   ${engine}wu`,
       `      /\\   \\        CPU Cores: ${coresText}`,

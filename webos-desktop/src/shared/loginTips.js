@@ -25,7 +25,7 @@ export const LOGIN_TIPS = [
   "Right-click the Start button to pick a custom Start icon or upload your own.",
   "Windows can wobble, shatter with Fall Apart, or wear XP and Win7 headers.",
   "Set any TTF or OTF as your system font from the font preview. (Minecraft theme!)",
-  "Type tyler in Terminal to control power, themes, wallpaper, and workspaces.",
+  "Type yuki in Terminal to control power, themes, wallpaper, and workspaces.",
   "Type neofetch in Terminal for a full summary of os",
   "The 3D room is a walkable world. Grab a game case and press F to launch it.",
   {

@@ -235,7 +235,7 @@ export function buildSteamShell(
         <i class="fab fa-steam" style="font-size: 20px; margin-right: 8px;"></i>
         <div class="steam-menu-items">
           <div class="steam-dropdown">
-            <span class="steam-menu-item steam-dropdown-trigger" data-dropdown="steam-menu">Tyler</span>
+            <span class="steam-menu-item steam-dropdown-trigger" data-dropdown="steam-menu">Yuki</span>
             <div class="steam-dropdown-menu" id="steam-menu-dropdown">
               <div class="steam-dropdown-item" data-action="steam-settings">Settings</div>
               <div class="steam-dropdown-item" data-action="steam-account">Account</div>
@@ -265,7 +265,7 @@ export function buildSteamShell(
           <button type="button" class="steam-quick-nav-btn" data-steam-nav="login" title="Account"><i class="fas fa-gear"></i></button>
           <div class="steam-user-profile">
             <span class="steam-profile-name">${username}</span>
-            <span class="steam-profile-coins" title="TylerCoins"><i class="fas fa-coins"></i> <span class="steam-profile-coins-value"></span></span>
+            <span class="steam-profile-coins" title="YukiCoins"><i class="fas fa-coins"></i> <span class="steam-profile-coins-value"></span></span>
             <span class="steam-profile-streak steam-profile-streak--hidden" title="Day streak"><i class="fas fa-fire"></i> <span class="steam-profile-streak-value"></span> days</span>
             <img src="${profilePic}" />
           </div>

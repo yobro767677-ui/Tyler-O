@@ -1,4 +1,4 @@
-.tyler-guide-container {
+.yuki-guide-container {
   display: flex;
   height: 100%;
   background: var(--bg-primary);
@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 
-.tyler-guide-sidebar {
+.yuki-guide-sidebar {
   width: 250px;
   background: var(--bg-secondary);
   backdrop-filter: blur(48px) saturate(1.6);
@@ -24,12 +24,12 @@
   z-index: 2;
 }
 
-.tyler-guide-search {
+.yuki-guide-search {
   position: relative;
   margin-bottom: 24px;
 }
 
-.tyler-guide-search input {
+.yuki-guide-search input {
   width: 100%;
   padding: 12px 38px 12px 16px;
   background: var(--glass);
@@ -47,19 +47,19 @@
   appearance: none;
 }
 
-.tyler-guide-search input:focus {
+.yuki-guide-search input:focus {
   border-color: var(--brand);
   background: var(--glass);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
 }
 
-.tyler-guide-search input::placeholder {
+.yuki-guide-search input::placeholder {
   color: var(--text-secondary);
   opacity: 0.55;
 }
 
-.tyler-guide-search i,
-.tyler-guide-search svg {
+.yuki-guide-search i,
+.yuki-guide-search svg {
   position: absolute;
   right: 14px;
   top: 50%;
@@ -175,26 +175,26 @@
   color: var(--text-primary);
 }
 
-.tyler-guide-main {
+.yuki-guide-main {
   flex: 1;
   overflow-y: auto;
   padding: 32px 36px;
 }
 
-.tyler-guide-main::-webkit-scrollbar {
+.yuki-guide-main::-webkit-scrollbar {
   width: 8px;
 }
 
-.tyler-guide-main::-webkit-scrollbar-track {
+.yuki-guide-main::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.tyler-guide-main::-webkit-scrollbar-thumb {
+.yuki-guide-main::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 4px;
 }
 
-html[data-theme-mode="light"] .tyler-guide-main::-webkit-scrollbar-thumb,
+html[data-theme-mode="light"] .yuki-guide-main::-webkit-scrollbar-thumb,
 html[data-theme-mode="light"] .guide-nav::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.15);
 }

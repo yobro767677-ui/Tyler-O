@@ -1,4 +1,4 @@
-export function buildTylerHomeSrcdoc() {
+export function buildYukiHomeSrcdoc() {
   return `<!doctype html>
 <html lang="en">
   <head>

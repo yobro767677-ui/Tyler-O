@@ -30,7 +30,7 @@ import { $, createElement } from "./shared/domUtils.js";
 import { isMobile } from "./shared/platformUtils.js";
 import { playSfx, SystemSfx } from "./sfx/systemSfx.js";
 
-if (typeof Element !== "undefined" && !Element.prototype._tylerosRemovePatched) {
+if (typeof Element !== "undefined" && !Element.prototype._yukiosRemovePatched) {
   const origRemove = Element.prototype.remove;
   Element.prototype.remove = function () {
     try {
@@ -38,7 +38,7 @@ if (typeof Element !== "undefined" && !Element.prototype._tylerosRemovePatched) 
     } catch {}
     return origRemove.call(this);
   };
-  Element.prototype._tylerosRemovePatched = true;
+  Element.prototype._yukiosRemovePatched = true;
 }
 
 export class WindowManager {
@@ -246,7 +246,7 @@ export class WindowManager {
       isGame = false;
     }
     const onMobile = isMobile();
-    const mobileFullscreen = onMobile && !id.startsWith("tylerOS-settings");
+    const mobileFullscreen = onMobile && !id.startsWith("yukiOS-settings");
     if (mobileFullscreen) {
       width = "100vw";
       height = "calc(100vh - var(--taskbar-h))";
@@ -392,7 +392,7 @@ export class WindowManager {
 
     if (isGame) this.gameWindowCount++;
     this.updateTransparency();
-    if (win.id === "tylerOS-settings") {
+    if (win.id === "yukiOS-settings") {
       setTimeout(() => {
         win.click();
       }, 0);

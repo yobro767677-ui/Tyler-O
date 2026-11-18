@@ -621,8 +621,8 @@ export class TorrentClientApp extends BaseApp {
         "Save to Tyler OS?",
         "Save files to Tyler OS when the download finishes?",
       )
-      .then((saveToTylerOS) => {
-        this.startDownloadWithOptions({ magnetUri }, saveToTylerOS, null);
+      .then((saveToYukiOS) => {
+        this.startDownloadWithOptions({ magnetUri }, saveToYukiOS, null);
       });
   }
 
@@ -762,8 +762,8 @@ export class TorrentClientApp extends BaseApp {
   }
 
   onTorrentComplete(torrent) {
-    if (torrent.saveToTylerOS) {
-      this.saveToTylerOS(torrent);
+    if (torrent.saveToYukiOS) {
+      this.saveToYukiOS(torrent);
     }
   }
 
@@ -838,7 +838,7 @@ export class TorrentClientApp extends BaseApp {
         <div class="torrent-dialog-save-toggle">
           <label class="torrent-dialog-toggle-label">
             <span class="torrent-toggle-switch">
-              <input type="checkbox" id="torrent-save-tyleros-toggle" checked />
+              <input type="checkbox" id="torrent-save-yukios-toggle" checked />
               <span class="torrent-toggle-slider"></span>
             </span>
             Save to Tyler OS when done
@@ -871,8 +871,8 @@ export class TorrentClientApp extends BaseApp {
     overlay
       .querySelector("#torrent-dlg-start")
       .addEventListener("click", () => {
-        const saveToTylerOS = overlay.querySelector(
-          "#torrent-save-tyleros-toggle",
+        const saveToYukiOS = overlay.querySelector(
+          "#torrent-save-yukios-toggle",
         ).checked;
 
         const selectedIndices = new Set();
@@ -883,14 +883,14 @@ export class TorrentClientApp extends BaseApp {
         close();
         this.startDownloadWithOptions(
           { parsedTorrent },
-          saveToTylerOS,
+          saveToYukiOS,
           selectedIndices.size > 0 ? selectedIndices : null,
         );
       });
   }
 
-  startDownloadWithOptions(item, saveToTylerOS, selectedFileIndices) {
-    const wrappedItem = { ...item, saveToTylerOS, selectedFileIndices };
+  startDownloadWithOptions(item, saveToYukiOS, selectedFileIndices) {
+    const wrappedItem = { ...item, saveToYukiOS, selectedFileIndices };
     if (this.activeDownloadCount < this.maxConcurrentDownloads) {
       this.startDownloadItem(wrappedItem);
     } else {
@@ -911,7 +911,7 @@ export class TorrentClientApp extends BaseApp {
     this.activeDownloadCount++;
     const startCb = (t) => {
       t.paused = false;
-      t.saveToTylerOS = item.saveToTylerOS || false;
+      t.saveToYukiOS = item.saveToYukiOS || false;
       if (item.selectedFileIndices && t.files) {
         t.files.forEach((f, i) => {
           if (!item.selectedFileIndices.has(i)) {
@@ -1181,7 +1181,7 @@ export class TorrentClientApp extends BaseApp {
         <button class="torrent-detail-action-btn" data-action="computer" data-infohash="${infoHash}">
           <i class="fas fa-download"></i> Save to Computer
         </button>
-        <button class="torrent-detail-action-btn" data-action="tyleros" data-infohash="${infoHash}">
+        <button class="torrent-detail-action-btn" data-action="yukios" data-infohash="${infoHash}">
           <i class="fas fa-hdd"></i> Save to Tyler OS
         </button>
       `
@@ -1226,8 +1226,8 @@ export class TorrentClientApp extends BaseApp {
 
         if (action === "computer") {
           this.saveToComputer(t);
-        } else if (action === "tyleros") {
-          this.saveToTylerOS(t);
+        } else if (action === "yukios") {
+          this.saveToYukiOS(t);
         } else if (action === "pause") {
           t.pause();
           t.paused = true;
@@ -1414,7 +1414,7 @@ export class TorrentClientApp extends BaseApp {
     });
   }
 
-  async saveToTylerOS(torrent) {
+  async saveToYukiOS(torrent) {
     if (!torrent.done) {
       os.dialog.alert(
         "Not Ready",
@@ -1443,7 +1443,7 @@ export class TorrentClientApp extends BaseApp {
       let savedCount = 0;
       for (const file of files) {
         const filePath = `${savePath}/${this.sanitizeFileName(file.name)}`;
-        await this.saveFileToTylerOS(file, filePath);
+        await this.saveFileToYukiOS(file, filePath);
         savedCount++;
       }
       this.notify(
@@ -1459,7 +1459,7 @@ export class TorrentClientApp extends BaseApp {
     }
   }
 
-  async saveFileToTylerOS(file, filePath) {
+  async saveFileToYukiOS(file, filePath) {
     return new Promise((resolve, reject) => {
       file.getBlob(async (err, blob) => {
         if (err) {

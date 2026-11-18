@@ -150,7 +150,7 @@ export class RemoteHostApp extends BaseApp {
                   <button class="remote-btn secondary small" id="copyRoomBtn" title="Copy room code"><i class="fas fa-copy"></i></button>
                   <button class="remote-btn secondary small" id="regenerateRoomBtn" title="Generate a new room code"><i class="fas fa-rotate"></i></button>
                 </div>
-                <p class="host-hint">Enter this code on the Connect tab or at tyleros.pages.dev/remote</p>
+                <p class="host-hint">Enter this code on the Connect tab or at yukios.pages.dev/remote</p>
               </div>
               <div class="host-actions">
                 <button class="remote-btn primary" id="shareBtn">

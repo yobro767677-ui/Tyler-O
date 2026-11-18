@@ -63,7 +63,7 @@ function compressPapirusData() {
 
 export function papirusDataPlugin() {
   return {
-    name: "tyleros-papirus-data",
+    name: "yukios-papirus-data",
     buildStart() {
       compressPapirusData();
     },

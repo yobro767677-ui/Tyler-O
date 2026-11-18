@@ -116,7 +116,7 @@ export function sanitizeThemeContract(input) {
   if (input.schemaVersion !== 1 && input.schemaVersion !== 2) {
     errors.push("Unsupported schema version");
   }
-  if (input.type !== "tyleros-theme") {
+  if (input.type !== "yukios-theme") {
     errors.push("Invalid theme type");
   }
   const name = typeof input.name === "string" ? input.name.trim() : "";
@@ -197,7 +197,7 @@ export function sanitizeThemeContract(input) {
 
   const contract = {
     schemaVersion: THEME_CONTRACT_VERSION,
-    type: "tyleros-theme",
+    type: "yukios-theme",
     name,
     description,
     author,
@@ -220,7 +220,7 @@ export function buildThemeContract({
 } = {}) {
   const result = sanitizeThemeContract({
     schemaVersion: THEME_CONTRACT_VERSION,
-    type: "tyleros-theme",
+    type: "yukios-theme",
     name,
     description,
     author,

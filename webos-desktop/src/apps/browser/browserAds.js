@@ -2,7 +2,7 @@ import { ADSTERRA_KEYS } from "../../ads.js";
 
 const closeTimers = new WeakMap();
 const showTimers = new WeakMap();
-const DISMISS_KEY = "tylerBrowserAdDismissedAt";
+const DISMISS_KEY = "yukiBrowserAdDismissedAt";
 const INITIAL_DELAY_MS = 12000;
 const RESHOW_COOLDOWN_MS = 8 * 60 * 1000;
 const CLOSE_LOCK_MS = 2000;

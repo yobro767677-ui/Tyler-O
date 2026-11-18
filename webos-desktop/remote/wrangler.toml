@@ -1,4 +1,4 @@
-name = "tyleros-remote-signaling"
+name = "yukios-remote-signaling"
 main = "signaling-worker.js"
 compatibility_date = "2026-07-29"
 

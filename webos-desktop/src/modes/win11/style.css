@@ -3912,14 +3912,14 @@ html[data-theme="light"].win11-mode
     width: auto;
   }
 }
-html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsHead {
+html.win11-mode #win11-widgets-board.widPaneCont .yukiNewsHead {
   margin: 12px 0 0;
   padding: 0 2px;
   font-size: 12px;
   font-weight: 600;
   color: var(--text-secondary);
 }
-html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsRow {
+html.win11-mode #win11-widgets-board.widPaneCont .yukiNewsRow {
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -3930,15 +3930,15 @@ html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsRow {
   border-radius: 6px;
   cursor: pointer;
 }
-html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsRow:hover {
+html.win11-mode #win11-widgets-board.widPaneCont .yukiNewsRow:hover {
   background: var(--bg-secondary);
   filter: brightness(1.25);
 }
-html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsRow .tpSource {
+html.win11-mode #win11-widgets-board.widPaneCont .yukiNewsRow .tpSource {
   font-size: 12px;
   color: var(--text-secondary);
 }
-html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsRow .tpArticle {
+html.win11-mode #win11-widgets-board.widPaneCont .yukiNewsRow .tpArticle {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
@@ -3947,7 +3947,7 @@ html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsRow .tpArticle {
   overflow-wrap: break-word;
   text-overflow: clip;
 }
-html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsRow .tylerNewsDesc {
+html.win11-mode #win11-widgets-board.widPaneCont .yukiNewsRow .yukiNewsDesc {
   font-size: 12px;
   color: var(--text-secondary);
   line-height: 1.5;
@@ -3957,31 +3957,31 @@ html.win11-mode #win11-widgets-board.widPaneCont .tylerNewsRow .tylerNewsDesc {
 }
 html[data-theme="light"].win11-mode
   #win11-widgets-board.widPaneCont
-  .tylerNewsHead {
+  .yukiNewsHead {
   color: var(--text-secondary);
 }
 html[data-theme="light"].win11-mode
   #win11-widgets-board.widPaneCont
-  .tylerNewsRow:hover {
+  .yukiNewsRow:hover {
   background: var(--bg-secondary);
   filter: brightness(0.95);
 }
 html[data-theme="light"].win11-mode
   #win11-widgets-board.widPaneCont
-  .tylerNewsRow
+  .yukiNewsRow
   .tpSource {
   color: var(--text-secondary);
 }
 html[data-theme="light"].win11-mode
   #win11-widgets-board.widPaneCont
-  .tylerNewsRow
+  .yukiNewsRow
   .tpArticle {
   color: var(--text-primary);
 }
 html[data-theme="light"].win11-mode
   #win11-widgets-board.widPaneCont
-  .tylerNewsRow
-  .tylerNewsDesc {
+  .yukiNewsRow
+  .yukiNewsDesc {
   color: var(--text-secondary);
 }
 html.win11-mode #win11-sidepane.sidePane {

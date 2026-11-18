@@ -80,10 +80,10 @@ import {
   setParticleOptions,
 } from "../desktopEffects/particleEffects.js";
 export function bindNavigation(win) {
-  const layout = $(".tyler-settings-layout", win);
-  const navItems = $$(".tyler-settings-nav li[data-target]", win);
-  const groupHeaders = $$(".tyler-settings-nav-group", win);
-  const sublists = $$(".tyler-settings-sublist", win);
+  const layout = $(".yuki-settings-layout", win);
+  const navItems = $$(".yuki-settings-nav li[data-target]", win);
+  const groupHeaders = $$(".yuki-settings-nav-group", win);
+  const sublists = $$(".yuki-settings-sublist", win);
   const panes = $$(".settings-category-pane", win);
   const searchInput = $("#settingsSearch", win);
   const compact = os.storage.get(StorageKeys.sidebarCompact) !== "false";
@@ -100,10 +100,10 @@ export function bindNavigation(win) {
       const gk = item.dataset.group;
       if (gk) {
         const header = win.querySelector(
-          `.tyler-settings-nav-group[data-group="${gk}"]`,
+          `.yuki-settings-nav-group[data-group="${gk}"]`,
         );
         const sublist = win.querySelector(
-          `.tyler-settings-sublist[data-group="${gk}"]`,
+          `.yuki-settings-sublist[data-group="${gk}"]`,
         );
         if (header) {
           header.classList.add("active");
@@ -152,10 +152,10 @@ export function bindNavigation(win) {
     bindEvent(header, "click", () => {
       const gk = header.dataset.group;
       const sublist = win.querySelector(
-        `.tyler-settings-sublist[data-group="${gk}"]`,
+        `.yuki-settings-sublist[data-group="${gk}"]`,
       );
       const firstNav = sublist
-        ? sublist.querySelector(".tyler-settings-nav-item:not([data-launch])")
+        ? sublist.querySelector(".yuki-settings-nav-item:not([data-launch])")
         : null;
       if (compact) {
         if (header.classList.contains("expanded")) {
@@ -163,7 +163,7 @@ export function bindNavigation(win) {
           if (sublist) sublist.classList.remove("expanded");
           if (sublist)
             sublist
-              .querySelectorAll(".tyler-settings-nav-item.active")
+              .querySelectorAll(".yuki-settings-nav-item.active")
               .forEach((el) => el.classList.remove("active"));
           return;
         }
@@ -196,15 +196,15 @@ export function bindNavigation(win) {
           card.style.display = "";
         });
       });
-      const activeNav = $(".tyler-settings-nav li.active", win);
+      const activeNav = $(".yuki-settings-nav li.active", win);
       if (activeNav) {
         const gk = activeNav.dataset.group;
         if (gk) {
           const header = win.querySelector(
-            `.tyler-settings-nav-group[data-group="${gk}"]`,
+            `.yuki-settings-nav-group[data-group="${gk}"]`,
           );
           const sublist = win.querySelector(
-            `.tyler-settings-sublist[data-group="${gk}"]`,
+            `.yuki-settings-sublist[data-group="${gk}"]`,
           );
           if (header) header.classList.add("expanded");
           if (sublist && compact) sublist.classList.add("expanded");
@@ -270,7 +270,7 @@ export function animateSettingsPane(paneEl, onDone) {
 }
 
 function getSettingsScroller(win) {
-  return win.querySelector(".tyler-settings-content");
+  return win.querySelector(".yuki-settings-content");
 }
 
 function scrollSettingsToTop(win) {
@@ -882,7 +882,7 @@ export function bindContextMenuStyleChooser(win, showSaved) {
       const style =
         btn.dataset.cmStyle === CM_STYLES.WIN11
           ? CM_STYLES.WIN11
-          : CM_STYLES.TYLEROS;
+          : CM_STYLES.YUKIOS;
       setContextMenuStyle(style);
       const all = $$(".cm-style-option", win);
       all.forEach((b) => {
@@ -2065,7 +2065,7 @@ export function bindQuickSettings(
       if (launch) {
         if (launch === "defaultApps") {
           const navItem = win.querySelector(
-            '.tyler-settings-nav li[data-target="default-applications"]',
+            '.yuki-settings-nav li[data-target="default-applications"]',
           );
           if (navItem) {
             navItem.click();
@@ -2076,7 +2076,7 @@ export function bindQuickSettings(
         return;
       }
       const navItem = win.querySelector(
-        `.tyler-settings-nav li[data-target="${btn.dataset.target}"]${btn.dataset.scroll ? `[data-scroll="${btn.dataset.scroll}"]` : ":not([data-scroll])"}`,
+        `.yuki-settings-nav li[data-target="${btn.dataset.target}"]${btn.dataset.scroll ? `[data-scroll="${btn.dataset.scroll}"]` : ":not([data-scroll])"}`,
       );
       if (navItem) {
         navItem.click();

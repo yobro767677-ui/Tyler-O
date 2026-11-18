@@ -395,7 +395,7 @@ function buildSettingsNavHtml() {
 
   return `
       <div class="steam-settings-sidebar">
-        <div class="steam-settings-header">TYLER SETTINGS</div>
+        <div class="steam-settings-header">YUKI SETTINGS</div>
         <div class="steam-settings-nav">
           ${sections.join("\n")}
         </div>

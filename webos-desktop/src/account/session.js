@@ -1,10 +1,6 @@
 import { os } from "../framework.js";
 import { StorageKeys } from "../StorageKeys.js";
 import { SOCIAL_BASE, analyticsFetch } from "../social/endpoints.js";
-import {
-  createLocalAccount,
-  verifyLocalAccount,
-} from "./localAccountStore.js";
 
 const SESSION_KEY = StorageKeys.accountSession;
 
@@ -72,35 +68,36 @@ export function onAccountChange(cb) {
 }
 
 export async function accountLogin(identifier, password) {
-  const nickname = String(identifier || "").trim();
-  if (!nickname || !password) {
-    return { error: "Enter your nickname and password." };
+  const res = await request("/live/account/login", "POST", {
+    identifier,
+    password,
+  });
+  if (!res.ok || res.data.error) {
+    return { error: res.data.error || "Login failed. Try again." };
   }
-  const res = await verifyLocalAccount(nickname, password);
-  if (res.error) return { error: res.error };
   setSession({
-    token: `local-${res.userId}`,
-    userId: res.userId,
-    nickname: res.nickname,
+    token: res.data.token,
+    userId: res.data.userId,
+    nickname: res.data.nickname || "",
     updatedAt: Date.now(),
   });
   return { ok: true };
 }
 
 export async function accountRegister({ nickname, password }) {
-  const name = String(nickname || "").trim();
-  if (name.length < 3) {
-    return { error: "Nickname needs at least 3 characters." };
+  const current = getSession();
+  const res = await request("/live/account/register", "POST", {
+    nickname,
+    password,
+    userId: current ? current.userId : undefined,
+  });
+  if (!res.ok || res.data.error) {
+    return { error: res.data.error || "Could not create the account." };
   }
-  if (String(password || "").length < 6) {
-    return { error: "Password needs at least 6 characters." };
-  }
-  const res = await createLocalAccount(name, password);
-  if (res.error) return { error: res.error };
   setSession({
-    token: `local-${res.userId}`,
-    userId: res.userId,
-    nickname: res.nickname,
+    token: res.data.token,
+    userId: res.data.userId,
+    nickname: nickname,
     updatedAt: Date.now(),
   });
   return { ok: true };
@@ -108,8 +105,7 @@ export async function accountRegister({ nickname, password }) {
 
 export async function accountSignOut() {
   const session = getSession();
-  const isLocalSession = String(session?.token || "").startsWith("local-");
-  if (session && session.token && !isLocalSession) {
+  if (session && session.token) {
     await request("/live/account/logout", "POST").catch(() => {});
   }
   setSession(null);
@@ -126,8 +122,7 @@ export async function fetchAccountInfo(remote = true) {
     supporter: false,
     quota: { limit: 256 * 1024, used: 0, supporter: false },
   };
-  const isLocalSession = String(session.token || "").startsWith("local-");
-  if (remote && !isLocalSession) {
+  if (remote) {
     const res = await request("/live/account/me");
     if (res.ok && res.data && res.data.userId) {
       info = {

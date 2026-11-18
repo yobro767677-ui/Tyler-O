@@ -72,7 +72,7 @@ function generateIconRegistry() {
 
 export function iconRegistryPlugin() {
   return {
-    name: "tyleros-icon-registry",
+    name: "yukios-icon-registry",
     buildStart() {
       generateIconRegistry();
     },

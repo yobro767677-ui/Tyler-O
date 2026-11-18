@@ -20,7 +20,7 @@ import {
   resetTransports,
   checkWispHealth,
 } from "../../shared/transportRouter.js";
-import { buildTylerHomeSrcdoc } from "./tylerHome.js";
+import { buildYukiHomeSrcdoc } from "./yukiHome.js";
 import { escapeDinoGameAttr } from "../../shared/dino/dinoGame.js";
 import {
   isPluginEnabled as isWindowOpenPluginEnabled,
@@ -76,7 +76,7 @@ const USER_AGENT_PRESETS = [
     ua: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0",
   },
 ];
-const TYLER_HOME_ICON =
+const YUKI_HOME_ICON =
   "https://gcore.jsdelivr.net/gh/NaoTomori1/YukiOS@main/static/icons/logo.png";
 const VIEWPORT_SANDBOX =
   "allow-scripts allow-forms allow-same-origin allow-popups allow-top-navigation-by-user-activation allow-modals";
@@ -210,7 +210,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
   const state = { activeId: null, counter: 0 };
   const splitState = { splitId: null };
   const findState = { matches: [], current: -1, query: "" };
-  const tylerState = {
+  const yukiState = {
     active: false,
     kind: null,
     prevUrl: null,
@@ -236,19 +236,19 @@ export function createTabsStore(viewportContainer, opts = {}) {
   function getSelectedSettingsSection() {
     try {
       const selected = rootNode
-        ? $(".tyler-settings-nav-item.selected", rootNode)
+        ? $(".yuki-settings-nav-item.selected", rootNode)
         : null;
       if (selected && selected.dataset && selected.dataset.section)
         return normalizeSettingsSection(selected.dataset.section);
     } catch (selectedErr) {
       void selectedErr;
     }
-    return normalizeSettingsSection(tylerState.settingsSection);
+    return normalizeSettingsSection(yukiState.settingsSection);
   }
   function markSettingsSectionSelected(layout, sectionMap, id) {
     const target = normalizeSettingsSection(id);
-    tylerState.settingsSection = target;
-    const allNav = $$(".tyler-settings-nav-item", layout);
+    yukiState.settingsSection = target;
+    const allNav = $$(".yuki-settings-nav-item", layout);
     allNav.forEach((other) =>
       other.classList.toggle("selected", other.dataset.section === target),
     );
@@ -281,7 +281,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
   let settingsDismissBound = false;
   function handleSettingsDismissClick() {
     if (!rootNode) return;
-    const opens = $$(".tyler-select.open", rootNode);
+    const opens = $$(".yuki-select.open", rootNode);
     opens.forEach((sel) => sel.classList.remove("open"));
   }
   let zoomDragState = null;
@@ -517,7 +517,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
   function faviconForUrl(url) {
     const text = String(url || "");
     if (text === "yuki://home" || text === "yuki://newtab")
-      return TYLER_HOME_ICON;
+      return YUKI_HOME_ICON;
     try {
       const parsed = new URL(text);
       if (!parsed.hostname) return null;
@@ -729,7 +729,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
         return { handled: true, url };
       }
       if (currentUrl.startsWith("yuki://")) {
-        openTylerPage(currentUrl.replace("yuki://", ""));
+        openYukiPage(currentUrl.replace("yuki://", ""));
         return { handled: true, url };
       }
       try {
@@ -793,7 +793,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     const normalized = normalizeUrl(rawUrl);
     applyDarkModeForUrl(normalized);
     if (normalized === "yuki://home" || normalized === "yuki://newtab") {
-      if (tylerState.active && tab.id === state.activeId) closeTylerPage();
+      if (yukiState.active && tab.id === state.activeId) closeYukiPage();
       pushNavEntry(tab, normalized);
       tab.url = normalized;
       tab.title = titleFromUrl(normalized);
@@ -805,7 +805,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
       return tab;
     }
     if (normalized.startsWith("yuki://")) {
-      openTylerPage(normalized.replace("yuki://", ""));
+      openYukiPage(normalized.replace("yuki://", ""));
       tab.url = normalized;
       tab.title = titleFromUrl(normalized);
       pushNavEntry(tab, normalized);
@@ -813,7 +813,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
       afterNavigate();
       return tab;
     }
-    if (tylerState.active && tab.id === state.activeId) closeTylerPage();
+    if (yukiState.active && tab.id === state.activeId) closeYukiPage();
     pushNavEntry(tab, normalized);
     tab.url = normalized;
     tab.title = titleFromUrl(normalized);
@@ -863,7 +863,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     if (target === "yuki://home" || target === "yuki://newtab")
       renderNewTab(viewport);
     else if (target.startsWith("yuki://"))
-      openTylerPage(target.replace("yuki://", ""));
+      openYukiPage(target.replace("yuki://", ""));
     else {
       recordHistoryEntry(target, tab.title);
       engineRender(tab, target);
@@ -878,11 +878,11 @@ export function createTabsStore(viewportContainer, opts = {}) {
   function switchTab(id) {
     const tab = findTab(id);
     if (!tab) return null;
-    if (tylerState.active) {
-      hideTylerContainer();
-      tylerState.active = false;
-      tylerState.kind = null;
-      tylerState.settingsSection = "nav";
+    if (yukiState.active) {
+      hideYukiContainer();
+      yukiState.active = false;
+      yukiState.kind = null;
+      yukiState.settingsSection = "nav";
       zoomDragState = null;
     }
     state.activeId = id;
@@ -957,8 +957,8 @@ export function createTabsStore(viewportContainer, opts = {}) {
   async function goBack() {
     const tab = getActiveTab();
     if (!tab) return null;
-    if (tylerState.active) {
-      closeTylerPage();
+    if (yukiState.active) {
+      closeYukiPage();
       return tab;
     }
     if (!tab.navStack || tab.navIndex <= 0) return tab;
@@ -975,7 +975,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
   async function goForward() {
     const tab = getActiveTab();
     if (!tab) return null;
-    if (tylerState.active) return tab;
+    if (yukiState.active) return tab;
     if (!tab.navStack || tab.navIndex >= tab.navStack.length - 1) return tab;
     tab.navIndex += 1;
     tab.navSuppressed = true;
@@ -1012,8 +1012,8 @@ export function createTabsStore(viewportContainer, opts = {}) {
   async function reload() {
     const tab = getActiveTab();
     if (!tab) return null;
-    if (tylerState.active) {
-      renderTylerContent(tylerState.kind);
+    if (yukiState.active) {
+      renderYukiContent(yukiState.kind);
       return tab;
     }
     tab.navSuppressed = true;
@@ -1332,49 +1332,49 @@ export function createTabsStore(viewportContainer, opts = {}) {
       return viewportContainer.parentElement;
     return rootNode;
   }
-  function ensureTylerContainer() {
-    let container = rootNode ? $(".tyler-page-container", rootNode) : null;
+  function ensureYukiContainer() {
+    let container = rootNode ? $(".yuki-page-container", rootNode) : null;
     if (container) return container;
-    container = createElement("div", { className: "tyler-page-container" });
+    container = createElement("div", { className: "yuki-page-container" });
     const layer = pageLayer();
     if (layer) layer.appendChild(container);
     return container;
   }
-  function hideTylerContainer() {
+  function hideYukiContainer() {
     if (!rootNode) return;
-    const container = $(".tyler-page-container", rootNode);
+    const container = $(".yuki-page-container", rootNode);
     if (container) container.remove();
   }
-  function buildTylerHeader(container, titleText) {
-    const header = createElement("div", { className: "tyler-page-header" });
+  function buildYukiHeader(container, titleText) {
+    const header = createElement("div", { className: "yuki-page-header" });
     const back = createElement("button", {
-      className: "tyler-back-btn",
+      className: "yuki-back-btn",
       attributes: { "data-tooltip": "Back to browsing" },
     });
     back.appendChild(
       createElement("i", { className: "fa-solid fa-arrow-left" }),
     );
     bindEvent(back, "click", () => {
-      closeTylerPage();
+      closeYukiPage();
     });
-    const title = createElement("h1", { className: "tyler-page-title" });
+    const title = createElement("h1", { className: "yuki-page-title" });
     setText(title, titleText);
     header.appendChild(back);
     header.appendChild(title);
     container.appendChild(header);
   }
-  function bindTylerRow(row, url) {
+  function bindYukiRow(row, url) {
     bindEvent(row, "click", () => {
       const active = getActiveTab();
       if (active) {
-        closeTylerPage();
+        closeYukiPage();
         performNavigate(active, url);
       }
     });
   }
-  function buildTylerFilter(body) {
+  function buildYukiFilter(body) {
     const filter = createElement("input", {
-      className: "tyler-search-bar",
+      className: "yuki-search-bar",
       attributes: { type: "text", placeholder: "Filter..." },
     });
     body.appendChild(filter);
@@ -1466,7 +1466,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
           "Import bookmarks",
           "Imported " + count + " bookmarks.",
         );
-        renderTylerContent("bookmarks");
+        renderYukiContent("bookmarks");
         renderBookmarkBar();
       });
       reader.readAsText(file);
@@ -1479,8 +1479,8 @@ export function createTabsStore(viewportContainer, opts = {}) {
     if (!text) return;
     blockedLog.push({ url: text, time: Date.now() });
     while (blockedLog.length > BLOCKED_LOG_CAP) blockedLog.shift();
-    if (tylerState.active && tylerState.kind === "blocking-log")
-      renderTylerContent("blocking-log");
+    if (yukiState.active && yukiState.kind === "blocking-log")
+      renderYukiContent("blocking-log");
   }
   function renderBlockingBody(body) {
     const total = blockedLog.length;
@@ -1512,7 +1512,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     if (total === 0) {
       body.appendChild(
         createElement("div", {
-          className: "tyler-page-empty",
+          className: "yuki-page-empty",
           text: "No blocked requests yet",
         }),
       );
@@ -1552,12 +1552,12 @@ export function createTabsStore(viewportContainer, opts = {}) {
     body.appendChild(page);
   }
   function renderHistoryBody(body) {
-    buildTylerFilter(body);
+    buildYukiFilter(body);
     const history = loadHistoryList();
     if (history.length === 0) {
       body.appendChild(
         createElement("div", {
-          className: "tyler-page-empty",
+          className: "yuki-page-empty",
           text: "No history yet",
         }),
       );
@@ -1612,12 +1612,12 @@ export function createTabsStore(viewportContainer, opts = {}) {
       content.appendChild(time);
       row.appendChild(fav);
       row.appendChild(content);
-      bindTylerRow(row, url);
+      bindYukiRow(row, url);
       body.appendChild(row);
     });
   }
   function renderBookmarksBody(body) {
-    buildTylerFilter(body);
+    buildYukiFilter(body);
     const actions = createElement("div", { className: "bookmark-actions" });
     const exportBtn = createElement("button", {
       className: "settings-action-btn",
@@ -1640,7 +1640,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     if (bookmarks.length === 0) {
       body.appendChild(
         createElement("div", {
-          className: "tyler-page-empty",
+          className: "yuki-page-empty",
           text: "No bookmarks yet",
         }),
       );
@@ -1668,21 +1668,21 @@ export function createTabsStore(viewportContainer, opts = {}) {
         const next = loadBookmarks();
         next.splice(markIndex, 1);
         safeSet(StorageKeys.browserBookmarks, next);
-        renderTylerContent("bookmarks");
+        renderYukiContent("bookmarks");
         renderBookmarkBar();
       });
       row.appendChild(content);
       row.appendChild(remove);
-      bindTylerRow(row, url);
+      bindYukiRow(row, url);
       body.appendChild(row);
     });
   }
   function renderDownloadsBody(body) {
-    buildTylerFilter(body);
+    buildYukiFilter(body);
     if (downloadList.length === 0) {
       body.appendChild(
         createElement("div", {
-          className: "tyler-page-empty",
+          className: "yuki-page-empty",
           text: "No downloads yet",
         }),
       );
@@ -1704,7 +1704,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
       content.appendChild(sub);
       row.appendChild(glyph);
       row.appendChild(content);
-      if (url) bindTylerRow(row, url);
+      if (url) bindYukiRow(row, url);
       body.appendChild(row);
     });
   }
@@ -1712,11 +1712,11 @@ export function createTabsStore(viewportContainer, opts = {}) {
     const initialSection = normalizeSettingsSection(
       activeSection || getSelectedSettingsSection(),
     );
-    tylerState.settingsSection = initialSection;
-    const layout = createElement("div", { className: "tyler-settings-layout" });
-    const nav = createElement("div", { className: "tyler-settings-nav" });
+    yukiState.settingsSection = initialSection;
+    const layout = createElement("div", { className: "yuki-settings-layout" });
+    const nav = createElement("div", { className: "yuki-settings-nav" });
     const content = createElement("div", {
-      className: "tyler-settings-content",
+      className: "yuki-settings-content",
     });
     const navDefs = [
       { id: "nav", label: "Navigation", icon: "fa-compass" },
@@ -1740,7 +1740,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     const sectionMap = {};
     navDefs.forEach((def) => {
       const item = createElement("a", {
-        className: "tyler-settings-nav-item",
+        className: "yuki-settings-nav-item",
         attributes: { "data-section": def.id },
       });
       if (def.id === initialSection) item.classList.add("selected");
@@ -1793,7 +1793,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     }
     const navSection = createElement("div", {
       className:
-        "tyler-settings-section" + (initialSection === "nav" ? " active" : ""),
+        "yuki-settings-section" + (initialSection === "nav" ? " active" : ""),
       attributes: { "data-section": "nav" },
     });
     navSection.appendChild(makeTitle("fa-compass", "Navigation"));
@@ -1865,30 +1865,30 @@ export function createTabsStore(viewportContainer, opts = {}) {
     ];
     const currentRegion = safeGet(StorageKeys.browserSearchRegion, "") || "";
     const regionSelect = createElement("div", {
-      className: "tyler-select",
+      className: "yuki-select",
       attributes: { "data-value": currentRegion },
     });
     const regionTrigger = createElement("div", {
-      className: "tyler-select-trigger",
+      className: "yuki-select-trigger",
     });
     const regionLabelSpan = createElement("span", {
-      className: "tyler-select-label",
+      className: "yuki-select-label",
     });
     const foundRegion =
       regionOpts.find((opt) => opt.value === currentRegion) || regionOpts[0];
     setText(regionLabelSpan, foundRegion.label);
     const regionArrow = createElement("i", {
-      className: "fa-solid fa-chevron-down tyler-select-arrow",
+      className: "fa-solid fa-chevron-down yuki-select-arrow",
     });
     regionTrigger.appendChild(regionLabelSpan);
     regionTrigger.appendChild(regionArrow);
     const regionDrop = createElement("div", {
-      className: "tyler-select-dropdown",
+      className: "yuki-select-dropdown",
     });
     regionOpts.forEach((opt) => {
       const optEl = createElement("div", {
         className:
-          "tyler-select-option" +
+          "yuki-select-option" +
           (opt.value === currentRegion ? " selected" : ""),
         attributes: { "data-value": opt.value },
       });
@@ -1898,7 +1898,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
         safeSet(StorageKeys.browserSearchRegion, opt.value);
         regionSelect.dataset.value = opt.value;
         setText(regionLabelSpan, opt.label);
-        const allOpts = $$(".tyler-select-option", regionSelect);
+        const allOpts = $$(".yuki-select-option", regionSelect);
         allOpts.forEach((other) =>
           other.classList.toggle("selected", other.dataset.value === opt.value),
         );
@@ -1911,7 +1911,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     bindEvent(regionTrigger, "click", (ev) => {
       ev.stopPropagation();
       const wasOpen = regionSelect.classList.contains("open");
-      const opens = $$(".tyler-select.open", body);
+      const opens = $$(".yuki-select.open", body);
       opens.forEach((sel) => {
         if (sel !== regionSelect) sel.classList.remove("open");
       });
@@ -1922,7 +1922,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     sectionMap.nav = navSection;
     content.appendChild(navSection);
     const appearanceSection = createElement("div", {
-      className: "tyler-settings-section",
+      className: "yuki-settings-section",
       attributes: { "data-section": "appearance" },
     });
     appearanceSection.appendChild(makeTitle("fa-palette", "Appearance"));
@@ -1954,16 +1954,16 @@ export function createTabsStore(viewportContainer, opts = {}) {
     setStyle(zoomWrap, { display: "flex", alignItems: "center", gap: "6px" });
     const zoomPctInit = Math.round(zoomLevel * 100);
     const rangeEl = createElement("div", {
-      className: "tyler-range",
+      className: "yuki-range",
       attributes: {
         "data-min": "50",
         "data-max": "200",
         "data-value": String(zoomPctInit),
       },
     });
-    const track = createElement("div", { className: "tyler-range-track" });
-    const fill = createElement("div", { className: "tyler-range-fill" });
-    const thumb = createElement("div", { className: "tyler-range-thumb" });
+    const track = createElement("div", { className: "yuki-range-track" });
+    const fill = createElement("div", { className: "yuki-range-fill" });
+    const thumb = createElement("div", { className: "yuki-range-thumb" });
     const initPct = ((zoomPctInit - 50) / (200 - 50)) * 100;
     setStyle(fill, { width: initPct + "%" });
     setStyle(thumb, { left: initPct + "%" });
@@ -2013,7 +2013,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     sectionMap.appearance = appearanceSection;
     content.appendChild(appearanceSection);
     const uaSection = createElement("div", {
-      className: "tyler-settings-section",
+      className: "yuki-settings-section",
       attributes: { "data-section": "user-agent" },
     });
     uaSection.appendChild(makeTitle("fa-laptop-code", "User-Agent Header"));
@@ -2062,7 +2062,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     uaSave.appendChild(uaSaveLabel);
     bindEvent(uaSave, "click", () => {
       safeSet(StorageKeys.browserUserAgent, String(uaInput.value || "").trim());
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     const uaReset = createElement("button", {
       className: "settings-action-btn",
@@ -2070,7 +2070,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     setText(uaReset, "Reset Default");
     bindEvent(uaReset, "click", () => {
       safeSet(StorageKeys.browserUserAgent, "");
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     uaRow.appendChild(uaSave);
     uaRow.appendChild(uaReset);
@@ -2078,7 +2078,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     sectionMap["user-agent"] = uaSection;
     content.appendChild(uaSection);
     const tabsSection = createElement("div", {
-      className: "tyler-settings-section",
+      className: "yuki-settings-section",
       attributes: { "data-section": "tabs" },
     });
     tabsSection.appendChild(makeTitle("fa-gears", "Tabs"));
@@ -2239,7 +2239,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     sectionMap.tabs = tabsSection;
     content.appendChild(tabsSection);
     const privacySection = createElement("div", {
-      className: "tyler-settings-section",
+      className: "yuki-settings-section",
       attributes: { "data-section": "privacy" },
     });
     privacySection.appendChild(makeTitle("fa-shield", "Privacy"));
@@ -2294,7 +2294,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
           saveDarkExclusions(next);
           const active = getActiveTab();
           if (active) applyDarkModeForUrl(active.url);
-          renderTylerContent("settings");
+          renderYukiContent("settings");
         });
         row.appendChild(nameSpan);
         row.appendChild(rem);
@@ -2323,14 +2323,14 @@ export function createTabsStore(viewportContainer, opts = {}) {
       next[host] = true;
       saveDarkExclusions(next);
       applyDarkModeForUrl(active.url);
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     exclBtnWrap.appendChild(exclBtn);
     privacySection.appendChild(exclBtnWrap);
     sectionMap.privacy = privacySection;
     content.appendChild(privacySection);
     const enginesSection = createElement("div", {
-      className: "tyler-settings-section",
+      className: "yuki-settings-section",
       attributes: { "data-section": "search-engines" },
     });
     enginesSection.appendChild(
@@ -2373,7 +2373,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
           const next = getCustomEngines();
           next.splice(idx, 1);
           saveCustomEngines(next);
-          renderTylerContent("settings");
+          renderYukiContent("settings");
         });
         row.appendChild(info);
         row.appendChild(rem);
@@ -2405,14 +2405,14 @@ export function createTabsStore(viewportContainer, opts = {}) {
         url: String(url).replace("{search}", ""),
       });
       saveCustomEngines(next);
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     addWrap.appendChild(addBtn);
     enginesSection.appendChild(addWrap);
     sectionMap["search-engines"] = enginesSection;
     content.appendChild(enginesSection);
     const dataSection = createElement("div", {
-      className: "tyler-settings-section",
+      className: "yuki-settings-section",
       attributes: { "data-section": "data" },
     });
     dataSection.appendChild(makeTitle("fa-database", "Data"));
@@ -2429,7 +2429,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
       );
       if (!ok) return;
       safeSet(StorageKeys.browserHistory, []);
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     const clearDlBtn = createElement("button", {
       className: "settings-action-btn",
@@ -2443,7 +2443,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
       if (!ok) return;
       downloadList.length = 0;
       updateMenuBadges();
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     const clearAllBtn = createElement("button", {
       className: "settings-action-btn danger",
@@ -2456,7 +2456,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
       );
       if (!ok) return;
       clearBrowsingData();
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     dataWrap.appendChild(clearHistBtn);
     dataWrap.appendChild(clearDlBtn);
@@ -2465,7 +2465,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     sectionMap.data = dataSection;
     content.appendChild(dataSection);
     const proxySection = createElement("div", {
-      className: "tyler-settings-section",
+      className: "yuki-settings-section",
       attributes: { "data-section": "proxy" },
     });
     proxySection.appendChild(makeTitle("fa-server", "Proxy"));
@@ -2540,7 +2540,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
               saveCustomWisps(next);
               if (currentWispUrl() === server.url)
                 saveWispUrl(DEFAULT_WISP_URL);
-              renderTylerContent("settings");
+              renderYukiContent("settings");
             });
         });
         status.appendChild(del);
@@ -2609,7 +2609,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
       if (known.includes(raw)) return;
       existing.push({ name: "Custom " + (existing.length + 1), url: raw });
       saveCustomWisps(existing);
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     wispRow.appendChild(wispInput);
     wispRow.appendChild(wispAdd);
@@ -2620,14 +2620,14 @@ export function createTabsStore(viewportContainer, opts = {}) {
     setText(repairBtn, "Repair Proxy");
     bindEvent(repairBtn, "click", () => {
       resetTransports();
-      renderTylerContent("settings");
+      renderYukiContent("settings");
       os.notify.send("Proxy repaired", "Transport state has been reset.");
     });
     proxySection.appendChild(repairBtn);
     sectionMap.proxy = proxySection;
     content.appendChild(proxySection);
     const dangerSection = createElement("div", {
-      className: "tyler-settings-section",
+      className: "yuki-settings-section",
       attributes: { "data-section": "danger-zone" },
     });
     dangerSection.appendChild(
@@ -2649,8 +2649,8 @@ export function createTabsStore(viewportContainer, opts = {}) {
           const key = localStorage.key(i);
           if (
             typeof key === "string" &&
-            (key.startsWith("tylerOS_browser") ||
-              key.startsWith("tylerOS_wisp") ||
+            (key.startsWith("yukiOS_browser") ||
+              key.startsWith("yukiOS_wisp") ||
               key.startsWith("scramjet_"))
           )
             toRemove.push(key);
@@ -2665,7 +2665,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
       } catch (enumErr) {
         return;
       }
-      renderTylerContent("settings");
+      renderYukiContent("settings");
     });
     dangerSection.appendChild(resetBtn);
     sectionMap["danger-zone"] = dangerSection;
@@ -2686,33 +2686,33 @@ export function createTabsStore(viewportContainer, opts = {}) {
     layout.appendChild(content);
     body.appendChild(layout);
   }
-  function renderTylerContent(kind, activeSection) {
+  function renderYukiContent(kind, activeSection) {
     if (kind === "settings") {
       const preserved = normalizeSettingsSection(
         activeSection ||
           getSelectedSettingsSection() ||
-          tylerState.settingsSection,
+          yukiState.settingsSection,
       );
-      tylerState.settingsSection = preserved;
-      const container = ensureTylerContainer();
+      yukiState.settingsSection = preserved;
+      const container = ensureYukiContainer();
       container.replaceChildren();
       setStyle(container, { display: "block" });
       container.classList.toggle("settings-zoom", true);
-      buildTylerHeader(container, "Settings");
+      buildYukiHeader(container, "Settings");
       const settingsBody = createElement("div", {
-        className: "tyler-page-body",
+        className: "yuki-page-body",
       });
       container.appendChild(settingsBody);
       renderSettingsBody(settingsBody, preserved);
       return;
     }
-    const container = ensureTylerContainer();
+    const container = ensureYukiContainer();
     container.replaceChildren();
     setStyle(container, { display: "block" });
     container.classList.toggle("settings-zoom", kind === "settings");
     const label = kind.charAt(0).toUpperCase() + kind.slice(1);
-    buildTylerHeader(container, label);
-    const body = createElement("div", { className: "tyler-page-body" });
+    buildYukiHeader(container, label);
+    const body = createElement("div", { className: "yuki-page-body" });
     container.appendChild(body);
     if (kind === "history") renderHistoryBody(body);
     else if (kind === "bookmarks") renderBookmarksBody(body);
@@ -2722,55 +2722,55 @@ export function createTabsStore(viewportContainer, opts = {}) {
     else if (kind === "settings")
       renderSettingsBody(body, getSelectedSettingsSection());
     else {
-      const empty = createElement("div", { className: "tyler-page-empty" });
+      const empty = createElement("div", { className: "yuki-page-empty" });
       setText(empty, label);
       body.appendChild(empty);
     }
   }
-  function openTylerPage(kind) {
+  function openYukiPage(kind) {
     const target = String(kind || "history");
     const active = getActiveTab();
-    if (active && !tylerState.active) {
-      tylerState.prevUrl = active.url;
-      tylerState.prevTitle = active.title;
+    if (active && !yukiState.active) {
+      yukiState.prevUrl = active.url;
+      yukiState.prevTitle = active.title;
     }
     const freshSettings =
       target === "settings" &&
-      (!tylerState.active || tylerState.kind !== "settings");
-    if (freshSettings) tylerState.settingsSection = "nav";
-    tylerState.active = true;
-    tylerState.kind = target;
+      (!yukiState.active || yukiState.kind !== "settings");
+    if (freshSettings) yukiState.settingsSection = "nav";
+    yukiState.active = true;
+    yukiState.kind = target;
     tabs.forEach((tab) => {
       if (tab.viewport) setStyle(tab.viewport, { display: "none" });
     });
-    renderTylerContent(target);
+    renderYukiContent(target);
     notifyAddress(HOME_URL + "/" + target);
     return target;
   }
-  function closeTylerPage() {
-    tylerState.active = false;
-    tylerState.kind = null;
-    tylerState.settingsSection = "nav";
+  function closeYukiPage() {
+    yukiState.active = false;
+    yukiState.kind = null;
+    yukiState.settingsSection = "nav";
     zoomDragState = null;
-    hideTylerContainer();
+    hideYukiContainer();
     const active = getActiveTab();
     if (active) {
       if (
-        tylerState.prevUrl &&
+        yukiState.prevUrl &&
         active.url &&
         String(active.url).startsWith("yuki://")
       ) {
-        active.url = tylerState.prevUrl;
-        active.title = tylerState.prevTitle || titleFromUrl(tylerState.prevUrl);
+        active.url = yukiState.prevUrl;
+        active.title = yukiState.prevTitle || titleFromUrl(yukiState.prevUrl);
       }
       applyVisibility();
       notifyAddress(active.url);
     } else applyVisibility();
-    tylerState.prevUrl = null;
-    tylerState.prevTitle = null;
+    yukiState.prevUrl = null;
+    yukiState.prevTitle = null;
   }
   function newTabHtml() {
-    return buildTylerHomeSrcdoc();
+    return buildYukiHomeSrcdoc();
   }
   function renderNewTab(frame) {
     const target = frame || (getActiveTab() ? getActiveTab().viewport : null);
@@ -3165,9 +3165,9 @@ export function createTabsStore(viewportContainer, opts = {}) {
     if (name === "new-tab" || name === "new-window")
       return addTab(DEFAULT_TAB_URL);
     if (name === "new-private-window") return addTab(DEFAULT_TAB_URL);
-    if (name === "downloads") return openTylerPage("downloads");
-    if (name === "history") return openTylerPage("history");
-    if (name === "bookmarks") return openTylerPage("bookmarks");
+    if (name === "downloads") return openYukiPage("downloads");
+    if (name === "history") return openYukiPage("history");
+    if (name === "bookmarks") return openYukiPage("bookmarks");
     if (name === "toggle-bookmark") return toggleBookmark();
     if (name === "reload") return reload();
     if (name === "toggle-bookmarkbar") {
@@ -3184,12 +3184,12 @@ export function createTabsStore(viewportContainer, opts = {}) {
       try {
         os.app.launch("erudaApp");
       } catch (launchErr) {
-        openTylerPage("settings");
+        openYukiPage("settings");
       }
       return true;
     }
     if (name === "wisp-settings" || name === "settings")
-      return openTylerPage("settings");
+      return openYukiPage("settings");
     if (name === "clear-data") {
       os.dialog
         .confirm(
@@ -3391,7 +3391,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
     renderBookmarkBar();
     updateStarButton();
     updateMenuBadges();
-    if (tylerState.active) renderTylerContent(tylerState.kind);
+    if (yukiState.active) renderYukiContent(yukiState.kind);
     notifyChange();
     return true;
   }
@@ -3430,8 +3430,8 @@ export function createTabsStore(viewportContainer, opts = {}) {
     activateOmniboxSelection,
     toggleBookmark,
     renderBookmarkBar,
-    openTylerPage,
-    closeTylerPage,
+    openYukiPage,
+    closeYukiPage,
     renderNewTab,
     findNext,
     findPrev,

@@ -1,6 +1,6 @@
 import { withBase } from "../../../../shared/basePath.js";
 import { os, StorageKeys } from "../../../../framework.js";
-import { TYLEROS_VERSION } from "../../../../apps/about.js";
+import { YUKIOS_VERSION } from "../../../../apps/about.js";
 import { versionChecker } from "../../../../versionChecker.js";
 import { $, bindEvent, setHTML, setText } from "../../../../shared/domUtils.js";
 import { custom, escapeHtml } from "../win11Controls.js";
@@ -46,7 +46,7 @@ function lastCheckedLabel() {
 
 function updateStatusText() {
   const remote = os.storage.get(StorageKeys.lastKnownRemoteVersion);
-  if (remote && isNewerVersion(remote, TYLEROS_VERSION)) {
+  if (remote && isNewerVersion(remote, YUKIOS_VERSION)) {
     return {
       title: "Update available",
       detail: `Tyler OS ${remote} is ready to install`,
@@ -115,7 +115,7 @@ registerWin11Binding("updateHistory", {
   render: () => `<div class="win11-empty">Loading update history...</div>`,
   bind: (host) => {
     const remote = os.storage.get(StorageKeys.lastKnownRemoteVersion);
-    const current = TYLEROS_VERSION;
+    const current = YUKIOS_VERSION;
     setHTML(
       host,
       `

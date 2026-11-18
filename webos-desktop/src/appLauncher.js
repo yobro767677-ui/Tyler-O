@@ -28,9 +28,9 @@ import {
   resolveGhUrl,
 } from "./shared/assetResolver.js";
 import {
-  tylerITDevToolsBridge,
-  TYLER_DEV_TOOLS_URL,
-} from "./tylerITDevToolsBridge.js";
+  yukiITDevToolsBridge,
+  YUKI_DEV_TOOLS_URL,
+} from "./yukiITDevToolsBridge.js";
 import { ClippyAnimation, initClippy, speak } from "./ai/clippy.js";
 const clippySpeak = speak;
 import { GameOverlayController } from "./gameOverlay.js";
@@ -215,7 +215,7 @@ export class AppLauncher {
 
     window.addEventListener("message", async (event) => {
       const data = event?.data;
-      if (!data || data.__tyleros !== "navigate" || typeof data.url !== "string")
+      if (!data || data.__yukios !== "navigate" || typeof data.url !== "string")
         return;
 
       let sourceIframe = null;
@@ -503,21 +503,21 @@ export class AppLauncher {
     window.open(appUrl, "_blank", "noopener,noreferrer");
   }
 
-  async openTylerDevToolsApp(extra = {}) {
-    const appId = "tylerDevTools";
+  async openYukiDevToolsApp(extra = {}) {
+    const appId = "yukiDevTools";
     if (this.bringToFrontIfExists(appId)) return;
 
     const title = this.appMap[appId]?.title || "Tyler Dev Tools";
-    let iframeUrl = TYLER_DEV_TOOLS_URL;
+    let iframeUrl = YUKI_DEV_TOOLS_URL;
 
     try {
-      iframeUrl = await tylerITDevToolsBridge(TYLER_DEV_TOOLS_URL);
+      iframeUrl = await yukiITDevToolsBridge(YUKI_DEV_TOOLS_URL);
     } catch (err) {
       console.error("Failed to build bridged Tyler Dev Tools iframe", err);
     }
 
     const contentHtml = `<iframe src="${iframeUrl}" ${IFRAME_ATTRS}></iframe>`;
-    this.createWindow(appId, title, contentHtml, TYLER_DEV_TOOLS_URL, appId, {
+    this.createWindow(appId, title, contentHtml, YUKI_DEV_TOOLS_URL, appId, {
       type: "game",
       ...extra,
     });
@@ -932,7 +932,7 @@ player.load("${swfPath}");
   ) {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has("game") && appId) {
-      if (window.__tylerCloakActive !== true)
+      if (window.__yukiCloakActive !== true)
         document.title = sanitizeTitle(title);
       document.head.insertAdjacentHTML(
         "beforeend",

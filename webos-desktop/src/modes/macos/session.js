@@ -53,9 +53,9 @@ export function disableMacSettings() {
   os.events.emit(BusEvents.SETTINGS_CHANGED, {});
   const currentTheme = os.storage.get(StorageKeys.theme);
   if (currentTheme === "macos-fluent") {
-    os.storage.set(StorageKeys.theme, "tyleros");
+    os.storage.set(StorageKeys.theme, "yukios");
     applyTheme(
-      "tyleros",
+      "yukios",
       () => os.storage.get(StorageKeys.customColors) || null,
     );
   }

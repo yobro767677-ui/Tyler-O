@@ -4,30 +4,30 @@ import { formatSize } from "../utils/utils.js";
 import { performanceManager } from "../shared/performanceManager.js";
 import { animateThemeChange } from "../settings/themeTransition.js";
 
-export function tylerHelpText() {
+export function yukiHelpText() {
   return [
     "",
-    "  tyler help                      Show this help",
+    "  yuki help                      Show this help",
     "",
-    "  tyler power <mode>              Set power mode (performance, balanced, high)",
-    "  tyler brightness s|set <0-100>  Set brightness level",
-    "  tyler brightness get            Show current brightness",
-    "  tyler theme <name>              Switch theme",
-    "  tyler wallpaper random          Set random wallpaper",
+    "  yuki power <mode>              Set power mode (performance, balanced, high)",
+    "  yuki brightness s|set <0-100>  Set brightness level",
+    "  yuki brightness get            Show current brightness",
+    "  yuki theme <name>              Switch theme",
+    "  yuki wallpaper random          Set random wallpaper",
     "",
-    "  tyler dnd on|off                Toggle Do Not Disturb",
-    "  tyler workspace <n>             Switch to workspace",
-    "  tyler workspaces list           List workspaces",
+    "  yuki dnd on|off                Toggle Do Not Disturb",
+    "  yuki workspace <n>             Switch to workspace",
+    "  yuki workspaces list           List workspaces",
     "",
-    "  tyler app list [query]          List apps with optional search",
-    "  tyler app uninstall <appId>     Uninstall an app",
-    "  tyler app install <appId>       Restore an app",
-    "  tyler app disable <appId>       Disable an app",
-    "  tyler app enable <appId>        Enable an app",
+    "  yuki app list [query]          List apps with optional search",
+    "  yuki app uninstall <appId>     Uninstall an app",
+    "  yuki app install <appId>       Restore an app",
+    "  yuki app disable <appId>       Disable an app",
+    "  yuki app enable <appId>        Enable an app",
     "",
-    "  tyler notifications clear       Clear all notifications",
+    "  yuki notifications clear       Clear all notifications",
     "",
-    "  tyler storage report            Storage usage breakdown",
+    "  yuki storage report            Storage usage breakdown",
     "",
   ];
 }
@@ -36,9 +36,9 @@ function powerModes() {
   return { performance: "performance", balanced: "balanced", high: "high" };
 }
 
-export async function cmdTyler(terminal, args) {
+export async function cmdYuki(terminal, args) {
   if (!args.length) {
-    for (const line of tylerHelpText()) await terminal.enqueuePrint(line);
+    for (const line of yukiHelpText()) await terminal.enqueuePrint(line);
     return;
   }
 
@@ -46,7 +46,7 @@ export async function cmdTyler(terminal, args) {
 
   switch (sub) {
     case "help": {
-      for (const line of tylerHelpText()) await terminal.enqueuePrint(line);
+      for (const line of yukiHelpText()) await terminal.enqueuePrint(line);
       break;
     }
 
@@ -54,7 +54,7 @@ export async function cmdTyler(terminal, args) {
       const mode = args[1];
       if (!mode || !powerModes()[mode]) {
         await terminal.enqueuePrint(
-          "Usage: tyler power <performance|balanced|high>",
+          "Usage: yuki power <performance|balanced|high>",
         );
         break;
       }
@@ -69,7 +69,7 @@ export async function cmdTyler(terminal, args) {
       if (sub === "s" || sub === "set") {
         const val = parseInt(args[2]);
         if (isNaN(val) || val < 0 || val > 100) {
-          await terminal.enqueuePrint("Usage: tyler brightness set <0-100>");
+          await terminal.enqueuePrint("Usage: yuki brightness set <0-100>");
           break;
         }
         os.storage.set(StorageKeys.brightness, val);
@@ -83,7 +83,7 @@ export async function cmdTyler(terminal, args) {
         await terminal.enqueuePrint(`  Brightness: ${current}%`);
       } else {
         await terminal.enqueuePrint(
-          "Usage: tyler brightness s|set <0-100>  |  tyler brightness get",
+          "Usage: yuki brightness s|set <0-100>  |  yuki brightness get",
         );
       }
       break;
@@ -92,7 +92,7 @@ export async function cmdTyler(terminal, args) {
     case "theme": {
       const name = args[1];
       if (!name) {
-        await terminal.enqueuePrint("Usage: tyler theme <theme-name>");
+        await terminal.enqueuePrint("Usage: yuki theme <theme-name>");
         break;
       }
       os.storage.set(StorageKeys.theme, name);
@@ -114,7 +114,7 @@ export async function cmdTyler(terminal, args) {
         os.events.emit("WALLPAPER_CHANGED", { index: idx });
         await terminal.enqueuePrint("  Random wallpaper applied");
       } else {
-        await terminal.enqueuePrint("Usage: tyler wallpaper random");
+        await terminal.enqueuePrint("Usage: yuki wallpaper random");
       }
       break;
     }
@@ -130,7 +130,7 @@ export async function cmdTyler(terminal, args) {
         os.events.emit("SETTINGS_CHANGED", { dnd: enabled });
         await terminal.enqueuePrint(`  Do Not Disturb: ${val}`);
       } else {
-        await terminal.enqueuePrint("Usage: tyler dnd on|off");
+        await terminal.enqueuePrint("Usage: yuki dnd on|off");
       }
       break;
     }
@@ -167,7 +167,7 @@ export async function cmdTyler(terminal, args) {
         }
       } else {
         await terminal.enqueuePrint(
-          "Usage: tyler workspace <n>  |  tyler workspaces list",
+          "Usage: yuki workspace <n>  |  yuki workspaces list",
         );
       }
       break;
@@ -212,11 +212,11 @@ export async function cmdTyler(terminal, args) {
 
       if (!id) {
         await terminal.enqueuePrint("Usage:");
-        await terminal.enqueuePrint("  tyler app list [query]");
-        await terminal.enqueuePrint("  tyler app uninstall <appId>");
-        await terminal.enqueuePrint("  tyler app install <appId>");
-        await terminal.enqueuePrint("  tyler app disable <appId>");
-        await terminal.enqueuePrint("  tyler app enable <appId>");
+        await terminal.enqueuePrint("  yuki app list [query]");
+        await terminal.enqueuePrint("  yuki app uninstall <appId>");
+        await terminal.enqueuePrint("  yuki app install <appId>");
+        await terminal.enqueuePrint("  yuki app disable <appId>");
+        await terminal.enqueuePrint("  yuki app enable <appId>");
         break;
       }
 
@@ -279,7 +279,7 @@ export async function cmdTyler(terminal, args) {
           await terminal.enqueuePrint("  Notification center not available");
         }
       } else {
-        await terminal.enqueuePrint("Usage: tyler notifications clear");
+        await terminal.enqueuePrint("Usage: yuki notifications clear");
       }
       break;
     }
@@ -302,14 +302,14 @@ export async function cmdTyler(terminal, args) {
         const files = os.storage.get(StorageKeys.recentFiles) || [];
         await terminal.enqueuePrint(`  Recent files tracked: ${files.length}`);
       } else {
-        await terminal.enqueuePrint("Usage: tyler storage report");
+        await terminal.enqueuePrint("Usage: yuki storage report");
       }
       break;
     }
 
     default: {
-      await terminal.enqueuePrint(`tyler: unknown subcommand '${sub}'`);
-      await terminal.enqueuePrint("Run 'tyler help' for usage");
+      await terminal.enqueuePrint(`yuki: unknown subcommand '${sub}'`);
+      await terminal.enqueuePrint("Run 'yuki help' for usage");
     }
   }
 }

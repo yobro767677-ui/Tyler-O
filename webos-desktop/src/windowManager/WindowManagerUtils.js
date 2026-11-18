@@ -65,7 +65,7 @@ export class WindowManagerUtils {
   }
 
   reassertCloak() {
-    if (window.__tylerCloakActive !== true) return false;
+    if (window.__yukiCloakActive !== true) return false;
     let key = null;
     try {
       key = os.storage.get(StorageKeys.tabCloak) || null;
@@ -189,7 +189,7 @@ export class WindowManagerUtils {
 
   initVisibilityTracking() {
     document.addEventListener("visibilitychange", () => {
-      if (window.__tylerCloakActive === true) return;
+      if (window.__yukiCloakActive === true) return;
       if (document.hidden) {
         document.title = this.manager.initialTitle;
         this.getFaviconLink().href = this.manager.initialFavicon || "";

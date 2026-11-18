@@ -4,7 +4,7 @@
   font-display: block;
 }
 
-html.win11-mode #tylerOS-settings .win11-settings {
+html.win11-mode #yukiOS-settings .win11-settings {
   --txt_clr-rgb: 255 255 255;
   --clrPrm: var(--win11-accent);
   --alt-txt: #000000;
@@ -24,7 +24,7 @@ html.win11-mode #tylerOS-settings .win11-settings {
   --select-bg: var(--win11-select-dark);
 }
 
-html.win11-mode[data-theme-mode="light"] #tylerOS-settings .win11-settings {
+html.win11-mode[data-theme-mode="light"] #yukiOS-settings .win11-settings {
   --txt_clr-rgb: 0 0 0;
   --clrPrm: var(--win11-accent-light);
   --alt-txt: #ffffff;
@@ -47,7 +47,7 @@ html.win11-mode[data-theme-mode="light"] #tylerOS-settings .win11-settings {
   --select-bg: var(--win11-select-light);
 }
 
-html.transparent-ui.tp-window-body.win11-mode #tylerOS-settings .win11-settings {
+html.transparent-ui.tp-window-body.win11-mode #yukiOS-settings .win11-settings {
   --fakeMica: color-mix(in srgb, var(--win11-mica-base) 82%, transparent)
     radial-gradient(
       color-mix(in srgb, var(--win11-mica-tint) 88%, transparent) 25%,
@@ -59,7 +59,7 @@ html.transparent-ui.tp-window-body.win11-mode #tylerOS-settings .win11-settings 
 }
 
 html.transparent-ui.tp-window-body.win11-mode[data-theme-mode="light"]
-  #tylerOS-settings
+  #yukiOS-settings
   .win11-settings {
   --fakeMica: color-mix(in srgb, var(--win11-mica-light-base) 82%, transparent)
     radial-gradient(
@@ -69,7 +69,7 @@ html.transparent-ui.tp-window-body.win11-mode[data-theme-mode="light"]
     no-repeat fixed;
 }
 
-html.win11-mode #tylerOS-settings .win11-settings {
+html.win11-mode #yukiOS-settings .win11-settings {
   background: var(--fakeMica);
   color: rgb(var(--txt_clr-rgb));
   min-width: 720px;
@@ -80,7 +80,7 @@ html.win11-mode #tylerOS-settings .win11-settings {
   min-height: 0;
 }
 
-html.win11-mode #tylerOS-settings .win11-settings .restWindow {
+html.win11-mode #yukiOS-settings .win11-settings .restWindow {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -89,12 +89,12 @@ html.win11-mode #tylerOS-settings .win11-settings .restWindow {
 }
 
 @supports (container-type: inline-size) {
-  html.win11-mode #tylerOS-settings .win11-settings {
+  html.win11-mode #yukiOS-settings .win11-settings {
     min-width: 360px;
   }
 }
 
-html.win11-mode #tylerOS-settings .win11-settings .restWindow {
+html.win11-mode #yukiOS-settings .win11-settings .restWindow {
   font-size: 14px;
   height: 100%;
 
@@ -614,7 +614,7 @@ html.win11-mode #tylerOS-settings .win11-settings .restWindow {
 }
 
 html.win11-mode[data-theme-mode="light"]
-  #tylerOS-settings
+  #yukiOS-settings
   .win11-settings
   .restWindow {
   nav .nav_top .search {
@@ -635,7 +635,7 @@ html.win11-mode[data-theme-mode="light"]
   }
 }
 
-html.win11-mode #tylerOS-settings .win11-settings .restWindow {
+html.win11-mode #yukiOS-settings .win11-settings .restWindow {
   .win11-subpage-head {
     display: flex;
     align-items: center;

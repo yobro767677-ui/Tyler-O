@@ -1,6 +1,6 @@
 import { os, MODES } from "../framework.js";
 import { audioMixer } from "../audioMixer.js";
-import { resolveTylerAsset } from "../shared/assetResolver.js";
+import { resolveYukiAsset } from "../shared/assetResolver.js";
 import { StorageKeys } from "../StorageKeys.js";
 import { parseBool } from "../utils/utils.js";
 
@@ -97,7 +97,7 @@ function isScopeAllowed(scope) {
 }
 
 function resolveSfxUrl(key) {
-  return resolveTylerAsset(`${SFX_BASE_PATH}/${key}.wav`);
+  return resolveYukiAsset(`${SFX_BASE_PATH}/${key}.wav`);
 }
 
 function getVolumeLevel(mixer, entry, options) {

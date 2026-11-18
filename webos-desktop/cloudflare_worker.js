@@ -1889,7 +1889,7 @@ function sanitizeThemeContract(input) {
   const errors = [];
   if (input.schemaVersion !== 1 && input.schemaVersion !== 2)
     errors.push("invalid schemaVersion");
-  if (input.type !== "tyleros-theme") errors.push("invalid type");
+  if (input.type !== "yukios-theme") errors.push("invalid type");
   if (
     typeof input.name !== "string" ||
     input.name.trim().length === 0 ||
@@ -1972,7 +1972,7 @@ function sanitizeThemeContract(input) {
     ok: true,
     contract: {
       schemaVersion: 2,
-      type: "tyleros-theme",
+      type: "yukios-theme",
       name,
       description,
       author,
@@ -1985,7 +1985,7 @@ function sanitizeThemeContract(input) {
   };
 }
 
-async function handleTylerRequest(request, env) {
+async function handleYukiRequest(request, env) {
   const url = new URL(request.url);
 
   if (request.method === "OPTIONS") {
@@ -3811,7 +3811,7 @@ async function handleTylerRequest(request, env) {
   if (url.pathname === "/admin/export" && request.method === "GET") {
     const headers = {
       ...corsHeaders("application/json"),
-      "Content-Disposition": `attachment; filename="tyleros-analytics-${new Date().toISOString().slice(0, 10)}.json"`,
+      "Content-Disposition": `attachment; filename="yukios-analytics-${new Date().toISOString().slice(0, 10)}.json"`,
     };
 
     const encoder = new TextEncoder();
@@ -4435,7 +4435,7 @@ export default {
       try {
         if (env.DB) ensureAnalyticsIndexes(env).catch(() => {});
       } catch {}
-      return withCors(await handleTylerRequest(request, env));
+      return withCors(await handleYukiRequest(request, env));
     } catch (error) {
       const status =
         error && error.status && Number.isInteger(error.status)
@@ -4926,7 +4926,7 @@ function renderDTTable(){
 function loadAll(){
   token=document.getElementById("token").value.trim();
   if(!token){alert("Enter auth token first");return;}
-  localStorage.setItem("tyleros_admin_token", token);
+  localStorage.setItem("yukios_admin_token", token);
   loadLive();
   document.getElementById("lastRefresh").textContent="Loaded "+new Date().toLocaleTimeString();
   if(refreshTimer)clearInterval(refreshTimer);
@@ -4956,7 +4956,7 @@ function renderLive(data){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  var savedToken = localStorage.getItem("tyleros_admin_token");
+  var savedToken = localStorage.getItem("yukios_admin_token");
   if (savedToken) {
     document.getElementById("token").value = savedToken;
     loadAll();
@@ -4970,7 +4970,7 @@ function exportData(){
       var url=URL.createObjectURL(blob);
       var a=document.createElement("a");
       a.href=url;
-      a.download="tyleros-analytics-"+new Date().toISOString().slice(0,10)+".json";
+      a.download="yukios-analytics-"+new Date().toISOString().slice(0,10)+".json";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

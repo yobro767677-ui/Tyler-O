@@ -2081,7 +2081,7 @@ export async function renderQuestsPage(pageEl, options = {}) {
       <div class="steam-quests-empty">
         <div class="steam-quests-empty-icon"><i class="fas fa-clipboard-list"></i></div>
         <p class="steam-quests-empty-title">Sign in to unlock daily quests</p>
-        <p class="steam-quests-empty-sub">Complete quests every day to earn TylerCoins.</p>
+        <p class="steam-quests-empty-sub">Complete quests every day to earn YukiCoins.</p>
         <button type="button" class="steam-quests-login-btn" data-quests-action="login"><i class="fas fa-sign-in-alt"></i> Sign In</button>
       </div>
       `,
@@ -2100,12 +2100,12 @@ export async function renderQuestsPage(pageEl, options = {}) {
   if (!pageEl.isConnected) return;
 
   const coins = typeof me?.coins === "number" ? me.coins : 0;
-  const walletHtml = `<span class="steam-quests-wallet"><i class="fas fa-coins"></i> <strong>${coins}</strong> TylerCoins</span>`;
+  const walletHtml = `<span class="steam-quests-wallet"><i class="fas fa-coins"></i> <strong>${coins}</strong> YukiCoins</span>`;
   const headHtml = `
     <div class="steam-quests-head">
       <div>
         <h2 class="steam-quests-title">Daily Quests</h2>
-        <p class="steam-quests-sub">Complete quests today to earn TylerCoins.</p>
+        <p class="steam-quests-sub">Complete quests today to earn YukiCoins.</p>
       </div>
       ${walletHtml}
     </div>
@@ -2377,7 +2377,7 @@ export async function renderStorePage(pageEl, options = {}) {
       <div class="steam-store-empty">
         <div class="steam-store-empty-icon"><i class="fas fa-store"></i></div>
         <p class="steam-store-empty-title">Sign in to open the Profile Store</p>
-        <p class="steam-store-empty-sub">Spend TylerCoins on cosmetics for your profile.</p>
+        <p class="steam-store-empty-sub">Spend YukiCoins on cosmetics for your profile.</p>
         <button type="button" class="steam-store-login-btn" data-store-action="login"><i class="fas fa-sign-in-alt"></i> Sign In</button>
       </div>
       `,
@@ -2422,7 +2422,7 @@ export async function renderStorePage(pageEl, options = {}) {
         <h2 class="steam-store-title">Profile Store</h2>
         <p class="steam-store-sub">Dress up your profile with coins earned from play.</p>
       </div>
-      <div class="steam-store-wallet"><i class="fas fa-coins"></i> <strong>${coins}</strong> TylerCoins</div>
+      <div class="steam-store-wallet"><i class="fas fa-coins"></i> <strong>${coins}</strong> YukiCoins</div>
     </div>
   `;
 
@@ -3418,7 +3418,7 @@ export async function renderLoginPage(pageEl, options = {}) {
           <p class="steam-login-subtitle">Keep your profile, achievements and playtime across devices. No email needed.</p>
         </div>
       </div>
-      <div class="tyleros-account-host">
+      <div class="yukios-account-host">
         ${buildAccountBlockHtml(account ? undefined : "register", {
           socialDisabled: isSocialDisabled(),
           prefillNickname: account ? undefined : localName,
@@ -3427,14 +3427,14 @@ export async function renderLoginPage(pageEl, options = {}) {
             : "Prefer to stay anonymous? That's fine, your local profile stays on this device until you register.",
         })}
       </div>
-      <p class="tyleros-account-disclaimer">${escapeHtml(ACCOUNT_DISCLAIMER)}</p>
+      <p class="yukios-account-disclaimer">${escapeHtml(ACCOUNT_DISCLAIMER)}</p>
       <div class="steam-login-actions">
         <button type="button" class="steam-login-back-btn" data-login-action="back"><i class="fas fa-arrow-left"></i> Back to Profile</button>
       </div>
     </div>
     `,
   );
-  bindAccountBlock($(".tyleros-account-host", pageEl), {
+  bindAccountBlock($(".yukios-account-host", pageEl), {
     onChange: () => os.app.launch("steamApp", { steamPage: "user" }),
     onEnableSocial: () => os.app.launch("steamApp", { steamPage: "settings" }),
   });

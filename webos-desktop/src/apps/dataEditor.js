@@ -11,7 +11,7 @@ import { BaseApp, os } from "../framework.js";
 import { formatSize, downloadBlob } from "../utils/utils.js";
 
 export class DataEditorApp extends BaseApp {
-  singletonWindowIds = ["tyleros-data-editor"];
+  singletonWindowIds = ["yukios-data-editor"];
 
   constructor(services) {
     super(services);
@@ -25,7 +25,7 @@ export class DataEditorApp extends BaseApp {
   }
 
   open() {
-    const winId = "tyleros-data-editor";
+    const winId = "yukios-data-editor";
 
     const win = os.window.create(winId, "Storage Editor", "1000px", "650px", {
       icon: "fas fa-database",
