@@ -1,28 +1,6 @@
 [
   {
     "date": "November 18, 2026",
-    "label": "Logo and Login Fixes",
-    "sections": [
-      {
-        "icon": "fas fa-image",
-        "title": "Fixes",
-        "items": [
-          [
-            "fas fa-image",
-            "Logos Load Again",
-            "Icons and logos point at the right address and appear."
-          ],
-          [
-            "fas fa-broom",
-            "Cleaner Login",
-            "Removed the desktop app download banner from the login screen."
-          ]
-        ]
-      }
-    ]
-  },
-  {
-    "date": "November 18, 2026",
     "label": "Polish and Controls",
     "sections": [
       {
