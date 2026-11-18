@@ -7,7 +7,7 @@ import { pluralize } from "../../../../utils/utils.js";
 const FILE_SECTIONS = [
   {
     dir: ["ROMs"],
-    emptyText: "No ROMs uploaded yet. Add ROM files in Yuki Emulator.",
+    emptyText: "No ROMs uploaded yet. Add ROM files in Tyler Emulator.",
     filter: null,
     meta: "ROM file",
   },
@@ -106,7 +106,7 @@ async function renderAddOns(host) {
     host,
     [
       note(
-        "Add-ons are files you uploaded to YukiOS apps. They are stored on your virtual drive.",
+        "Add-ons are files you uploaded to Tyler OS apps. They are stored on your virtual drive.",
       ),
       renderSection(
         "Virtual machines",
@@ -121,7 +121,7 @@ async function renderAddOns(host) {
       ),
       renderSection("Console ROMs", fileItems[0], FILE_SECTIONS[0].emptyText),
       appRow(
-        "Yuki Emulator",
+        "Tyler Emulator",
         `${romFiles.length} ${pluralize(romFiles.length, "ROM file")} in ROMs`,
         "emulatorApp",
         "Open",
@@ -151,7 +151,7 @@ async function renderAddOns(host) {
       <div class="win11-control">
         <div class="win11-control__text">
           <p class="win11-control__title">Ruffle settings</p>
-          <p class="win11-control__desc">Choose how Flash games play inside YukiOS</p>
+          <p class="win11-control__desc">Choose how Flash games play inside Tyler OS</p>
         </div>
         <button type="button" class="win11-action" data-win11-goto-category="Apps" data-win11-goto-subpage="apps-ruffle">Open</button>
       </div>`,

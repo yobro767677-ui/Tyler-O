@@ -84,7 +84,7 @@ async def commit_sync():
             color=0x8b5cf6
         )
         embed.add_field(name="Commit", value=f"`{short_sha}` — {msg}", inline=False)
-        embed.set_footer(text="YukiOS Changelog")
+        embed.set_footer(text="Tyler OS Changelog")
         try:
             await channel.send(embed=embed)
             await asyncio.sleep(1)
@@ -94,12 +94,12 @@ async def commit_sync():
 @bot.event
 async def on_ready():
     await bot.tree.sync()
-    print(f"YukiOS Bot ready as {bot.user}")
+    print(f"Tyler OS Bot ready as {bot.user}")
     asyncio.create_task(commit_sync())
 
-game_group = app_commands.Group(name="game", description="YukiOS Game Library commands")
+game_group = app_commands.Group(name="game", description="Tyler OS Game Library commands")
 
-@game_group.command(name="search", description="Search games in the YukiOS library")
+@game_group.command(name="search", description="Search games in the Tyler OS library")
 @app_commands.describe(query="Search term (game name or ID)")
 async def game_search(interaction: discord.Interaction, query: str):
     await interaction.response.defer()
@@ -117,7 +117,7 @@ async def game_search(interaction: discord.Interaction, query: str):
         description="\n".join(lines),
         color=0x8b5cf6
     )
-    embed.set_footer(text=f"{len(results)} result(s) | YukiOS Game Library")
+    embed.set_footer(text=f"{len(results)} result(s) | Tyler OS Game Library")
     await interaction.followup.send(embed=embed)
 
 @game_group.command(name="info", description="Get detailed info about a specific game")
@@ -139,7 +139,7 @@ async def game_info(interaction: discord.Interaction, game_id: str):
         embed.add_field(name="SWF", value=game["swf"][:100], inline=False)
     if desc:
         embed.add_field(name="Description", value=desc[:1000], inline=False)
-    embed.set_footer(text="YukiOS Game Library")
+    embed.set_footer(text="Tyler OS Game Library")
     await interaction.followup.send(embed=embed)
 
 @game_group.command(name="random", description="Get a random game from the library")
@@ -153,7 +153,7 @@ async def game_random(interaction: discord.Interaction):
     embed.add_field(name="Type", value=game.get("type", "unknown"), inline=True)
     if desc:
         embed.add_field(name="Description", value=desc[:1000], inline=False)
-    embed.set_footer(text="YukiOS Game Library")
+    embed.set_footer(text="Tyler OS Game Library")
     await interaction.followup.send(embed=embed)
 
 @game_group.command(name="stats", description="Show game library statistics")
@@ -170,16 +170,16 @@ async def game_stats(interaction: discord.Interaction):
         emoji = TYPE_EMOJIS.get(t, "❓")
         lines.append(f"{emoji} {t}: {c}")
     embed = discord.Embed(
-        title="📊 YukiOS Game Library",
+        title="📊 Tyler OS Game Library",
         description="\n".join(lines),
         color=0x8b5cf6
     )
     embed.set_footer(text=f"Sources: gamesList.js + gameDescriptions.js")
     await interaction.followup.send(embed=embed)
 
-news_group = app_commands.Group(name="news", description="YukiOS Changelog & News commands")
+news_group = app_commands.Group(name="news", description="Tyler OS Changelog & News commands")
 
-@news_group.command(name="latest", description="Show the latest YukiOS update")
+@news_group.command(name="latest", description="Show the latest Tyler OS update")
 async def news_latest(interaction: discord.Interaction):
     await interaction.response.defer()
     latest = get_latest_news()
@@ -188,21 +188,21 @@ async def news_latest(interaction: discord.Interaction):
         return
     content = format_news_embed(latest)
     embed = discord.Embed(
-        title=f"📰 YukiOS Update - {latest['date']}",
+        title=f"📰 Tyler OS Update - {latest['date']}",
         description=content[:4000],
         color=0x8b5cf6
     )
-    embed.set_footer(text=f"Update #{news_count()} | YukiOS Changelog")
+    embed.set_footer(text=f"Update #{news_count()} | Tyler OS Changelog")
     await interaction.followup.send(embed=embed)
 
-@news_group.command(name="list", description="List recent YukiOS updates")
+@news_group.command(name="list", description="List recent Tyler OS updates")
 @app_commands.describe(count="Number of updates to show (default 3)")
 async def news_list(interaction: discord.Interaction, count: int = 3):
     await interaction.response.defer()
     count = max(1, min(count, 5))
     content = format_news_compact(NEWS_UPDATES, count)
     embed = discord.Embed(
-        title="📰 Recent YukiOS Changelog",
+        title="📰 Recent Tyler OS Changelog",
         description=content[:4000],
         color=0x8b5cf6
     )
@@ -224,14 +224,14 @@ async def news_date(interaction: discord.Interaction, date: str):
         return
     content = format_news_embed(update)
     embed = discord.Embed(
-        title=f"📰 YukiOS Update - {update['date']}",
+        title=f"📰 Tyler OS Update - {update['date']}",
         description=content[:4000],
         color=0x8b5cf6
     )
-    embed.set_footer(text="YukiOS Changelog")
+    embed.set_footer(text="Tyler OS Changelog")
     await interaction.followup.send(embed=embed)
 
-app_group = app_commands.Group(name="app", description="YukiOS App Registry commands")
+app_group = app_commands.Group(name="app", description="Tyler OS App Registry commands")
 
 @app_group.command(name="list", description="List all registered apps")
 @app_commands.describe(category="Filter by category (system, development, graphics, games, help, internet, media, office)")
@@ -250,7 +250,7 @@ async def app_list(interaction: discord.Interaction, category: str = None):
         lines.append(f"{emoji} **{app['title']}** — {app.get('category', 'other')}")
     chunks = [lines[i:i+30] for i in range(0, len(lines), 30)]
     for i, chunk in enumerate(chunks):
-        title = f"📱 YukiOS Apps ({category or 'all'})" if i == 0 else None
+        title = f"📱 Tyler OS Apps ({category or 'all'})" if i == 0 else None
         desc = "\n".join(chunk)
         embed = discord.Embed(
             title=title,
@@ -287,7 +287,7 @@ async def app_info(interaction: discord.Interaction, name: str):
         embed.add_field(name="Source", value=app["source"][:100], inline=False)
     if app.get("description"):
         embed.add_field(name="Description", value=app["description"][:1000], inline=False)
-    embed.set_footer(text="YukiOS App Registry")
+    embed.set_footer(text="Tyler OS App Registry")
     await interaction.followup.send(embed=embed)
 
 @app_group.command(name="stats", description="Show app registry statistics")
@@ -308,7 +308,7 @@ async def app_stats(interaction: discord.Interaction):
     for lt, c in sorted(s["by_launch_type"].items(), key=lambda x: -x[1]):
         lines.append(f"  • {lt}: {c}")
     embed = discord.Embed(
-        title="📱 YukiOS App Registry",
+        title="📱 Tyler OS App Registry",
         description="\n".join(lines),
         color=0x8b5cf6
     )

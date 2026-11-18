@@ -1619,7 +1619,7 @@ function getGridItems() {
   return [
     {
       app: "browserApp",
-      title: "Yuki Browser",
+      title: "Tyler Browser",
       icon: "papirus:apps/internet-web-browser",
     },
     { app: "explorerApp", title: "Files", icon: "papirus:places/folder-blue" },
@@ -1630,7 +1630,7 @@ function getGridItems() {
     },
     {
       app: "aiAssistantApp",
-      title: "Yuki AI Assistant",
+      title: "Tyler AI Assistant",
       icon: "papirus:apps/gnome-robots",
     },
     { app: "notepadApp", title: "Notepad", icon: "papirus:actions/edit" },
@@ -1646,7 +1646,7 @@ function getGridItems() {
     },
     {
       app: "yukiConvertApp",
-      title: "Yuki Convert",
+      title: "Tyler Convert",
       icon: "papirus:actions/swap-panels",
     },
     {
@@ -1667,10 +1667,10 @@ function getGridItems() {
     { app: "weatherApp", title: "Weather", icon: "papirus:apps/weather" },
     {
       app: "yukiOsGuideApp",
-      title: "YukiOS Guide",
+      title: "Tyler OS Guide",
       icon: "papirus:apps/accessories-dictionary",
     },
-    { app: "steamApp", title: "Yuki Steam", icon: "papirus:apps/steam" },
+    { app: "steamApp", title: "Tyler Steam", icon: "papirus:apps/steam" },
     { app: "paint", title: "Paint", icon: "papirus:apps/gpaint" },
     {
       app: "newsApp",
@@ -1700,7 +1700,7 @@ function getGridItems() {
     },
     {
       app: "aboutApp",
-      title: "About YukiOS",
+      title: "About Tyler OS",
       icon: "papirus:actions/help-about",
     },
     {

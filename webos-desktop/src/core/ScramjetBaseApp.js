@@ -1,3 +1,4 @@
+import { withBase } from "../shared/basePath.js";
 import { BaseApp } from "./BaseApp.js";
 import "../styles/scramjet.css";
 import {
@@ -118,7 +119,7 @@ export class ScramjetBaseApp extends BaseApp {
   }
 
   getHTMLPath() {
-    return `/sapps/set-template.html`;
+    return `${withBase("sapps/")}set-template.html`;
   }
 
   async initScramjet(payload, vt, element, state) {

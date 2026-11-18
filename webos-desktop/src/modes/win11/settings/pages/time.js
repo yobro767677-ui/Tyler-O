@@ -9,13 +9,13 @@ const SHORTCUT_CATEGORY_LABELS = {
   global: "Global & System",
   desktop: "Desktop & Files",
   notepad: "Notepad",
-  browser: "Yuki Browser",
+  browser: "Tyler Browser",
   calc: "Calculator",
   calendar: "Calendar",
   terminal: "Terminal",
   office: "Office",
   games: "Games",
-  steamdeck: "Yuki Deck",
+  steamdeck: "Tyler Deck",
   custom: "Custom",
 };
 

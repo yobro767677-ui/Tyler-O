@@ -1,3 +1,4 @@
+import { withBase } from "../../../../shared/basePath.js";
 import { os, StorageKeys, BusEvents } from "../../../../framework.js";
 import {
   action,
@@ -153,7 +154,7 @@ function renderSyncSection() {
   if (!isLoggedIn()) {
     return `
       ${subHeading("Cloud sync")}
-      <div class="win11-empty">Sign in with a YukiOS Account to sync settings across devices.</div>`;
+      <div class="win11-empty">Sign in with a Tyler OS Account to sync settings across devices.</div>`;
   }
 
   const enabled = isSyncEnabledPref();
@@ -223,7 +224,7 @@ function renderAccountBlock() {
     32,
   );
   return `
-    ${subHeading("YukiOS Account")}
+    ${subHeading("Tyler OS Account")}
     ${buildAccountBlockHtml(undefined, {
       socialDisabled: isSocialDisabled(),
       prefillNickname: localName,
@@ -493,7 +494,7 @@ function renderAccountsHero() {
   const userName = os.storage.get(StorageKeys.username) || "Guest";
   return `
     <div class="accountsTop">
-      <img src="/img/settings/defAccount.webp" alt="" width="90" />
+      <img src="${withBase("img/settings/defAccount.webp")}" alt="" width="90" />
       <div>
         <p>${escapeHtml(userName)}</p>
         <p>Local Account</p>
@@ -594,11 +595,11 @@ export const accountsPage = {
             "Restore a previously saved system backup",
             "Import",
           ),
-          subHeading("Save YukiOS"),
+          subHeading("Save Tyler OS"),
           action(
             "downloadPage",
             "Download Page",
-            "Save a local copy of YukiOS",
+            "Save a local copy of Tyler OS",
             "Download",
           ),
           subHeading("Danger Zone"),

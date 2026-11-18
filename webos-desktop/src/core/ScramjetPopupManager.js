@@ -1,3 +1,4 @@
+import { withBase } from "../shared/basePath.js";
 import { os, StorageKeys } from "../framework.js";
 import { getWispUrl } from "../shared/wispConfig.js";
 
@@ -222,7 +223,7 @@ export function createPopupWindow(options) {
     });
     const src =
       location.origin +
-      "/sapps/set-template.html?wisp=" +
+      withBase("sapps/set-template.html?wisp=") +
       encodeURIComponent(getWispUrl()) +
       "&target=" +
       encodeURIComponent(url) +

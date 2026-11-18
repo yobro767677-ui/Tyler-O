@@ -46,7 +46,7 @@ export function playDeckBootVideo() {
 
   const disclaimer = createElement("div", {
     className: "deck-boot-disclaimer",
-    text: "YukiOS is an independent fan recreation and is not affiliated with, endorsed by, or connected to Steam or Valve.",
+    text: "Tyler OS is an independent fan recreation and is not affiliated with, endorsed by, or connected to Steam or Valve.",
   });
   overlay.appendChild(disclaimer);
 

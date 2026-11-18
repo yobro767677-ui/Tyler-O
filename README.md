@@ -1,4 +1,4 @@
-# YukiOS: Multi-Environment Web Desktop for the Browser
+# Tyler OS: Multi-Environment Web Desktop for the Browser
 
 <div align="center">
 
@@ -11,10 +11,10 @@
 </div>
 
 > A browser-native multi-environment web desktop. Switch seamlessly between floating desktops (macOS, ChromeOS), dynamic
-> BSP tiling (Hyprland), game consoles (Yuki Deck), all running on a single persistent client-side core built in vanilla
+> BSP tiling (Hyprland), game consoles (Tyler Deck), all running on a single persistent client-side core built in vanilla
 > JavaScript (no UI framework).
 
-YukiOS is not just another web desktop. It is a single browser tab that rewrites its entire window management paradigm,
+Tyler OS is not just another web desktop. It is a single browser tab that rewrites its entire window management paradigm,
 UI chrome, input model, and workspace semantics at runtime without destroying open applications, file system state, or
 user context. One session, six switchable desktop modes.
 
@@ -38,7 +38,7 @@ client-side filesystem, and it is built entirely in vanilla JavaScript without a
 
 # Desktop Environments
 
-YukiOS ships six complete desktop paradigms, each a switchable mode of the same core. Pick any mode from the session
+Tyler OS ships six complete desktop paradigms, each a switchable mode of the same core. Pick any mode from the session
 picker at login, or switch live. Every mode shares the same running applications, open files, persistent settings, and
 IndexedDB-backed filesystem.
 
@@ -55,7 +55,7 @@ A full macOS-inspired desktop with top menu bar, animated fisheye dock, Launchpa
 - **Launchpad** (F4) with a fullscreen app grid, glassmorphism backdrop, live search, slide-from-dock animation, bigger
   icons on hover, and hover-zoom, pinned to the Dock in Mac Mode
 
-## 🎮 Yuki Deck Mode
+## 🎮 Tyler Deck Mode
 
 A fullscreen, animated and full-sfx game-console-style environment you can pick at login, controlled with a gamepad or
 keyboard/mouse, with home feed and library management.
@@ -108,10 +108,10 @@ picker, with per-workspace tree layouts and live config reloading.
 A 3d fps game where player can walk around in a room and interact with computer monitor, grab and launch game cases that
 hide game and open inside os page, or play sorting minigame
 
-## ⚡ Yuki Native Session
+## ⚡ Tyler Native Session
 
 The default hybrid desktop layout, a modern, high-density multitasking environment blending familiar desktop conventions
-with YukiOS-specific innovations.
+with Tyler OS-specific innovations.
 
 - Full floating window management with snapping, workspaces, and animations
 - Desktop widgets, system tray, notification center
@@ -122,12 +122,12 @@ with YukiOS-specific innovations.
 
 ## Architecture
 
-YukiOS uses a shared-state architecture. Switching from Hyprland tiling to macOS shell does not destroy your open
+Tyler OS uses a shared-state architecture. Switching from Hyprland tiling to macOS shell does not destroy your open
 applications, file system, or workspace context. The UI layout engine morphs around the running state.
 
 ```
                       ┌───────────────────────────────────────┐
-                      │        YukiOS Central Core            │
+                      │        Tyler OS Central Core            │
                       │   (Application Registry & App Layer)  │
                       └──────────────────┬────────────────────┘
                                          │
@@ -143,7 +143,7 @@ applications, file system, or workspace context. The UI layout engine morphs aro
         │                               │                              │
         ▼                               ▼                              ▼
 ┌─────────────────┐            ┌─────────────────┐            ┌─────────────────┐
-│  🎮Yuki Deck   │             │ GNOME Shell 🧙‍♂️  │           │ Windows 11 Now  │
+│  🎮Tyler Deck   │             │ GNOME Shell 🧙‍♂️  │           │ Windows 11 Now  │
 │ (Gamepad Focus) │            │   (Upcoming)    │            │🪟XP/Win7/10 soon│
 └───────┬─────────┘            └────────┬────────┘            └────────┬────────┘
         │                               │                              │
@@ -288,20 +288,20 @@ applications, file system, or workspace context. The UI layout engine morphs aro
 
 - Custom App Creator for adding web shortcuts with auto-detected favicons and per-app CORS proxy
 - Scramjet/BareMux-based web app proxy for embedding third-party sites
-- URL parameter launch: `?app=`, `?game=`, for launching games, `?deck=1` for Yuki Deck Mode and `?red` for launching stickman chaos mode
+- URL parameter launch: `?app=`, `?game=`, for launching games, `?deck=1` for Tyler Deck Mode and `?red` for launching stickman chaos mode
 
 </details>
 
 <details>
 <summary><strong>📂 Local Files & Dev Server (virtual, in-browser)</strong></summary>
 
-- `python -m http.server [port] [--directory DIR]` inside YukiOS Terminal serves the virtual filesystem at
+- `python -m http.server [port] [--directory DIR]` inside Tyler OS Terminal serves the virtual filesystem at
   `http://localhost:PORT` via the in-browser `PortManager` (`src/services/PortManager.js:1`,
   `src/terminal/httpServer.js:80`). Press `Ctrl+C` to stop. This does not expose a host OS server
-- Viewable only in Yuki Browser, which handles `localhost`/`127.0.0.1`/`0.0.0.0:PORT`, `fs://`, `file://`, `/abs/path`
+- Viewable only in Tyler Browser, which handles `localhost`/`127.0.0.1`/`0.0.0.0:PORT`, `fs://`, `file://`, `/abs/path`
   natively without proxy. Includes directory listings, HTML with relative asset rewrites, and media/text/download views
 - Entirely virtual with no real TCP. Unregistered ports show `ERR_CONNECTION_REFUSED` with dino minigame. Use it to
-  preview local sites and assets inside YukiOS
+  preview local sites and assets inside Tyler OS
 
 </details>
 
@@ -325,18 +325,18 @@ applications, file system, or workspace context. The UI layout engine morphs aro
   - Pipeline (`|`), redirects (`>`/`>>`), command chaining (`&&`/`||`/`;`), Ctrl+R reverse search
   - `yuki` command for OS control (power mode, brightness, themes, wallpaper, workspaces, app management, DND,
     notifications)
-  - `python -m http.server [port]` (virtual, YukiOS only) serves VFS dir on `localhost:PORT` for preview in Yuki Browser
-    inside YukiOS
+  - `python -m http.server [port]` (virtual, Tyler OS only) serves VFS dir on `localhost:PORT` for preview in Tyler Browser
+    inside Tyler OS
   - **[lavat](https://github.com/Reeyuki/lavat-web)**, a lava lamp simulation with customizable metaballs and gravity;
     Emscripten WASM port (by Reeyuki) of the original C program, runs fully client-side
   - **[cmatrix](https://github.com/Reeyuki/cmatrix/)**, a Matrix rain animation with color, speed, and character modes;
     browser-native JS reimplementation (by Reeyuki)
   - **[btop](https://github.com/Reeyuki/btop-emscripten)**, a real-time resource monitor (CPU, memory, disks, network,
-    processes); Emscripten WASM port (by Reeyuki) that feeds live host system data from YukiOS into the emulated
+    processes); Emscripten WASM port (by Reeyuki) that feeds live host system data from Tyler OS into the emulated
     terminal
 - Notepad
 - Markdown Viewer
-- Yuki Code
+- Tyler Code
 - VS Code
 - Run (Ctrl+R quick-launch)
 - Settings
@@ -347,17 +347,17 @@ applications, file system, or workspace context. The UI layout engine morphs aro
 - Setup Wizard
 - Achievements
 - Profile Customizer
-- Yuki AI Assistant (WebLLM)
+- Tyler AI Assistant (WebLLM)
 - Storage Editor
-- Yuki Convert
+- Tyler Convert
 - Clipboard Manager
 - Emoji Selector
-- Yuki Dev Tools (It Tools)
+- Tyler Dev Tools (It Tools)
 - Dev Tools (Eruda)
 - Weather
 - News
 - Aquarium
-- YukiOS Guide
+- Tyler OS Guide
 - Display Performance
 - Virtual Machine Manager
 - About (system information)
@@ -397,13 +397,13 @@ applications, file system, or workspace context. The UI layout engine morphs aro
 <details>
 <summary><strong>🌐 Browser & Internet</strong></summary>
 
-- Yuki Browser with Scramjet Proxy, Sidebar Tabs mode, bookmarks, proxy, Tor, history, dark mode, tab system, and
+- Tyler Browser with Scramjet Proxy, Sidebar Tabs mode, bookmarks, proxy, Tor, history, dark mode, tab system, and
   screenshot
 - WebTorrent Client
 - Tor Manager, a WASM-based Tor client with Snowflake transport
-- Yuki Steam launcher
+- Tyler Steam launcher
 - Maps (interactive maps with OpenStreetMap and Google Maps support)
-- Yuki Remote Desktop (stream your full desktop to any browser via WebRTC with remote input control)
+- Tyler Remote Desktop (stream your full desktop to any browser via WebRTC with remote input control)
 
 </details>
 
@@ -423,17 +423,17 @@ applications, file system, or workspace context. The UI layout engine morphs aro
 <details>
 <summary><strong>🎮 Games & Emulation</strong></summary>
 
-- Yuki Emulator (EmulatorJS) for NES, SNES, GB, GBA, N64, PSX, and more
+- Tyler Emulator (EmulatorJS) for NES, SNES, GB, GBA, N64, PSX, and more
 - Ruffle (Flash)
 - JsDos (DOS)
 - Virtual 86 (x86)
 - Azahar (3DS Emulator)
 - Flashpoint Database
-- Yuki Steam storefront with friends, community, playtime tracking and collection system
+- Tyler Steam storefront with friends, community, playtime tracking and collection system
 - Roblox (browse and play Roblox games)
 - 3D Room (first-person 3D room where your game library comes to life)
 
-### Yuki Steam In-Game Overlay
+### Tyler Steam In-Game Overlay
 
 Shift+Tab overlay with draggable, resizable panels for any running game:
 
@@ -486,7 +486,7 @@ A native Electron wrapper for enhanced desktop integration:
 
 - Native game windows that launch in their own OS-level window with auto-hide menu bar
 - Remote host to stream your real desktop with mouse/keyboard control from any device
-- Autostart YukiOS on system startup
+- Autostart Tyler OS on system startup
 - Browse real files via home directory drive in Explorer
 
 The web-only version runs in any browser with all core features intact; the Electron app adds native OS integration on
@@ -524,7 +524,7 @@ top.
 - [Pyodide](https://github.com/pyodide/pyodide) (WASM Python runtime)
 - [WebContainers](https://github.com/stackblitz/webcontainer-core) (WASM Node.js runtime)
 - [Infared](https://youtube-liard-ten.vercel.app/) Alternative YouTube frontend by maacy on Discord, contact ihatecamouflage@hotmail.com. Used with permission. All rights reserved.
-- [CraxGPT](https://gpt.crax.lol) Free AI chat backend powering the YukiOS assistant.
+- [CraxGPT](https://gpt.crax.lol) Free AI chat backend powering the Tyler OS assistant.
 - [Nodium Roblox Studio](https://studio.nodium.lol) and [Nodium Roblox Player](https://player.nodium.lol) Roblox webports.
 - [Azerun](https://azerun.com/play/) World of Warcraft in the browser.
 - [Eaglercraft Launcher](https://redflamz.github.io/Eaglercraft-Launcher/) Community Minecraft web launcher.
@@ -547,4 +547,4 @@ top.
 
 ## License
 
-YukiOS is licensed under the MIT License, see [LICENSE](LICENSE) for details. If you use any part of this project, including code, design, themes or assets, whether you fork or copy, please retain the original copyright notice and kindly credit **YukiOS by Reeyuki** at https://github.com/Reeyuki/YukiOS.
+Tyler OS is licensed under the MIT License, see [LICENSE](LICENSE) for details. If you use any part of this project, including code, design, themes or assets, whether you fork or copy, please retain the original copyright notice and kindly credit **Tyler OS by Reeyuki** at https://github.com/Reeyuki/YukiOS.

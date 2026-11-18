@@ -63,7 +63,7 @@ export class SessionManager {
     this.skipSetup = false;
     this.selectedUser = null;
     this.selectedSession =
-      os.storage.get(StorageKeys.selectedSession) || "Yuki Desktop(Default)";
+      os.storage.get(StorageKeys.selectedSession) || "Tyler Desktop(Default)";
 
     this.ensureUserId();
     this.setupProfileUpdateListener();
@@ -207,8 +207,8 @@ export class SessionManager {
     if (directBoot) this.skipSetup = true;
 
     if (directBoot) {
-      if (deckParam) this.selectedSession = "Yuki Deck Mode";
-      if (redParam) this.selectedSession = "Yuki Desktop(Default)";
+      if (deckParam) this.selectedSession = "Tyler Deck Mode";
+      if (redParam) this.selectedSession = "Tyler Desktop(Default)";
 
       this.currentSession = {
         name: os.storage.get(StorageKeys.username) || "Guest",
@@ -222,7 +222,7 @@ export class SessionManager {
 
     const autoLogin = os.storage.get(StorageKeys.autoLogin);
 
-    if (this.selectedSession === "Yuki Deck Mode") {
+    if (this.selectedSession === "Tyler Deck Mode") {
       if (autoLogin && os.storage.get(StorageKeys.username)) {
         this.currentSession = {
           name: os.storage.get(StorageKeys.username) || "Guest",
@@ -271,7 +271,7 @@ export class SessionManager {
     const timeStr = this.formatLoginClock(now);
     const dateStr = now.toLocaleDateString([], {
       weekday: "long",
-      month: this.selectedSession === "Yuki Windows 11" ? "long" : "short",
+      month: this.selectedSession === "Tyler Windows 11" ? "long" : "short",
       day: "numeric",
     });
 
@@ -301,14 +301,14 @@ export class SessionManager {
       <div class="session-wallpaper"></div>
       <div class="session-background"></div>
       <div class="session-content${state === "locked" ? "" : " extra-hidden"}">
-        <div class="session-brand">YukiOS</div>
+        <div class="session-brand">Tyler OS</div>
         <div class="session-clock-block">
           <div class="session-time">${timeStr}</div>
           <div class="session-date">${dateStr}</div>
         </div>
 
         <div class="session-extra">
-        <div class="session-support-btn" id="session-support-btn" title="Support YukiOS">
+        <div class="session-support-btn" id="session-support-btn" title="Support Tyler OS">
           <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/emotes/face-smile.svg" class="papirus-icon papirus-icon--22" alt="" />
         </div>
         <a class="session-github-btn" href="https://github.com/Reeyuki/YukiOS" target="_blank" rel="noopener" title="Star Us On Github">
@@ -326,7 +326,7 @@ export class SessionManager {
           <div class="session-status-panel" id="session-status-panel">
             <div class="status-info-row">
               <span class="status-info-label">Version</span>
-              <span class="status-info-value">YukiOS ${YUKIOS_VERSION}</span>
+              <span class="status-info-value">Tyler OS ${YUKIOS_VERSION}</span>
             </div>
             <div class="status-info-row">
               <span class="status-info-label">Build</span>
@@ -404,7 +404,7 @@ export class SessionManager {
             <div class="session-modes-grid">
               <button type="button" class="session-mode-btn" data-mode="reset">
                 <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/48x48/status/weather-snow.svg" class="papirus-icon papirus-icon--32" alt="" />
-                <span>YukiOS</span>
+                <span>Tyler OS</span>
               </button>
               <button type="button" class="session-mode-btn" data-mode="mac">
                 <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/apps/apple-music.svg" class="papirus-icon papirus-icon--32" alt="" />
@@ -439,13 +439,13 @@ export class SessionManager {
             <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/window-close.svg" class="papirus-icon papirus-icon--22" alt="" />
           </button>
           <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/edit-download.svg" class="papirus-icon papirus-icon--22" alt="" />
-          <span><strong>YukiOS desktop app</strong> Persistent storage, system tray, remote desktop, and faster performance.</span>
+          <span><strong>Tyler OS desktop app</strong> Persistent storage, system tray, remote desktop, and faster performance.</span>
           <div class="electron-banner-actions">
             <span class="electron-download-link" id="electron-download-btn"><img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/edit-download.svg" class="papirus-icon papirus-icon--22" alt="" /> Download</span>
             <a href="https://github.com/reeyuki/yukios/releases" target="_blank" class="electron-releases-link">View all releases</a>
           </div>
         </div>
-        <a href="/features.html" class="session-features-link">Explore Features</a>
+        <a href="features.html" class="session-features-link">Explore Features</a>
         </div>
         <button class="session-settings-btn" id="session-settings-btn" title="Login settings" type="button">
           <img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/configure.svg" class="papirus-icon papirus-icon--22" alt="" />
@@ -515,7 +515,7 @@ export class SessionManager {
               <div class="settings-card-header"><img src="https://gcore.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/apps/utilities-tweak-tool.svg" class="papirus-icon papirus-icon--22" alt="" /> Session Modes</div>
               <div class="settings-row">
                 <div class="settings-label-group">
-                  <span class="settings-label-title">YukiOS</span>
+                  <span class="settings-label-title">Tyler OS</span>
                   <span class="settings-label-desc">Default desktop session</span>
                 </div>
                 <label class="settings-toggle">
@@ -565,7 +565,7 @@ export class SessionManager {
               </div>
               <div class="settings-row">
                 <div class="settings-label-group">
-                  <span class="settings-label-title">Yuki Deck</span>
+                  <span class="settings-label-title">Tyler Deck</span>
                   <span class="settings-label-desc">Fullscreen handheld gaming shell</span>
                 </div>
                 <label class="settings-toggle">
@@ -740,7 +740,7 @@ export class SessionManager {
       avatar: this.selectedUser.avatar,
     };
     setDeckBootVideoSkip(false);
-    if (this.selectedSession !== "Yuki Windows 11") {
+    if (this.selectedSession !== "Tyler Windows 11") {
       playSfx(SystemSfx.STARTUP);
     }
     await this.initializeSession();
@@ -836,7 +836,7 @@ export class SessionManager {
   async applySessionModeUI() {
     if (!this.container) return;
     if (this.sessionState === "locked") return;
-    if (this.selectedSession === "Yuki Windows 11") {
+    if (this.selectedSession === "Tyler Windows 11") {
       applyWin11LoginWallpaper(this.container);
       if (!isWin11SessionUI(this.container)) {
         const avatarUrl = await resolveAvatarUrl(
@@ -1085,7 +1085,7 @@ export class SessionManager {
       this.bootMiniTls.forEach((tl) => tl.kill && tl.kill());
     this.bootMiniTls = [];
     const savedId = os.storage.get(StorageKeys.selectedBootAnimation) || "";
-    const brandLetters = "YukiOS"
+    const brandLetters = "Tyler OS"
       .split("")
       .map((ch) => `<span class="boot-letter">${ch}</span>`)
       .join("");
@@ -1393,14 +1393,14 @@ export class SessionManager {
     }
 
     powerBtn.addEventListener("click", async () => {
-      if (await os.dialog.confirm("Shutdown", `Shut down YukiOS?`)) {
+      if (await os.dialog.confirm("Shutdown", `Shut down Tyler OS?`)) {
         playSfx(SystemSfx.SHUTDOWN);
         window.close();
       }
     });
 
     restartBtn.addEventListener("click", async () => {
-      if (await os.dialog.confirm("Restart", `Restart YukiOS?`)) {
+      if (await os.dialog.confirm("Restart", `Restart Tyler OS?`)) {
         playSfx(SystemSfx.SHUTDOWN);
         location.reload();
       }
@@ -1414,22 +1414,22 @@ export class SessionManager {
       "#session-modes .session-mode-btn",
     );
     const modeToSession = {
-      reset: "Yuki Desktop(Default)",
-      mac: "Yuki Mac Desktop",
-      chromeos: "Yuki Chrome OS",
-      tiling: "Yuki Tiling VM",
+      reset: "Tyler Desktop(Default)",
+      mac: "Tyler Mac Desktop",
+      chromeos: "Tyler Chrome OS",
+      tiling: "Tyler Tiling VM",
       "3d": "Yuki 3D Desktop",
-      steamdeck: "Yuki Deck Mode",
-      win11: "Yuki Windows 11",
+      steamdeck: "Tyler Deck Mode",
+      win11: "Tyler Windows 11",
     };
     const sessionToMode = {
-      "Yuki Desktop(Default)": "reset",
-      "Yuki Mac Desktop": "mac",
-      "Yuki Chrome OS": "chromeos",
-      "Yuki Tiling VM": "tiling",
+      "Tyler Desktop(Default)": "reset",
+      "Tyler Mac Desktop": "mac",
+      "Tyler Chrome OS": "chromeos",
+      "Tyler Tiling VM": "tiling",
       "Yuki 3D Desktop": "3d",
-      "Yuki Deck Mode": "steamdeck",
-      "Yuki Windows 11": "win11",
+      "Tyler Deck Mode": "steamdeck",
+      "Tyler Windows 11": "win11",
       tiling: "tiling",
     };
     const activeMode = sessionToMode[this.selectedSession] || "reset";
@@ -1760,14 +1760,14 @@ export class SessionManager {
     os.events.emit(BusEvents.SESSION_INITIALIZED, this.currentSession);
     liveActivityManager.init();
 
-    if (this.selectedSession === "Yuki Mac Desktop") {
+    if (this.selectedSession === "Tyler Mac Desktop") {
       applyMacSettings();
     } else {
       disableMacSettings();
     }
 
     if (
-      this.selectedSession === "Yuki Tiling VM" ||
+      this.selectedSession === "Tyler Tiling VM" ||
       this.selectedSession === "tiling"
     ) {
       applyTilingSettings();
@@ -1775,19 +1775,19 @@ export class SessionManager {
       disableTilingSettings();
     }
 
-    if (this.selectedSession === "Yuki Chrome OS") {
+    if (this.selectedSession === "Tyler Chrome OS") {
       applyChromeOsSettings();
     } else {
       disableChromeOsSettings();
     }
 
-    if (this.selectedSession === "Yuki Deck Mode") {
+    if (this.selectedSession === "Tyler Deck Mode") {
       applySteamDeckSettings();
     } else {
       disableSteamDeckSettings();
     }
 
-    if (this.selectedSession === "Yuki Windows 11") {
+    if (this.selectedSession === "Tyler Windows 11") {
       applyWin11Settings({ playStartup: true });
     } else {
       disableWin11Settings();
@@ -1805,7 +1805,7 @@ export class SessionManager {
     if (
       !this.skipSetup &&
       !os.storage.get(StorageKeys.setupCompleted) &&
-      this.selectedSession === "Yuki Desktop(Default)"
+      this.selectedSession === "Tyler Desktop(Default)"
     ) {
       const setupApp = this.os.app.getInstance(ServiceKeys.SETUP);
       if (setupApp) setTimeout(() => setupApp.open(), 1000);

@@ -2250,7 +2250,7 @@ export class OfficeApp extends BaseApp {
       title: "Office",
       version: "1.0.0",
       description:
-        "YukiOS Office Suite for editing documents, spreadsheets, and presentations.",
+        "Tyler OS Office Suite for editing documents, spreadsheets, and presentations.",
       icon: "static/icons/office.webp",
       iconType: "image",
     });

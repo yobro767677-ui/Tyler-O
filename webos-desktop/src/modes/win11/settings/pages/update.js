@@ -1,3 +1,4 @@
+import { withBase } from "../../../../shared/basePath.js";
 import { os, StorageKeys } from "../../../../framework.js";
 import { YUKIOS_VERSION } from "../../../../apps/about.js";
 import { versionChecker } from "../../../../versionChecker.js";
@@ -48,7 +49,7 @@ function updateStatusText() {
   if (remote && isNewerVersion(remote, YUKIOS_VERSION)) {
     return {
       title: "Update available",
-      detail: `YukiOS ${remote} is ready to install`,
+      detail: `Tyler OS ${remote} is ready to install`,
     };
   }
   return {
@@ -62,7 +63,7 @@ function renderUpdateHero() {
   return `
     <div class="updateTop">
       <div class="left">
-        <img src="/img/settings/update.png" width="90" alt="" />
+        <img src="${withBase("img/settings/update.png")}" width="90" alt="" />
         <div>
           <h2>${escapeHtml(status.title)}</h2>
           <p>${escapeHtml(status.detail)}</p>

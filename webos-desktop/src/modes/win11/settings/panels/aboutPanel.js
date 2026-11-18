@@ -36,7 +36,7 @@ function renderOsInformation() {
     <div class="win11-control win11-control--stacked">
       <div class="win11-control__text">
         <p class="win11-control__title">
-          YukiOS <span class="win11-badge">${escapeHtml(YUKIOS_VERSION)}</span>
+          Tyler OS <span class="win11-badge">${escapeHtml(YUKIOS_VERSION)}</span>
         </p>
         <p class="win11-control__desc">Desktop, in your browser</p>
       </div>
@@ -113,13 +113,13 @@ function renderCredits() {
     <div class="win11-control win11-control--stacked">
       <div class="win11-control__text">
         <p class="win11-control__title">Credits</p>
-        <p class="win11-control__desc">YukiOS is MIT Licensed</p>
+        <p class="win11-control__desc">Tyler OS is MIT Licensed</p>
       </div>
       <div class="win11-hero-row">
         <img class="win11-logo" src="${resolveIconUrl("static/icons/reeyuki.webp")}" alt="Reeyuki" loading="lazy" onerror="this.style.display='none'" />
         <div class="win11-control__text">
           <p class="win11-control__title"><i class="fas fa-heart"></i> Made by Reeyuki</p>
-          <p class="win11-control__desc">Creator of YukiOS</p>
+          <p class="win11-control__desc">Creator of Tyler OS</p>
           <div class="win11-chip-row">
             <a class="win11-link" href="https://github.com/reeyuki" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
             <a class="win11-link" href="https://reeyuki.neocities.org" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i> Website</a>

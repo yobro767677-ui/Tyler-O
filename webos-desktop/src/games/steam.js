@@ -441,7 +441,7 @@ export function initDropdowns(container, navigateTo, openFriendsWindow, wm) {
         {
           id: "up-social-tour",
           action: "up-social-tour",
-          label: "Yuki Steam Tour",
+          label: "Tyler Steam Tour",
           icon: "fa-question-circle",
         },
       ];

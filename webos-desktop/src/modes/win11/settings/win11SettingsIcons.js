@@ -1,6 +1,7 @@
+import { withBase } from "../../../shared/basePath.js";
 import win11CategoryData from "./win11SettingsData.json";
 
-export const WIN11_CATEGORY_ICON_BASE = "/img/settings";
+export const WIN11_CATEGORY_ICON_BASE = withBase("img/settings");
 
 export function win11CategoryIcon(categoryId) {
   return `${WIN11_CATEGORY_ICON_BASE}/${categoryId}.webp`;

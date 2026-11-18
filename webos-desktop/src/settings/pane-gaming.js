@@ -72,7 +72,7 @@ export function renderGamingSettings() {
       </div>
 
       <div class="settings-card" id="sc-gaming-steam" style="margin-top:16px;">
-        <div class="settings-card-header"><i class="fab fa-steam"></i> Yuki Steam</div>
+        <div class="settings-card-header"><i class="fab fa-steam"></i> Tyler Steam</div>
         <div class="settings-row">
           <div class="settings-label-group">
             <span class="settings-label-title">Open Steam Settings</span>

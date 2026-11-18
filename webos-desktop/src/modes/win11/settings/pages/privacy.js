@@ -100,7 +100,7 @@ registerWin11Binding("recentFilesPanel", {
         <div class="win11-control win11-control--stacked">
           <div class="win11-control__text">
             <p class="win11-control__title">File History (${recent.length})</p>
-            <p class="win11-control__desc">Files opened recently across YukiOS</p>
+            <p class="win11-control__desc">Files opened recently across Tyler OS</p>
           </div>
           <div class="win11-range">
             <button type="button" class="win11-action" data-recent-clear><i class="fas fa-trash"></i> Clear all</button>
@@ -208,13 +208,13 @@ export const privacyPage = {
           action(
             "aboutBlankNow",
             "Open in about:blank",
-            "Reopen YukiOS in a blank tab behind a decoy page",
+            "Reopen Tyler OS in a blank tab behind a decoy page",
             "Open now",
           ),
           action(
             "panicKey",
             "Panic key",
-            "Press to instantly leave YukiOS",
+            "Press to instantly leave Tyler OS",
             "Set key",
           ),
           select(

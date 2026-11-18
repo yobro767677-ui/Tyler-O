@@ -1,3 +1,4 @@
+import { withBase } from "./shared/basePath.js";
 import { sanitizeTitle } from "./utils/utils.js";
 import { HIGHLIGHTED_GAMES, getGameName } from "./games/games.js";
 import { appMap } from "./games/gamesList.js";
@@ -373,7 +374,7 @@ export class AppLauncher {
 
         if (info?.scramjetEnabled) {
           const wispUrl = getWispUrl();
-          source = `/sapps/set-template.html?wisp=${encodeURIComponent(wispUrl)}&target=${encodeURIComponent(info.url)}`;
+          source = `${withBase("sapps/")}set-template.html?wisp=${encodeURIComponent(wispUrl)}&target=${encodeURIComponent(info.url)}`;
         } else if (
           info?.blobEnabled &&
           typeof source === "string" &&
@@ -506,13 +507,13 @@ export class AppLauncher {
     const appId = "yukiDevTools";
     if (this.bringToFrontIfExists(appId)) return;
 
-    const title = this.appMap[appId]?.title || "Yuki Dev Tools";
+    const title = this.appMap[appId]?.title || "Tyler Dev Tools";
     let iframeUrl = YUKI_DEV_TOOLS_URL;
 
     try {
       iframeUrl = await yukiITDevToolsBridge(YUKI_DEV_TOOLS_URL);
     } catch (err) {
-      console.error("Failed to build bridged Yuki Dev Tools iframe", err);
+      console.error("Failed to build bridged Tyler Dev Tools iframe", err);
     }
 
     const contentHtml = `<iframe src="${iframeUrl}" ${IFRAME_ATTRS}></iframe>`;
@@ -765,7 +766,7 @@ player.load("${swfPath}");
         });
 
         const overlayBtnHtml = isGame
-          ? `<button class="overlay-open-btn" title="Yuki Steam Overlay (Shift+Tab)"><i class="fab fa-steam"></i></button>`
+          ? `<button class="overlay-open-btn" title="Tyler Steam Overlay (Shift+Tab)"><i class="fab fa-steam"></i></button>`
           : "";
 
         win.innerHTML = `
@@ -984,7 +985,7 @@ player.load("${swfPath}");
     const iconHtml = this.buildWindowIconHtml(resolvedIcon, { margin: "8px" });
 
     const overlayBtnHtml = isGame
-      ? `<button class="overlay-open-btn" title="Yuki Steam Overlay (Shift+Tab)"><i class="fab fa-steam"></i></button>`
+      ? `<button class="overlay-open-btn" title="Tyler Steam Overlay (Shift+Tab)"><i class="fab fa-steam"></i></button>`
       : "";
 
     win.innerHTML = `

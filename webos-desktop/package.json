@@ -1,5 +1,5 @@
 {
-  "name": "yukios-desktop",
+  "name": "tyleros-desktop",
   "private": true,
   "version": "0.0.0",
   "repository": {
@@ -86,8 +86,8 @@
   },
   "build": {
     "npmRebuild": false,
-    "appId": "app.yukios.desktop",
-    "productName": "YukiOS",
+    "appId": "app.tyleros.desktop",
+    "productName": "Tyler OS",
     "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
     "directories": {
       "output": "release"

@@ -40,7 +40,7 @@ export class Room extends DurableObject {
       .toUpperCase();
 
     if (request.headers.get("Upgrade") !== "websocket") {
-      return new Response("YukiOS Remote Desktop Signaling", { status: 200 });
+      return new Response("Tyler OS Remote Desktop Signaling", { status: 200 });
     }
 
     const pair = new WebSocketPair();

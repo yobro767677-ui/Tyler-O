@@ -1,3 +1,4 @@
+import { withBase } from "../shared/basePath.js";
 import "../styles/appCreator.css";
 import { isImageFile } from "../fileDisplay.js";
 import { refreshIcons } from "../shared/contextMenu.js";
@@ -903,7 +904,7 @@ export class AppCreatorApp extends BaseApp {
 
     if (scramjetEnabled) {
       const wispUrl = getWispUrl();
-      finalUrl = `/sapps/set-template.html?wisp=${encodeURIComponent(wispUrl)}&target=${encodeURIComponent(secureUrl)}`;
+      finalUrl = `${withBase("sapps/")}set-template.html?wisp=${encodeURIComponent(wispUrl)}&target=${encodeURIComponent(secureUrl)}`;
     } else if (
       blobEnabled &&
       typeof secureUrl === "string" &&

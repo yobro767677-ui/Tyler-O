@@ -642,7 +642,7 @@ class GameWindowRenderer {
         : [
             {
               image: "fas fa-snowflake",
-              title: "Yuki Steam App Added",
+              title: "Tyler Steam App Added",
               date: "May 1, 2026",
             },
           ];
@@ -675,7 +675,7 @@ class GameWindowRenderer {
       return descriptionMap[appId];
     }
     const title = appMap[appId]?.title || appId;
-    return `Experience ${title} on YukiOS. This game is part of your Yuki Steam library.`;
+    return `Experience ${title} on Tyler OS. This game is part of your Tyler Steam library.`;
   }
 
   setCurrentGame(appId) {
