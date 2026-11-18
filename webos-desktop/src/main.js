@@ -50,6 +50,7 @@ import { trayManager } from "./tray/tray.js";
 import { MacControlCenter } from "./modes/macos/ControlCenter.js";
 import { MenuBarManager } from "./modes/macos/MenuBarManager.js";
 import { applyStartButtonIcon } from "./desktopui/startButtonManager.js";
+import { applyAdminTag } from "./shared/adminAccess.js";
 
 registerPWA();
 
@@ -87,6 +88,7 @@ try {
 os.clipboardManager = clipboardManager;
 new MacControlCenter();
 init();
+applyAdminTag();
 window.os = os;
 deckCapture.install();
 

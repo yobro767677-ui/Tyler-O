@@ -36,6 +36,7 @@ import { ScreenshotApp } from "./apps/screenshot.js";
 import { MapsApp } from "./apps/maps.js";
 import { ErudaApp } from "./apps/eruda.js";
 import { ClockApp } from "./apps/clock.js";
+import { AdminPanelApp } from "./apps/adminPanel.js";
 import { TorBrowserApp } from "./apps/torBrowser.js";
 import { DiscordApp } from "./apps/discord.js";
 import { RobloxApp } from "./apps/roblox.js";
@@ -94,6 +95,7 @@ const APP_CLASS_MAP = {
   mapsApp: MapsApp,
   erudaApp: ErudaApp,
   clockApp: ClockApp,
+  adminPanelApp: AdminPanelApp,
   torBrowserApp: TorBrowserApp,
   discordApp: DiscordApp,
   robloxApp: RobloxApp,

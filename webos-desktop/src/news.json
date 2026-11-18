@@ -1,6 +1,33 @@
 [
   {
     "date": "November 18, 2026",
+    "label": "Admin Panel",
+    "sections": [
+      {
+        "icon": "fas fa-user-shield",
+        "title": "Admin Panel",
+        "items": [
+          [
+            "fas fa-lock",
+            "Code Lock",
+            "Unlock admin tools with your private admin code."
+          ],
+          [
+            "fas fa-id-badge",
+            "Admin Tag",
+            "Show an ADMIN badge next to your name in the Start menu."
+          ],
+          [
+            "fas fa-screwdriver-wrench",
+            "Admin Tools",
+            "Send announcements, close windows, restart, or reset all data."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "date": "November 18, 2026",
     "label": "Welcome to Tyler OS",
     "sections": [
       {

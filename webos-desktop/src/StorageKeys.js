@@ -363,4 +363,6 @@ export const StorageKeys = {
   autoCloakOnBoot: "yukiOS_auto_cloak_on_boot",
   boxedWineLastApp: "yukiOS_boxedwine_last_app",
   webAppMusicMuted: "yukiOS_webapp_music_muted",
+  adminUnlocked: "tylerOS_admin_unlocked",
+  adminTag: "tylerOS_admin_tag",
 };

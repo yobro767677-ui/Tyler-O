@@ -1,0 +1,150 @@
+.admin-panel-root {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  padding: 18px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 14px;
+  overflow-y: auto;
+}
+
+.admin-panel-lock {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.admin-panel-lock-icon {
+  font-size: 40px;
+  color: var(--brand);
+}
+
+.admin-panel-lock p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.admin-panel-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 260px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.admin-panel-error {
+  min-height: 18px;
+  color: var(--error);
+}
+
+.admin-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-panel-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.admin-panel-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+}
+
+.admin-panel-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 11px;
+  background: var(--bg-primary);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.admin-panel-toggle::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  transition: transform 0.15s;
+}
+
+.admin-panel-toggle:checked {
+  background: var(--brand);
+}
+
+.admin-panel-toggle:checked::after {
+  transform: translateX(18px);
+  background: var(--text-primary);
+}
+
+.admin-panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.admin-panel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.admin-panel-btn:hover {
+  filter: brightness(1.2);
+}
+
+.admin-panel-btn-primary {
+  background: var(--brand);
+}
+
+.admin-panel-btn-danger {
+  color: var(--error);
+}
+
+.admin-badge,
+.admin-tag-enabled .start-user span::after {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--brand);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.admin-tag-enabled .start-user span::after {
+  content: "ADMIN";
+  margin-left: 6px;
+}

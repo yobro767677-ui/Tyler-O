@@ -1,4 +1,6 @@
 export const ServiceKeys = {
+  TASK_MANAGER: "taskManagerApp",
+  ADMIN_PANEL: "adminPanelApp",
   EXPLORER: "explorerApp",
   NOTEPAD: "notepadApp",
   MARKDOWN: "markdownApp",

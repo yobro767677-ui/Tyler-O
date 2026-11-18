@@ -1411,6 +1411,17 @@ export const APP_MANIFESTS = [
     description: "Nintendo 3DS emulator for playing 3DS games in the browser.",
   },
   {
+    serviceKey: "adminPanelApp",
+    type: "system",
+    title: "Admin Panel",
+    icon: "fas fa-user-shield",
+    launchType: "instance",
+    windowIdPatterns: ["admin-panel"],
+    category: "system",
+    description:
+      "Unlock admin tools with a code, show your admin tag and manage the desktop.",
+  },
+  {
     serviceKey: "clockApp",
     enhanced: true,
     type: "system",
