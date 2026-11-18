@@ -1,4 +1,4 @@
-# Contributing to YukiOS
+# Contributing to Tyler OS
 
 Check out our [Roadmap](ROADMAP.md)
 

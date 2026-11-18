@@ -1,3 +1,4 @@
+import { withBase } from "../shared/basePath.js";
 import "../styles/infaredYoutube.css";
 import { BaseApp, os } from "../framework.js";
 import { $, bindEvent, setText } from "../shared/domUtils.js";
@@ -20,7 +21,7 @@ export class InfaredYoutubeApp extends BaseApp {
     const wispUrl = getWispUrl();
     return (
       window.location.origin +
-      "/sapps/set-template.html?wisp=" +
+      withBase("sapps/set-template.html?wisp=") +
       encodeURIComponent(wispUrl) +
       "&target=" +
       encodeURIComponent(SOURCE)

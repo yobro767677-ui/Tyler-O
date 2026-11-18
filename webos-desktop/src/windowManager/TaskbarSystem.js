@@ -740,7 +740,7 @@ export class TaskbarSystem {
         {
           winId: "browser-pinned",
           appId: "browserApp",
-          title: "Yuki Browser",
+          title: "Tyler Browser",
           iconValue: resolveIconUrl("static/icons/chrome.webp"),
           color: null,
         },

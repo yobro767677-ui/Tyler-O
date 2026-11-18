@@ -815,7 +815,7 @@ let trayState = {
 function setupTray() {
   const iconPath = TRAY_ICON_PATH;
   tray = new Tray(nativeImage.createFromPath(iconPath));
-  tray.setToolTip("YukiOS");
+  tray.setToolTip("Tyler OS");
 
   rebuildTrayMenu = () => {
     const autostart = app.getLoginItemSettings().openAtLogin;
@@ -992,14 +992,14 @@ function setupTray() {
       },
       { type: "separator" },
       {
-        label: "Show YukiOS",
+        label: "Show Tyler OS",
         click: () => {
           mainWindow.show();
           mainWindow.focus();
         },
       },
       {
-        label: "Quit YukiOS",
+        label: "Quit Tyler OS",
         click: () => {
           app.isQuitting = true;
           app.quit();

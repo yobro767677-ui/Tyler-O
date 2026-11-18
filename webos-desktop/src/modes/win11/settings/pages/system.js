@@ -1,3 +1,4 @@
+import { withBase } from "../../../../shared/basePath.js";
 import { $, $$, bindEvent, os } from "../../../../framework.js";
 import { formatSize } from "../../../../utils/utils.js";
 import {
@@ -30,18 +31,18 @@ function renderSystemHero() {
     <div class="sysTop">
       <div class="left">
         <div class="column_device">
-          <p class="device_name">YukiOS</p>
+          <p class="device_name">Tyler OS</p>
           <p class="device_model">${YUKIOS_VERSION}</p>
           <p class="device_rename">Windows 11 mode</p>
         </div>
       </div>
       <div class="right">
         <div class="column" data-win11-goto-category="Windows Update">
-          <img src="/img/settings/Windows Update.webp" alt="" height="20" />
+          <img src="${withBase("img/settings/Windows Update.webp")}" alt="" height="20" />
           <p>
             Windows Update
             <br />
-            <span class="column_lower">Check for YukiOS updates</span>
+            <span class="column_lower">Check for Tyler OS updates</span>
           </p>
         </div>
       </div>
@@ -389,11 +390,11 @@ export const systemPage = {
             "Revert any unsaved changes to stored configuration",
             "Revert",
           ),
-          subHeading("Save YukiOS"),
+          subHeading("Save Tyler OS"),
           action(
             "downloadPage",
             "Download Page",
-            "Save a local copy of YukiOS",
+            "Save a local copy of Tyler OS",
             "Download",
           ),
         ].join(""),

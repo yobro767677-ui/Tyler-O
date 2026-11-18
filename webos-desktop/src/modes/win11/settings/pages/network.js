@@ -1,3 +1,4 @@
+import { withBase } from "../../../../shared/basePath.js";
 import { select, subHeading, textField, toggle } from "../win11Controls.js";
 import {
   WIN11_CDN_OPTIONS,
@@ -12,7 +13,7 @@ function renderNetworkHero() {
   return `
     <div class="netTop">
       <div>
-        <img src="/img/settings/wifi.png" alt="" height="100" />
+        <img src="${withBase("img/settings/wifi.png")}" alt="" height="100" />
         <div>
           <h2 class="font-medium text-lg">WiFi</h2>
           <p>Connected, secured</p>
@@ -24,7 +25,7 @@ function renderNetworkHero() {
       </div>
       <div class="box">
         <span class="settingsIcon">\uE701</span>
-        <div><h3>Data Usage</h3><p>YukiOS runs locally in your browser</p></div>
+        <div><h3>Data Usage</h3><p>Tyler OS runs locally in your browser</p></div>
       </div>
     </div>`;
 }

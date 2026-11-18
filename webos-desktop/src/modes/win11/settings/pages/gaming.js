@@ -319,7 +319,7 @@ export const gamingPage = {
       subPage: "gaming-mode",
     },
     {
-      name: "Yuki Steam",
+      name: "Tyler Steam",
       desc: "Storefront, overlay and library preferences",
       icon: "fab fa-steam",
       subPage: "gaming-steam",
@@ -359,7 +359,7 @@ export const gamingPage = {
         ),
     },
     "gaming-steam": {
-      title: "Yuki Steam",
+      title: "Tyler Steam",
       body: () =>
         [
           custom(

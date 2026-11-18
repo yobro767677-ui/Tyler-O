@@ -1,4 +1,4 @@
-# YukiOS - Agent Reference
+# Tyler OS - Agent Reference
 
 You are working under webos-desktop directory. when src is mentioned it means webos-desktop/
 
@@ -99,7 +99,7 @@ Write modular, clean, and DRY code. Follow these principles:
 
 ## Styling System
 
-YukiOS uses a dark glassmorphism theme with a comprehensive theming system. All rules below are non-negotiable.
+Tyler OS uses a dark glassmorphism theme with a comprehensive theming system. All rules below are non-negotiable.
 
 - **CSS Variables**: Use `--brand` (accent), `--text-primary`, `--text-secondary`, `--bg-primary`, `--bg-secondary`,
   `--glass`, `--glass-border`, `--error`. Never introduce new hues or hardcoded values.
@@ -474,7 +474,7 @@ Rich metadata per app: title, description, genre, year, developer (`descriptionM
 
 ### steam - `games/steam.js`
 
-Yuki Steam storefront: `SteamSettings` persistence, game launch handling, playtime tracking.
+Tyler Steam storefront: `SteamSettings` persistence, game launch handling, playtime tracking.
 
 ### appCreator - `apps/appCreator.js`
 
@@ -509,10 +509,10 @@ entries — no app class needed.
 | -------------- | ------------------------ | ----------------------------------------------------- |
 | NotepadApp     | `apps/notepad.js`        | Text editor, file save/load                           |
 | MarkdownApp    | `apps/markdown.js`       | Split-pane editor with live preview                   |
-| Yuki Code      | `apps/monaco.js`         | Monaco editor (VSCode engine) integration             |
+| Tyler Code      | `apps/monaco.js`         | Monaco editor (VSCode engine) integration             |
 | CalculatorApp  | `apps/calculator.js`     | Scientific calculator with memory                     |
 | OfficeAppProxy | `office/officeLoader.js` | Office 365 viewer for .docx/.xlsx/.pptx               |
-| Yuki Convert   | `apps/yukiConvert.js`    | Local file converter (image, audio, video, documents) |
+| Tyler Convert   | `apps/yukiConvert.js`    | Local file converter (image, audio, video, documents) |
 | Data Editor    | `apps/dataEditor.js`     | IndexedDB storage inspector for debugging             |
 
 ### Media & Emulators
@@ -523,7 +523,7 @@ entries — no app class needed.
 | YouTube          | `apps/youtube.js`         | YouTube integration                                             |
 | JsDos            | `apps/jsdos.js`           | DOS emulation                                                   |
 | V86              | `apps/v86.js`             | x86-64 full system emulation                                    |
-| Yuki Emulator    | `apps/emulator.js`        | Multi-console ROM emulator (NES, SNES, GB, GBA, N64, PSX, etc.) |
+| Tyler Emulator    | `apps/emulator.js`        | Multi-console ROM emulator (NES, SNES, GB, GBA, N64, PSX, etc.) |
 | Ruffle           | `apps/ruffle.js`          | Flash player for SWF content                                    |
 | Rhythms          | `apps/rhythms.js`         | System-wide audio visualizer                                    |
 | Wallpaper Engine | `apps/wallpaperEngine.js` | Static, video and animated wallpapers                           |
@@ -542,12 +542,12 @@ entries — no app class needed.
 | AboutApp            | `apps/about.js`                 | System info, version, credits                                               |
 | What's New          | `apps/news.js`                  | News aggregation with unread bubble                                         |
 | WeatherApp          | `apps/weather.js`               | Current weather and forecast                                                |
-| YukiOS Guide        | `apps/yukiOsGuide.js`           | Interactive guide and tutorial system                                       |
+| Tyler OS Guide        | `apps/yukiOsGuide.js`           | Interactive guide and tutorial system                                       |
 | Clipboard Manager   | `apps/clipboardApp.js`          | Clipboard history and management                                            |
 | Setup Wizard        | `apps/setupApp.js`              | First-run profile setup                                                     |
 | Intro Tour          | `apps/introTour.js`             | Replayable 60-second guided desktop tour                                    |
 | Shortcuts           | `apps/shortcuts.js`             | Keyboard shortcut manager (KeybindManager UI)                               |
-| Yuki AI Assistant   | `apps/aiAssistant.js`           | Local, in-browser AI assistant (launch apps, manage files)                  |
+| Tyler AI Assistant   | `apps/aiAssistant.js`           | Local, in-browser AI assistant (launch apps, manage files)                  |
 | Theme Hub           | `apps/themeHub.js`              | Community theme browser/installer                                           |
 | Launchpad           | `apps/launchpad.js`             | macOS-style fullscreen app grid                                             |
 | Emoji Selector      | `apps/emojiSelector.js`         | Emoji picker with categories                                                |
@@ -569,7 +569,7 @@ entries — no app class needed.
 | VM Manager          | `apps/virtualMachineManager.js` | Manage v86 virtual machines                                                 |
 | Remote Host         | `apps/RemoteHostApp.js`         | Remote desktop hosting with room codes                                      |
 | Display Performance | `apps/displayPerformanceApp.js` | Display/performance monitoring                                              |
-| Steam               | `games/steam.js`                | Yuki Steam storefront and game launcher                                     |
+| Steam               | `games/steam.js`                | Tyler Steam storefront and game launcher                                     |
 | Roblox              | `apps/roblox.js`                | Roblox Studio / Roblox client                                               |
 | Room 3D             | `apps/room3d.js`                | 3D room mode (system mode)                                                  |
 
@@ -771,7 +771,7 @@ export class MyApp extends BaseApp {
 
 ### 2. Add CSS Styling
 
-Create `src/styles/myApp.css` with YukiOS styling:
+Create `src/styles/myApp.css` with Tyler OS styling:
 
 ```css
 .my-app-root {

@@ -171,7 +171,7 @@ class TabCloak {
     } catch {
       /* ignore */
     }
-    document.title = "YukiOS";
+    document.title = "Tyler OS";
   }
 
   isCloakActive() {

@@ -1,3 +1,4 @@
+import { withBase } from "./shared/basePath.js";
 import { KeybindManager } from "./keybindManager.js";
 import { StorageKeys, os, ServiceKeys } from "./framework.js";
 import { BusEvents } from "./core/EventBus.js";
@@ -1278,7 +1279,7 @@ export class GameOverlayController {
       "sandbox",
       "allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation-by-user-activation",
     );
-    iframe.src = window.location.origin + "/s/index.html";
+    iframe.src = new URL(withBase("s/index.html"), window.location.href).href;
 
     wrapper.appendChild(iframe);
     pane.innerHTML = "";
@@ -1302,7 +1303,7 @@ export class GameOverlayController {
           <div class="overlay-settings-section-title">Overlay Settings</div>
           <div class="overlay-settings-row">
             <div>
-              <div class="overlay-settings-label">Enable Yuki Steam Overlay While In-Game</div>
+              <div class="overlay-settings-label">Enable Tyler Steam Overlay While In-Game</div>
               <div class="overlay-settings-desc">Show overlay when pressing the shortcut key</div>
             </div>
             <div class="overlay-settings-toggle ${this.settings.enabled ? "active" : ""}" data-setting="enabled"></div>

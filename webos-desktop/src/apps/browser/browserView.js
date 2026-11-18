@@ -77,13 +77,13 @@ function buildSidebar(suffix, fireAction, els) {
     className: "sidebar-brand-icon",
     attributes: {
       src: "https://gcore.jsdelivr.net/gh/NaoTomori1/YukiOS@main/static/icons/logo.png",
-      alt: "Yuki Browser",
+      alt: "Tyler Browser",
     },
   });
   sidebarHeader.appendChild(brandIcon);
   const sidebarTitle = createElement("span", {
     className: "sidebar-title",
-    text: "Yuki Browser",
+    text: "Tyler Browser",
   });
   sidebarHeader.appendChild(sidebarTitle);
   const headerActions = createElement("div", {

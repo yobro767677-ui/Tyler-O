@@ -329,7 +329,7 @@ registerWin11Binding("startupApps", {
             <div class="win11-control win11-control--toggle">
               <div class="win11-control__text">
                 <p class="win11-control__title">${escapeHtml(title)}</p>
-                <p class="win11-control__desc">${enabled ? "Starts automatically when YukiOS launches" : "Does not start automatically"}</p>
+                <p class="win11-control__desc">${enabled ? "Starts automatically when Tyler OS launches" : "Does not start automatically"}</p>
               </div>
               <button type="button" class="win11-switch${enabled ? " is-on" : ""}" role="switch" aria-checked="${enabled ? "true" : "false"}" aria-label="${escapeHtml(title)}" data-startup-app="${escapeHtml(app.id)}">
                 <span class="win11-switch__thumb"></span>
@@ -460,7 +460,7 @@ export const appsPage = {
           custom(
             "startupApps",
             "Launch on Startup",
-            "Choose which system apps open automatically when YukiOS starts",
+            "Choose which system apps open automatically when Tyler OS starts",
           ),
         ].join(""),
     },
@@ -482,7 +482,7 @@ export const appsPage = {
         custom(
           "addOnsPanel",
           "Add-on library",
-          "Files and machines you added to YukiOS",
+          "Files and machines you added to Tyler OS",
         ),
     },
   },

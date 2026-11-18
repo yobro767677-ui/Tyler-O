@@ -85,7 +85,7 @@ export const bluetoothPage = {
       body: () =>
         [
           note(
-            "YukiOS runs entirely in the browser, so hardware device management is limited.",
+            "Tyler OS runs entirely in the browser, so hardware device management is limited.",
           ),
           toggle(
             "cursorEffect",

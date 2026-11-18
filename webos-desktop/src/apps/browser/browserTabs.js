@@ -549,7 +549,7 @@ export function createTabsStore(viewportContainer, opts = {}) {
 
   const DEFAULT_BOOKMARKS = [
     {
-      name: "YukiOS Alpha Historical",
+      name: "Tyler OS Alpha Historical",
       url: "https://reeyuki.github.io/YukiOS-AlphaHistorical/desktop/",
     },
     {

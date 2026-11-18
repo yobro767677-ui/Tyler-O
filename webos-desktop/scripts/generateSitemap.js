@@ -5,7 +5,8 @@ import https from "https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-const BASE = "https://yukios.netlify.app";
+const BASE = (process.env.SITE_URL || "https://yukios.netlify.app").replace(/\/+$/, "");
+const SITE_ROOT = process.env.SITE_BASE || "/";
 
 function extractApps() {
   const content = readFileSync(
@@ -425,38 +426,38 @@ const GENRE_KEYWORDS = {
 
 const TITLE_TEMPLATES = {
   Action:
-    "${title} - Action Game - Play Free Online in Browser No Download | YukiOS",
-  Adventure: "${title} - Free Adventure Game - Play Online in Browser | YukiOS",
+    "${title} - Action Game - Play Free Online in Browser No Download | Tyler OS",
+  Adventure: "${title} - Free Adventure Game - Play Online in Browser | Tyler OS",
   Strategy:
-    "${title} - Strategy Game - Play Free Online Browser No Install | YukiOS",
+    "${title} - Strategy Game - Play Free Online Browser No Install | Tyler OS",
   Puzzle:
-    "${title} - Free Puzzle Game - Brain Teaser Online No Download | YukiOS",
+    "${title} - Free Puzzle Game - Brain Teaser Online No Download | Tyler OS",
   Simulation:
-    "${title} - Simulation Game - Play Free Online in Your Browser | YukiOS",
-  RPG: "${title} - Free RPG - Play Online in Browser No Install Required | YukiOS",
-  Horror: "${title} - Scary Horror Game - Play Free Online in Browser | YukiOS",
+    "${title} - Simulation Game - Play Free Online in Your Browser | Tyler OS",
+  RPG: "${title} - Free RPG - Play Online in Browser No Install Required | Tyler OS",
+  Horror: "${title} - Scary Horror Game - Play Free Online in Browser | Tyler OS",
   Platformer:
-    "${title} - Free Platformer Game - Play Online in Browser | YukiOS",
+    "${title} - Free Platformer Game - Play Online in Browser | Tyler OS",
   Shooter:
-    "${title} - Shooter Game - Play Free Online Browser No Download | YukiOS",
-  Sports: "${title} - Sports Game - Play Free Online in Browser | YukiOS",
-  Racing: "${title} - Racing Game - Play Free Online in Browser | YukiOS",
+    "${title} - Shooter Game - Play Free Online Browser No Download | Tyler OS",
+  Sports: "${title} - Sports Game - Play Free Online in Browser | Tyler OS",
+  Racing: "${title} - Racing Game - Play Free Online in Browser | Tyler OS",
   Fighting:
-    "${title} - Fighting Game - Play Free Online Browser No Download | YukiOS",
-  Casual: "${title} - Free Casual Game - Play Online Relax in Browser | YukiOS",
+    "${title} - Fighting Game - Play Free Online Browser No Download | Tyler OS",
+  Casual: "${title} - Free Casual Game - Play Online Relax in Browser | Tyler OS",
   Sandbox:
-    "${title} - Free Sandbox Game - Play Online in Browser No Limits | YukiOS",
-  Survival: "${title} - Survival Game - Play Free Online in Browser | YukiOS",
+    "${title} - Free Sandbox Game - Play Online in Browser No Limits | Tyler OS",
+  Survival: "${title} - Survival Game - Play Free Online in Browser | Tyler OS",
   Roguelike:
-    "${title} - Free Roguelike Game - Play Online Browser Run | YukiOS",
-  Card: "${title} - Card Game - Play Free Online Browser No Download | YukiOS",
-  Arcade: "${title} - Retro Arcade Game - Play Free Online Unblocked | YukiOS",
+    "${title} - Free Roguelike Game - Play Online Browser Run | Tyler OS",
+  Card: "${title} - Card Game - Play Free Online Browser No Download | Tyler OS",
+  Arcade: "${title} - Retro Arcade Game - Play Free Online Unblocked | Tyler OS",
   Educational:
-    "${title} - Free Educational Game - Learn Online in Browser | YukiOS",
-  Idle: "${title} - Idle Clicker Game - Play Free Online in Browser | YukiOS",
-  Rhythm: "${title} - Music Rhythm Game - Play Free Online in Browser | YukiOS",
+    "${title} - Free Educational Game - Learn Online in Browser | Tyler OS",
+  Idle: "${title} - Idle Clicker Game - Play Free Online in Browser | Tyler OS",
+  Rhythm: "${title} - Music Rhythm Game - Play Free Online in Browser | Tyler OS",
   Multiplayer:
-    "${title} - Multiplayer IO Browser Game - Play Free Online | YukiOS",
+    "${title} - Multiplayer IO Browser Game - Play Free Online | Tyler OS",
 };
 
 const H1_TEMPLATES = {
@@ -744,9 +745,9 @@ const featurePages = [
   {
     key: "index",
     rootFile: "features.html",
-    title: "YukiOS Features - Desktop Environment in Your Browser",
+    title: "Tyler OS Features - Desktop Environment in Your Browser",
     description:
-      "YukiOS is a full browser-based desktop environment with a tiling window manager, Mac desktop mode, 3000 free games, a terminal with Python and Git, retro emulators for DOS/Flash/x86/3DS, and 90+ built-in apps - all running directly in your browser with no installation.",
+      "Tyler OS is a full browser-based desktop environment with a tiling window manager, Mac desktop mode, 3000 free games, a terminal with Python and Git, retro emulators for DOS/Flash/x86/3DS, and 90+ built-in apps - all running directly in your browser with no installation.",
   },
   {
     key: "tiling",
@@ -776,7 +777,7 @@ const featurePages = [
     key: "games",
     title: "3000 Free Online Games - Play in Your Browser",
     description:
-      "Play 3000 free games instantly in your browser on YukiOS. From Minecraft and Geometry Dash to Balatro and Angry Birds - no downloads, no sign-ups, just click and play in a full desktop environment.",
+      "Play 3000 free games instantly in your browser on Tyler OS. From Minecraft and Geometry Dash to Balatro and Angry Birds - no downloads, no sign-ups, just click and play in a full desktop environment.",
   },
   {
     key: "3d-room",
@@ -1018,8 +1019,8 @@ function makeStandalonePage(
   <div class="slideshow-container">
     <button class="slideshow-btn slideshow-btn-prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
     <div class="slideshow-wrapper">
-      <img id="slideshow-img-front" class="slideshow-img slideshow-img-front" src="${galleryImages[0].src}" alt="YukiOS Screenshot" loading="lazy" />
-      <img id="slideshow-img-back" class="slideshow-img slideshow-img-back" src="${galleryImages[0].src}" alt="YukiOS Screenshot" loading="lazy" />
+      <img id="slideshow-img-front" class="slideshow-img slideshow-img-front" src="${galleryImages[0].src}" alt="Tyler OS Screenshot" loading="lazy" />
+      <img id="slideshow-img-back" class="slideshow-img slideshow-img-back" src="${galleryImages[0].src}" alt="Tyler OS Screenshot" loading="lazy" />
       <div class="slideshow-dots" id="slideshow-dots"></div>
     </div>
     <button class="slideshow-btn slideshow-btn-next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
@@ -1080,14 +1081,14 @@ function startSlideshow() {
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>${escHtml(title)} - YukiOS</title>
+<title>${escHtml(title)} - Tyler OS</title>
 <meta name="description" content="${escHtml(desc)}" />
-<meta property="og:title" content="${escHtml(title)} - YukiOS" />
+<meta property="og:title" content="${escHtml(title)} - Tyler OS" />
 <meta property="og:description" content="${escHtml(desc)}" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="${escHtml(ogImage)}" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="${escHtml(title)} - YukiOS" />
+<meta name="twitter:title" content="${escHtml(title)} - Tyler OS" />
 <meta name="twitter:description" content="${escHtml(desc)}" />
 <meta name="twitter:image" content="${escHtml(ogImage)}" />
 <link rel="canonical" href="${canonicalUrl}" />
@@ -1096,17 +1097,17 @@ function startSlideshow() {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600&display=swap" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${SITE_ROOT}favicon.ico" />
 ${landingStyle}
 </head>
 <body>
 <div class="seo-overlay" role="main">
   <header class="seo-header">
-    <a href="/" class="seo-brand"><em>Y</em>ukiOS</a>
+    <a href="${SITE_ROOT}" class="seo-brand"><em>T</em>yler OS</a>
     <div class="seo-nav-links">
-      <a href="/features.html">Features</a>
-      <a href="/apps.html">Apps</a>
-      <a href="/games.html">Games</a>
+      <a href="${SITE_ROOT}features.html">Features</a>
+      <a href="${SITE_ROOT}apps.html">Apps</a>
+      <a href="${SITE_ROOT}games.html">Games</a>
       <a href="https://github.com/NaoTomori1/yukios">GitHub</a>
     </div>
   </header>
@@ -1114,7 +1115,7 @@ ${landingStyle}
     <section class="seo-hero">
       <h1>${title}</h1>
       <p>${desc}</p>
-      <a class="launch-btn" href="${launchUrl}">Launch YukiOS</a>
+      <a class="launch-btn" href="${launchUrl}">Launch Tyler OS</a>
     </section>
     ${screenshot}
     <section class="seo-content">
@@ -1124,8 +1125,8 @@ ${landingStyle}
     </section>
   </main>
   <footer class="seo-footer">
-    <p>YukiOS - Free Browser-Based Desktop Environment</p>
-    <div><a href="/features.html">Features</a> &middot; <a href="https://github.com/NaoTomori1/yukios">GitHub</a> &middot; <a href="/">About</a></div>
+    <p>Tyler OS - Free Browser-Based Desktop Environment</p>
+    <div><a href="${SITE_ROOT}features.html">Features</a> &middot; <a href="https://github.com/NaoTomori1/yukios">GitHub</a> &middot; <a href="${SITE_ROOT}">About</a></div>
   </footer>
 </div>
 ${adSlotScript("landing-ad")}
@@ -1140,8 +1141,8 @@ function makeLanding(title, desc, extraContent, imageUrl) {
   <div class="slideshow-container">
     <button class="slideshow-btn slideshow-btn-prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
     <div class="slideshow-wrapper">
-      <img id="slideshow-img-front" class="slideshow-img slideshow-img-front" src="${galleryImages[0].src}" alt="YukiOS Screenshot" loading="lazy" />
-      <img id="slideshow-img-back" class="slideshow-img slideshow-img-back" src="${galleryImages[0].src}" alt="YukiOS Screenshot" loading="lazy" />
+      <img id="slideshow-img-front" class="slideshow-img slideshow-img-front" src="${galleryImages[0].src}" alt="Tyler OS Screenshot" loading="lazy" />
+      <img id="slideshow-img-back" class="slideshow-img slideshow-img-back" src="${galleryImages[0].src}" alt="Tyler OS Screenshot" loading="lazy" />
       <div class="slideshow-dots" id="slideshow-dots"></div>
     </div>
     <button class="slideshow-btn slideshow-btn-next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
@@ -1200,11 +1201,11 @@ function startSlideshow() {
   return `${landingStyle}
 <div class="seo-overlay" id="seo-overlay" role="main">
   <header class="seo-header">
-    <a href="/" class="seo-brand"><em>Y</em>ukiOS</a>
+    <a href="${SITE_ROOT}" class="seo-brand"><em>T</em>yler OS</a>
     <div class="seo-nav-links">
-      <a href="/features.html">Features</a>
-      <a href="/apps.html">Apps</a>
-      <a href="/games.html">Games</a>
+      <a href="${SITE_ROOT}features.html">Features</a>
+      <a href="${SITE_ROOT}apps.html">Apps</a>
+      <a href="${SITE_ROOT}games.html">Games</a>
       <a href="https://github.com/NaoTomori1/yukios">GitHub</a>
     </div>
   </header>
@@ -1212,7 +1213,7 @@ function startSlideshow() {
     <section class="seo-hero">
       <h1>${title}</h1>
       <p>${desc}</p>
-      <button class="launch-btn" onclick="document.getElementById('seo-overlay').classList.add('hidden')">Launch YukiOS</button>
+      <button class="launch-btn" onclick="document.getElementById('seo-overlay').classList.add('hidden')">Launch Tyler OS</button>
     </section>
     ${screenshot}
     <section class="seo-content">
@@ -1222,8 +1223,8 @@ function startSlideshow() {
     </section>
   </main>
   <footer class="seo-footer">
-    <p>YukiOS - Free Browser-Based Desktop Environment</p>
-    <div><a href="/features.html">Features</a> &middot; <a href="https://github.com/NaoTomori1/yukios">GitHub</a> &middot; <a href="/">About</a></div>
+    <p>Tyler OS - Free Browser-Based Desktop Environment</p>
+    <div><a href="${SITE_ROOT}features.html">Features</a> &middot; <a href="https://github.com/NaoTomori1/yukios">GitHub</a> &middot; <a href="${SITE_ROOT}">About</a></div>
   </footer>
 </div>
 ${adSlotScript("landing-ad")}`;
@@ -1237,8 +1238,8 @@ function generateBullets(description, minBullets) {
     .map((s) => s.replace(/\.+$/, "").trim());
   const fallbacks = [
     "Available directly in your browser with no downloads or installation required",
-    "Part of the YukiOS desktop environment with 90+ built-in applications and 3000 games",
-    "Accessible from the Start Menu and compatible with the full YukiOS ecosystem",
+    "Part of the Tyler OS desktop environment with 90+ built-in applications and 3000 games",
+    "Accessible from the Start Menu and compatible with the full Tyler OS ecosystem",
   ];
   for (const fb of fallbacks) {
     if (pts.length >= minBullets) break;
@@ -1316,7 +1317,7 @@ function makeMinimalGamePage(
   seoDesc,
   gameType,
 ) {
-  const st = seoTitle || `${title} - Play Online Free on YukiOS`;
+  const st = seoTitle || `${title} - Play Online Free on Tyler OS`;
   const sd = seoDesc || desc;
   const isSubwaySurfers = title.toLowerCase().includes("subway surfers");
   let finalGameIcon = gameIcon;
@@ -1456,11 +1457,11 @@ body{background:#0a0a14;color:#ccc;font-family:-apple-system,BlinkMacSystemFont,
 <body>
 <div id="seo-content">
   <header class="seo-header">
-    <a href="/" class="seo-brand"><em>Y</em>ukiOS</a>
+    <a href="${SITE_ROOT}" class="seo-brand"><em>T</em>yler OS</a>
     <div class="seo-nav-links">
-      <a href="/games.html">Games</a>
-      <a href="/apps.html">Apps</a>
-      <a href="/features.html">Features</a>
+      <a href="${SITE_ROOT}games.html">Games</a>
+      <a href="${SITE_ROOT}apps.html">Apps</a>
+      <a href="${SITE_ROOT}features.html">Features</a>
     </div>
   </header>
   <div class="game-hero">
@@ -1509,26 +1510,26 @@ body{background:#0a0a14;color:#ccc;font-family:-apple-system,BlinkMacSystemFont,
       </div>
       <div class="game-info-card">
         <h3>Quick Links</h3>
-        <a href="/games.html" style="color:#d97706;text-decoration:none;display:block;padding:8px 0;font-size:.95rem">→ Browse All Games</a>
-        <a href="/features.html" style="color:#d97706;text-decoration:none;display:block;padding:8px 0;font-size:.95rem">→ YukiOS Features</a>
+        <a href="${SITE_ROOT}games.html" style="color:#d97706;text-decoration:none;display:block;padding:8px 0;font-size:.95rem">→ Browse All Games</a>
+        <a href="${SITE_ROOT}features.html" style="color:#d97706;text-decoration:none;display:block;padding:8px 0;font-size:.95rem">→ Tyler OS Features</a>
       </div>
       <style>${AD_SLOT_STYLE}</style>
       ${adSlotHtml("sidebar-ad")}
     </aside>
   </div>
   <footer class="seo-footer">
-    <p>YukiOS - Free Browser-Based Desktop Environment</p>
+    <p>Tyler OS - Free Browser-Based Desktop Environment</p>
     <div>
-      <a href="/features.html">Features</a>
-      <a href="/games.html">Games</a>
-      <a href="/apps.html">Apps</a>
+      <a href="${SITE_ROOT}features.html">Features</a>
+      <a href="${SITE_ROOT}games.html">Games</a>
+      <a href="${SITE_ROOT}apps.html">Apps</a>
       <a href="https://github.com/NaoTomori1/yukios">GitHub</a>
     </div>
   </footer>
 </div>
 <div id="game-player">
   <div class="gp-header">
-    <button onclick="window.location.href='/'">Back to YukiOS</button>
+    <button onclick="window.location.href='/'">Back to Tyler OS</button>
     <span class="gp-title">${escHtml(title)}</span>
     <button onclick="toggleFS()">Fullscreen</button>
   </div>
@@ -1812,7 +1813,7 @@ body{background:#0a0a14;color:#ccc;font-family:-apple-system,BlinkMacSystemFont,
 </head>
 <body>
 <header class="seo-header">
-  <a href="/" class="seo-brand"><em>Y</em>ukiOS</a>
+  <a href="${SITE_ROOT}" class="seo-brand"><em>T</em>yler OS</a>
 </header>
 <main>
   <section class="seo-hero">
@@ -1837,8 +1838,8 @@ body{background:#0a0a14;color:#ccc;font-family:-apple-system,BlinkMacSystemFont,
   </div>
 </main>
 <footer class="seo-footer">
-  <p>YukiOS - Free Browser-Based Desktop Environment</p>
-  <div><a href="/features.html">Features</a> &middot; <a href="/">Home</a></div>
+  <p>Tyler OS - Free Browser-Based Desktop Environment</p>
+  <div><a href="${SITE_ROOT}features.html">Features</a> &middot; <a href="${SITE_ROOT}">Home</a></div>
 </footer>
 ${
   hasFilters
@@ -1903,7 +1904,7 @@ function makeGenrePage(genre, genreGames, allGenreConfigs) {
       const iconHtml = g.icon
         ? `<img src="${esc(g.icon)}" alt="${esc(g.title)}" loading="lazy" class="gc-icon" />`
         : `<div class="gc-icon-placeholder"></div>`;
-      return `<a href="/class/${g.key}.html" class="gc-card">
+      return `<a href="${SITE_ROOT}class/${g.key}.html" class="gc-card">
       ${iconHtml}
       <span class="gc-label">${esc(g.title)}</span>
       <span class="gc-genres">${g.genre.map((gg) => `<span class="gc-tag">${esc(gg)}</span>`).join("")}</span>
@@ -1915,7 +1916,7 @@ function makeGenrePage(genre, genreGames, allGenreConfigs) {
     (c) => c.slug !== config.slug,
   );
   const otherLinksHtml = otherGenres.length
-    ? `<div class="gl-section"><h3>Browse More Game Genres</h3><div class="gl-links">${otherGenres.map((c) => `<a href="/games/${c.slug}.html">${esc(c.h1)}</a>`).join("\n      ")}</div></div>`
+    ? `<div class="gl-section"><h3>Browse More Game Genres</h3><div class="gl-links">${otherGenres.map((c) => `<a href="${SITE_ROOT}games/${c.slug}.html">${esc(c.h1)}</a>`).join("\n      ")}</div></div>`
     : "";
   const jsonld = JSON.stringify({
     "@context": "https://schema.org",
@@ -1933,7 +1934,7 @@ function makeGenrePage(genre, genreGames, allGenreConfigs) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "YukiOS", item: BASE },
+      { "@type": "ListItem", position: 1, name: "Tyler OS", item: BASE },
       {
         "@type": "ListItem",
         position: 2,
@@ -1997,10 +1998,10 @@ body{background:#0a0a14;color:#ccc;font-family:-apple-system,BlinkMacSystemFont,
 </head>
 <body>
 <header class="gc-header">
-  <a href="/" class="gc-brand"><em>Y</em>ukiOS</a>
+  <a href="${SITE_ROOT}" class="gc-brand"><em>T</em>yler OS</a>
   <div class="gc-nav">
-    <a href="/features.html">Features</a>
-    <a href="/games.html">All Games</a>
+    <a href="${SITE_ROOT}features.html">Features</a>
+    <a href="${SITE_ROOT}games.html">All Games</a>
     <a href="https://github.com/NaoTomori1/yukios">GitHub</a>
   </div>
 </header>
@@ -2016,8 +2017,8 @@ body{background:#0a0a14;color:#ccc;font-family:-apple-system,BlinkMacSystemFont,
   ${otherLinksHtml}
 </main>
 <footer class="gc-footer">
-  <p>YukiOS - Free Browser-Based Desktop Environment</p>
-  <div><a href="/features.html">Features</a> &middot; <a href="/games.html">All Games</a> &middot; <a href="https://github.com/NaoTomori1/yukios">GitHub</a></div>
+  <p>Tyler OS - Free Browser-Based Desktop Environment</p>
+  <div><a href="${SITE_ROOT}features.html">Features</a> &middot; <a href="${SITE_ROOT}games.html">All Games</a> &middot; <a href="https://github.com/NaoTomori1/yukios">GitHub</a></div>
 </footer>
 ${adSlotScript("genre-ad")}
 </body>
@@ -2038,13 +2039,13 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
     const desc =
       APP_DESC_OVERRIDES[a.key] ||
       a.description ||
-      `${a.title} - a built-in YukiOS app.`;
+      `${a.title} - a built-in Tyler OS app.`;
     const url = `${BASE}/app/${a.key}.html`;
     const jsonld = JSON.stringify([
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        name: `${pageTitle} - YukiOS`,
+        name: `${pageTitle} - Tyler OS`,
         url,
         description: desc,
         operatingSystem: "Web Browser",
@@ -2055,7 +2056,7 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "YukiOS", item: BASE },
+          { "@type": "ListItem", position: 1, name: "Tyler OS", item: BASE },
           {
             "@type": "ListItem",
             position: 2,
@@ -2080,12 +2081,12 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
       if (i !== appIdx) nearby.push(apps[i]);
     }
     const relatedApps = nearby.length
-      ? `<p class="seo-more">More YukiOS apps: ${nearby
+      ? `<p class="seo-more">More Tyler OS apps: ${nearby
           .slice(0, 4)
-          .map((n) => `<a href="/app/${n.key}.html">${n.title}</a>`)
+          .map((n) => `<a href="${SITE_ROOT}app/${n.key}.html">${n.title}</a>`)
           .join(", ")}</p>`
       : "";
-    const extra = `${bullets}<p class="seo-cta">${pageTitle} is part of YukiOS - a free browser-based desktop environment with 90+ apps, 3000 games, and no downloads or sign-ups required. Launch it directly from the Start Menu or bookmark this page for quick access.</p>${relatedApps}`;
+    const extra = `${bullets}<p class="seo-cta">${pageTitle} is part of Tyler OS - a free browser-based desktop environment with 90+ apps, 3000 games, and no downloads or sign-ups required. Launch it directly from the Start Menu or bookmark this page for quick access.</p>${relatedApps}`;
     const html = makeStandalonePage(
       pageTitle,
       desc,
@@ -2102,8 +2103,8 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
   mkdirSync(classDir, { recursive: true });
   for (const g of games) {
     const desc = gameDescs[g.key]
-      ? `Play ${g.title} in your browser on YukiOS - ${gameDescs[g.key]}`
-      : `Play ${g.title} in your browser on YukiOS`;
+      ? `Play ${g.title} in your browser on Tyler OS - ${gameDescs[g.key]}`
+      : `Play ${g.title} in your browser on Tyler OS`;
     const genre = (g.genre && g.genre[0]) || "Casual";
     const titleTmpl = TITLE_TEMPLATES[genre] || TITLE_TEMPLATES.Casual;
     const h1Tmpl = H1_TEMPLATES[genre] || H1_TEMPLATES.Casual;
@@ -2126,7 +2127,7 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "YukiOS", item: BASE },
+          { "@type": "ListItem", position: 1, name: "Tyler OS", item: BASE },
           {
             "@type": "ListItem",
             position: 2,
@@ -2186,7 +2187,7 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
       .slice(0, 6)
       .map(
         (s) => `
-      <a href="/class/${s.game.key}.html" class="you-may-like-card">
+      <a href="${SITE_ROOT}class/${s.game.key}.html" class="you-may-like-card">
         ${s.game.icon ? `<img class="you-may-like-icon" src="${escHtml(s.game.icon)}" alt="${escHtml(s.game.title)} icon" loading="lazy" />` : `<div class="you-may-like-icon"></div>`}
         <div class="you-may-like-title">${escHtml(s.game.title)}</div>
         <div class="you-may-like-genre">${(s.game.genre && s.game.genre[0]) || "Casual"}</div>
@@ -2200,7 +2201,7 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
     const seoPara = SEO_PARAGRAPHS[genre] || SEO_PARAGRAPHS.Casual;
     const howToPlay = `<h2>How to Play</h2><ul><li>Press the Play button above to start playing ${g.title} instantly in full screen.</li><li>Use keyboard (WASD or arrow keys) and mouse for most games.</li><li>Your progress and high scores are saved automatically between sessions.</li></ul>`;
     const platformFeatures = `<h2>Platform Features</h2><ul><li>Zero downloads or installations needed.</li><li>Works on Chromebooks, tablets, and mobile devices.</li><li>Fast loading times with optimized delivery.</li><li>Open source project. View and contribute on GitHub.</li><li>Fullscreen mode for immersive gameplay.</li><li>Mobile friendly with touch controls.</li><li>Works behind school and corporate network filters.</li><li>Regularly updated game library.</li></ul>`;
-    const extra = `<p class="seo-cta">Play ${g.title} online for free in your browser on YukiOS. No downloads, no sign-ups, no installation required.</p>${bullets}<h2>About This Game</h2><p>${seoPara}</p>${howToPlay}${platformFeatures}${relatedGames}`;
+    const extra = `<p class="seo-cta">Play ${g.title} online for free in your browser on Tyler OS. No downloads, no sign-ups, no installation required.</p>${bullets}<h2>About This Game</h2><p>${seoPara}</p>${howToPlay}${platformFeatures}${relatedGames}`;
     const gameUrl = resolveGameUrl(g.url, g.type);
     const html = makeMinimalGamePage(
       g.title,
@@ -2254,7 +2255,7 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
       .filter((p) => p.key !== "index" && p.key !== f.key)
       .slice(0, 4);
     const relatedLinks = related.length
-      ? `<p class="seo-more">Explore more: ${related.map((r) => `<a href="/feature/${r.key}.html">${r.title}</a>`).join(", ")}</p>`
+      ? `<p class="seo-more">Explore more: ${related.map((r) => `<a href="${SITE_ROOT}feature/${r.key}.html">${r.title}</a>`).join(", ")}</p>`
       : "";
     const ogImage =
       (galleryImages.find((i) => i.featureKey === f.key) || {}).src ||
@@ -2269,7 +2270,7 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
       const cards = galleryImages
         .map((img) => {
           const title = featureTitleMap[img.featureKey];
-          return `<a href="/feature/${img.featureKey}.html" class="feature-card"><img src="${img.src}" alt="${title}" loading="lazy"/><span class="feature-card-label">${title || img.featureKey}</span></a>`;
+          return `<a href="${SITE_ROOT}feature/${img.featureKey}.html" class="feature-card"><img src="${img.src}" alt="${title}" loading="lazy"/><span class="feature-card-label">${title || img.featureKey}</span></a>`;
         })
         .join("");
       extra = `
@@ -2387,32 +2388,32 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
   </div>
 </div>
 <div class="seo-cta-row">
-  <a href="/apps.html" class="seo-cta-card">
+  <a href="${SITE_ROOT}apps.html" class="seo-cta-card">
     <span class="cta-count">90+</span>
     <h3>Browse Apps</h3>
     <p>Explore the full catalog of built-in applications</p>
   </a>
-  <a href="/games.html" class="seo-cta-card">
+  <a href="${SITE_ROOT}games.html" class="seo-cta-card">
     <span class="cta-count">3,700+</span>
     <h3>Browse Games</h3>
     <p>Discover free games across every genre</p>
   </a>
-  <a href="/feature/tiling.html" class="seo-cta-card">
+  <a href="${SITE_ROOT}feature/tiling.html" class="seo-cta-card">
     <h3>Desktop Modes</h3>
     <p>MacOS, ChromeOS, Hyprland</p>
   </a>
 </div>
 <div class="seo-gallery">${cards}</div>
-<p style="color:#aaa;font-size:.85rem;text-align:center;margin-top:48px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">YukiOS is free, open-source, and runs entirely in your browser with no downloads, sign-ups, or installation required.</p>`;
+<p style="color:#aaa;font-size:.85rem;text-align:center;margin-top:48px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">Tyler OS is free, open-source, and runs entirely in your browser with no downloads, sign-ups, or installation required.</p>`;
     } else {
-      extra = `${bullets}<p class="seo-cta">${f.title} is part of YukiOS - a free browser-based desktop environment that runs entirely in your browser with no downloads or sign-ups needed.</p>${relatedLinks}`;
+      extra = `${bullets}<p class="seo-cta">${f.title} is part of Tyler OS - a free browser-based desktop environment that runs entirely in your browser with no downloads or sign-ups needed.</p>${relatedLinks}`;
     }
     let jsonld;
     const breadcrumbBase = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "YukiOS", item: BASE },
+        { "@type": "ListItem", position: 1, name: "Tyler OS", item: BASE },
         {
           "@type": "ListItem",
           position: 2,
@@ -2434,14 +2435,14 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: `${f.title} - YukiOS`,
+          name: `${f.title} - Tyler OS`,
           url,
           description: f.description,
-          about: { "@type": "SoftwareApplication", name: "YukiOS" },
+          about: { "@type": "SoftwareApplication", name: "Tyler OS" },
         },
         {
           "@type": "ItemList",
-          name: "YukiOS Features",
+          name: "Tyler OS Features",
           numberOfItems: items.length,
           itemListElement: items,
         },
@@ -2459,10 +2460,10 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: `${f.title} - YukiOS`,
+          name: `${f.title} - Tyler OS`,
           url,
           description: f.description,
-          about: { "@type": "SoftwareApplication", name: "YukiOS" },
+          about: { "@type": "SoftwareApplication", name: "Tyler OS" },
         },
         breadcrumb,
       ]);
@@ -2495,7 +2496,7 @@ function buildPages(apps, games, gameDescs, featurePages, indexHtml) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found - YukiOS</title>
+<title>Page Not Found - Tyler OS</title>
 <meta name="robots" content="noindex">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -2509,10 +2510,10 @@ small{color:#666;margin-top:2rem;font-size:.85rem}
 </head>
 <body>
 <h1>404</h1>
-<p>The page you're looking for doesn't exist on YukiOS.</p>
-<a href="/">Go to YukiOS Home</a>
+<p>The page you're looking for doesn't exist on Tyler OS.</p>
+<a href="${SITE_ROOT}">Go to Tyler OS Home</a>
 <small>You will be redirected automatically in a few seconds.</small>
-<script>setTimeout(function(){window.location.href="/"},5000)</script>
+<script>setTimeout(function(){window.location.href="${SITE_ROOT}"},5000)</script>
 </body>
 </html>`;
   writeFileSync(resolve(outDir, "404.html"), notFoundHtml, "utf-8");
@@ -2561,8 +2562,8 @@ async function main() {
     writeFileSync(
       resolve(outDir, "apps.html"),
       makeCatalogPage(
-        "All YukiOS Apps - Browser Desktop Applications",
-        `Browse ${apps.length} built-in apps in the YukiOS browser desktop environment. From terminal and calculator to office and development tools, all free and no downloads needed.`,
+        "All Tyler OS Apps - Browser Desktop Applications",
+        `Browse ${apps.length} built-in apps in the Tyler OS browser desktop environment. From terminal and calculator to office and development tools, all free and no downloads needed.`,
         apps,
         "app",
       ),
@@ -2571,8 +2572,8 @@ async function main() {
     writeFileSync(
       resolve(outDir, "games.html"),
       makeCatalogPage(
-        "All YukiOS Games - Play Free Online Browser Games",
-        `Browse ${allGames.length} free online games in the YukiOS browser desktop environment. Play instantly with no downloads or sign-ups.`,
+        "All Tyler OS Games - Play Free Online Browser Games",
+        `Browse ${allGames.length} free online games in the Tyler OS browser desktop environment. Play instantly with no downloads or sign-ups.`,
         allGames,
         "game",
         200,

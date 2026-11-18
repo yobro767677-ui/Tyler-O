@@ -1,3 +1,4 @@
+import { withBase } from "../shared/basePath.js";
 import "../styles/maps.css";
 
 import { BaseApp, os } from "../framework.js";
@@ -309,7 +310,7 @@ export class MapsApp extends BaseApp {
     const wispUrl = getWispUrl();
     return (
       window.location.origin +
-      "/sapps/set-template.html?wisp=" +
+      withBase("sapps/set-template.html?wisp=") +
       encodeURIComponent(wispUrl) +
       "&target=" +
       encodeURIComponent("https://www.google.com/maps")

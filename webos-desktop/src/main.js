@@ -257,7 +257,7 @@ async function start() {
   const featureMatch = window.location.pathname.match(
     /^\/feature\/(.+)\.html$/,
   );
-  const isFeatureIndex = window.location.pathname === "/features.html";
+  const isFeatureIndex = window.location.pathname.endsWith("/features.html");
 
   if (pathMatch) {
     const id = pathMatch[2];

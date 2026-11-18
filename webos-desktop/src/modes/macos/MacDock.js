@@ -32,7 +32,7 @@ const DEFAULT_DOCK_APPS = [
   },
   {
     appId: "browserApp",
-    title: "Yuki Browser",
+    title: "Tyler Browser",
     icon: "static/icons/chrome.webp",
     color: "#fff",
   },

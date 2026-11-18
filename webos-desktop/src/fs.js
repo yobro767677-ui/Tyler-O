@@ -74,12 +74,12 @@ export const defaultStorage = {
       kind: FileKind.TEXT,
       icon: "static/icons/notepad.webp",
     },
-    "YukiOS.md": {
+    "Tyler OS.md": {
       type: "file",
       content:
         typeof __README_CONTENT__ !== "undefined"
           ? __README_CONTENT__
-          : "# YukiOS\n",
+          : "# Tyler OS\n",
       kind: FileKind.TEXT,
       icon: "static/icons/notepad.webp",
     },

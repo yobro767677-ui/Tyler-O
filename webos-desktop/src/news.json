@@ -1,5 +1,32 @@
 [
   {
+    "date": "November 18, 2026",
+    "label": "Welcome to Tyler OS",
+    "sections": [
+      {
+        "icon": "fas fa-star",
+        "title": "Tyler OS",
+        "items": [
+          [
+            "fas fa-signature",
+            "New Name",
+            "The desktop, apps and store all carry the Tyler OS name."
+          ],
+          [
+            "fas fa-forward",
+            "Faster Startup",
+            "Skip the logo animation and go straight to your desktop."
+          ],
+          [
+            "fab fa-github",
+            "GitHub Pages",
+            "Visit Tyler OS online through its GitHub Pages website."
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "date": "November 11, 2026",
     "label": "Desktop Particle Effects",
     "sections": [

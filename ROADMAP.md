@@ -1,6 +1,6 @@
-# YukiOS Roadmap
+# Tyler OS Roadmap
 
-Planned features and improvements for YukiOS.
+Planned features and improvements for Tyler OS.
 
 ## Legend
 
@@ -71,9 +71,9 @@ Planned features and improvements for YukiOS.
 
 ## New Applications
 
-- [✅] Notepad, Markdown Viewer, Yuki Code, Calculator, Clock, Weather, News, Paint, Camera, Media Viewer, Office Viewer
-- [✅] Terminal, Explorer, Settings, Task Manager, Shortcuts, Achievements, Profile Customizer, Yuki AI Assistant
-- [✅] Clipboard Manager, Emoji Selector, YukiDevTools, Dev Tools (Eruda), Storage Editor, Yuki Convert
+- [✅] Notepad, Markdown Viewer, Tyler Code, Calculator, Clock, Weather, News, Paint, Camera, Media Viewer, Office Viewer
+- [✅] Terminal, Explorer, Settings, Task Manager, Shortcuts, Achievements, Profile Customizer, Tyler AI Assistant
+- [✅] Clipboard Manager, Emoji Selector, YukiDevTools, Dev Tools (Eruda), Storage Editor, Tyler Convert
 - [✅] Browser, WebTorrent, Tor Manager, VNC Client, Steam-like launcher
 - [💡] **Control Center / storage dashboard** — Centralized system data overview with storage usage breakdown
 - [💡] **Media tray app** — Replace the "now playing" indicator with a dedicated tray player showing album art,

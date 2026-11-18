@@ -1,3 +1,4 @@
+import { withBase } from "../shared/basePath.js";
 import "../styles/virtualMachineManager.css";
 import { BaseApp, os, StorageKeys, $ } from "../framework.js";
 import { getWispUrl } from "../shared/wispConfig.js";
@@ -312,7 +313,7 @@ export class VirtualMachineManagerApp extends BaseApp {
     const wispUrl = getWispUrl();
     return (
       window.location.origin +
-      "/s/index.html?wisp=" +
+      withBase("s/index.html?wisp=") +
       encodeURIComponent(wispUrl) +
       "&embed=1" +
       "#" +
